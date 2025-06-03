@@ -179,7 +179,7 @@ const about = {
         description: <>Professional Certificate Program in Artificial Intelligence and Data Science</>,
       },
       {
-        name: "Babuji Institute of Engineering and Technology",
+        name: "Bapuji Institute of Engineering and Technology",
         description: <>Studing Computer Science and Engineering</>,
       },
     ],
