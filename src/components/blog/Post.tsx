@@ -55,10 +55,10 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
                         onBackground="neutral-weak">
                         {formatDate(post.metadata.publishedAt, false)}
                     </Text>
-                    { post.metadata.tag &&
+                    { post.metadata.tags && post.metadata.tags.length > 0 &&
                         <Tag
                             className="mt-12"
-                            label={post.metadata.tag}
+                            label={post.metadata.tags[0]}
                             variant="neutral" />
                     }
                 </Column>
