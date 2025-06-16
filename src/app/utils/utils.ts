@@ -18,6 +18,7 @@ type Metadata = {
   tags: string[];
   team: Team[];
   link?: string;
+  category?: string;
 };
 
 import { notFound } from 'next/navigation';
@@ -47,6 +48,7 @@ function readMDXFile(filePath: string) {
     tags: data.tags || [],
     team: data.team || [],
     link: data.link || "",
+    category: data.category || "",
   };
 
   return { metadata, content };
@@ -69,4 +71,12 @@ function getMDXData(dir: string) {
 export function getPosts(customPath = ["", "", "", ""]) {
   const postsDir = path.join(process.cwd(), ...customPath);
   return getMDXData(postsDir);
+}
+
+export function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }

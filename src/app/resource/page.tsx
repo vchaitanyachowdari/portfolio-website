@@ -1,5 +1,5 @@
 import { Column, Heading } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
+import { Resources } from "@/components/resource/Resources";
 import { baseURL } from "@/app/resources";
 import { resources, person } from "@/app/resources/content";
 import { Meta, Schema } from "@/once-ui/modules";
@@ -14,7 +14,7 @@ export async function generateMetadata() {
   });
 }
 
-export default function Resources() {
+export default function ResourcePage() {
   return (
     <Column maxWidth="s">
       <Schema
@@ -26,18 +26,17 @@ export default function Resources() {
         image={`${baseURL}/og?title=${encodeURIComponent(resources.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}/resources`,
+          url: `${baseURL}/resource`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="display-strong-s">
         {resources.title}
       </Heading>
-      <Column
-        fillWidth flex={1}>
-        <Projects range={[1,1]} thumbnail direction="column"/>
-        <Projects range={[2,3]} thumbnail/>
-        <Projects range={[4]} columns="2"/>
+      <Column fillWidth flex={1}>
+        <Resources range={[1, 1]} columns="1" />
+        <Resources range={[2, 3]} columns="2" />
+        <Resources range={[4, 4]} columns="2" />
       </Column>
     </Column>
   );

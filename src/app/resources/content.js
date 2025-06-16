@@ -326,7 +326,7 @@ const about = {
       },
       {
         title: "v0",
-        description: <>Proficient in using Vercel’s v0 to rapidly prototype frontend UIs using AI-powered generation and Tailwind CSS integration.</>,
+        description: <>Proficient in using Vercel's v0 to rapidly prototype frontend UIs using AI-powered generation and Tailwind CSS integration.</>,
         // optional: leave the array empty if you don't want to display images
         images: [ ],
       },
@@ -448,4 +448,21 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const resources = {
+  path: "/resource",
+  label: "Resources",
+  title: `Resources – ${person.name}`,
+  description: `Useful resources and tools curated by ${person.name}`,
+};
+
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  blog,
+  work,
+  gallery,
+  resources,
+};

@@ -11,7 +11,7 @@ export const about = {
 };
 
 export const resources = {
-  path: "/resources",
+  path: "/resource",
   label: "Resources",
   title: `Resources – ${person.name}`,
   description: `A collection of useful resources, tools, and guides by ${person.name}`,
