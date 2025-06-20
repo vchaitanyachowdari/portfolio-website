@@ -98,15 +98,28 @@
   font-size: var(--font-size-s, 14px);
   font-weight: var(--font-weight-medium, 500);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--surface-neutral-hovered, #e0e0e0);
     border-color: var(--border-neutral-alpha-medium, #ccc);
+    outline: 2px solid var(--border-focus-default, #007bff); /* Example focus outline, adjust color if needed */
+    outline-offset: 1px;
   }
+
+  &:focus:not(:focus-visible) { /* Optional: remove outline if not keyboard focus, for browsers supporting :focus-visible */
+    outline: none;
+  }
+
 
   &.active {
     background-color: var(--surface-brand-default, #007bff); /* Assuming once-ui token */
     color: var(--text-on-brand-default, #fff); /* Assuming once-ui token */
     border-color: var(--surface-brand-default, #007bff);
+  }
+
+  &.active:focus {
+    outline: 2px solid var(--border-focus-on-brand, #fff); /* Example focus outline for active state */
+    outline-offset: 1px;
   }
 }
 

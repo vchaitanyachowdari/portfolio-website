@@ -1,3 +1,5 @@
+"use client"; // Add this directive
+
 import React, { useState, useMemo } from 'react'; // Added useState and useMemo
 import techStackData from './tech-stack-data.json';
 import styles from './TechStack.module.scss';
@@ -68,6 +70,7 @@ const TechStackPage = () => {
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`${styles.filterButton} ${selectedCategory === category ? styles.active : ''}`}
+              aria-pressed={selectedCategory === category}
             >
               {category}
             </button>

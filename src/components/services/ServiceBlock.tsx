@@ -76,10 +76,8 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
       <ul className={styles.deliverablesList}>
         {deliverables.map((item, index) => (
           <li key={index} className={styles.deliverableItem}>
-            {/* Placeholder for deliverable icon, e.g., from once-ui icons */}
-            {/* For now, using a simple unicode character or a specific icon if available */}
             <Text as="span" className={styles.deliverableIcon} aria-hidden="true">
-              {item.icon === 'checkCircle' ? '✓' : '•'} {/* Example checkmark or bullet */}
+              {item.icon === 'checkCircle' ? '✓' : '•'}
             </Text>
             <Text as="span">{item.text}</Text>
           </li>

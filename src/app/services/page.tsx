@@ -1,5 +1,7 @@
 "use client"; // Required because ServiceBlock uses useEffect for animations
 
+"use client"; // Add this directive
+
 import React from 'react';
 import styles from './Services.module.scss';
 import { ServiceBlock, ServiceBlockProps } from '@/components/services/ServiceBlock';
