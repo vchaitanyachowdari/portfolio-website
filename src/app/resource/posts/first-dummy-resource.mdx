@@ -1,11 +1,16 @@
 ---
 title: "First Dummy Resource Post"
 publishedAt: "2023-10-26"
-summary: "This is a summary for the first dummy resource. It's created to test the rendering logic of the Resources component."
-image: "/images/gallery/horizontal-01.jpg" # Using an existing image for testing
-tags: ["dummy", "test", "mdx"]
+summary: "This is a summary for the first dummy resource, now updated to test the ResourceDisplayCard component with a carousel."
+images:
+  - "/images/gallery/horizontal-01.jpg"
+  - "/images/gallery/horizontal-02.jpg"
+  - "/images/gallery/vertical-01.png"
+# image prop is no longer primary, images array is used instead. Keeping old 'image' commented out for reference.
+# image: "/images/gallery/horizontal-01.jpg"
+tags: ["dummy", "test", "mdx", "carousel"]
 category: "Test Category 1"
-link: "https://example.com/first-resource"
+link: "https://example.com/first-resource" # External link for "Visit resource"
 team:
   - name: "Jules Verne"
     role: "Content Creator"

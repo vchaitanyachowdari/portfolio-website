@@ -469,24 +469,8 @@ const resources = {
   description: `Useful resources and tools curated by ${person.name}`,
 };
 
-const resourcePages = [
-  {
-    title: "8 Open-Source Tools for AI SaaS App Development (2025 Edition)",
-    summary: "Explore 8 pivotal open-source tools to build and scale your next AI SaaS application, covering agent orchestration, frontend integration, secure code execution, RAG pipelines, vector databases, and marketing automation.",
-    image: "/images/og/anthropic-circuit-tools.jpg",
-    tag: "AI SaaS Development",
-    link: "https://your-link-here.com",
-    category: "Featured"
-  },
-  {
-    title: "Another Resource Title",
-    summary: "A summary for another resource.",
-    image: "/images/og/another-image.jpg",
-    tag: "Web Tools",
-    link: "https://another-link.com",
-    category: "Guide"
-  }
-];
+// const resourcePages = [ ... ]; // This array is no longer used by the Resource page.
+// Content from here should be migrated to individual .mdx files in src/app/resource/posts/ if desired.
 
 /**
  * @typedef {Object} Testimonial
@@ -522,6 +506,6 @@ export {
   work,
   gallery,
   resources,
-  resourcePages,
+  // resourcePages, // No longer exporting as it's not used by the new Resource page design
   testimonials,
 };
