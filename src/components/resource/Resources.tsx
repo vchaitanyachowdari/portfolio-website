@@ -139,8 +139,14 @@ export const Resources = ({ range, columns = "1" }: ResourcesProps) => {
             padding: 1.5rem 1rem 1.5rem 1rem;
             min-height: 220px;
           }
-          .resource-card-ui h2 {
-            font-size: 20px !important;
+          /* Attempting a more general selector for the heading within the card */
+          .resource-card-ui div[class*="Column"] > h1,
+          .resource-card-ui div[class*="Column"] > h2,
+          .resource-card-ui div[class*="Column"] > h3,
+          .resource-card-ui div[class*="Column"] > h4,
+          .resource-card-ui div[class*="Column"] > h5,
+          .resource-card-ui div[class*="Column"] > h6 {
+            font-size: 20px;
           }
         }
       `}</style>
