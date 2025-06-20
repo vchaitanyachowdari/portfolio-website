@@ -1,110 +1,110 @@
+"use client"; // Required because ServiceBlock uses useEffect for animations
+
 import React from 'react';
-import styles from './Services.module.scss'; // We'll create this SCSS module next
-// import { Heading } from '@/once-ui'; // Example of using existing UI component if available
+import styles from './Services.module.scss';
+import { ServiceBlock, ServiceBlockProps } from '@/components/services/ServiceBlock';
+import { Column } from '@/once-ui/components'; // Using Column for overall page structure
+
+// Sample Data for Services - this would ideally come from a CMS or a dedicated data file
+const servicesData: ServiceBlockProps[] = [
+  {
+    id: 'web-dev',
+    iconPlaceholder: 'WD',
+    title: 'Web Development',
+    valueProposition: 'Crafting responsive, high-performance websites and web applications tailored to your business needs.',
+    deliverables: [
+      { text: 'Custom Website Design & Development' },
+      { text: 'Full-Stack Development (Frontend & Backend)' },
+      { text: 'Responsive Web Design for all devices' },
+      { text: 'Ongoing Website Maintenance & Support' },
+    ],
+    cta: { text: 'Discuss Your Project', link: '#contact' }, // Example link
+    reverseLayout: false,
+  },
+  {
+    id: 'mobile-dev',
+    iconPlaceholder: 'MD',
+    title: 'Mobile App Development',
+    valueProposition: 'Building intuitive and engaging mobile experiences for iOS and Android platforms.',
+    deliverables: [
+      { text: 'Native iOS App Development (Swift/Objective-C)' },
+      { text: 'Native Android App Development (Kotlin/Java)' },
+      { text: 'Cross-Platform Development (React Native, Flutter)' },
+      { text: 'App Store Submission & Support' },
+    ],
+    cta: { text: 'Get a Mobile Quote', link: '#contact' },
+    reverseLayout: true,
+  },
+  {
+    id: 'ui-ux',
+    iconPlaceholder: 'UX',
+    title: 'UI/UX Design',
+    valueProposition: 'Designing user-centric interfaces that are both beautiful and easy to use, enhancing user satisfaction.',
+    deliverables: [
+      { text: 'User Interface (UI) Design' },
+      { text: 'User Experience (UX) Research & Strategy' },
+      { text: 'Wireframing & Interactive Prototyping' },
+      { text: 'Usability Testing & Feedback Iteration' },
+    ],
+    cta: { text: 'Explore Design Process', link: '#contact' },
+    reverseLayout: false,
+  },
+  {
+    id: 'consulting',
+    iconPlaceholder: 'CS',
+    title: 'Consulting & Strategy',
+    valueProposition: 'Providing expert technical guidance and strategic planning to help you achieve your digital goals.',
+    deliverables: [
+      { text: 'Technical Consultation & Feasibility Studies' },
+      { text: 'Project Planning, Scoping & Roadmapping' },
+      { text: 'Digital Transformation Strategy Development' },
+      { text: 'Technology Stack Advisory' },
+    ],
+    // No CTA for this one as an example
+    reverseLayout: true,
+  }
+];
 
 const ServicesPage = () => {
   return (
-    <div className={styles.container}>
+    <Column className={styles.container} gap="32" align="center"> {/* Use once-ui Column for layout */}
       <header className={styles.header}>
-        <h1>Services</h1>
-        <p>We offer a range of services designed to meet your project needs, specializing in various aspects of software development and digital solutions.</p>
+        <h1>Our Services</h1>
+        <p>
+          We offer a comprehensive range of services designed to meet your project needs,
+          specializing in various aspects of software development and digital solutions.
+        </p>
       </header>
 
-      <section className={styles.section}>
-        <h2>A. Core Service Offerings:</h2>
-        <div className={styles.serviceGrid}>
-          <div className={styles.serviceCard}>
-            <h3>Web Development</h3>
-            <ul>
-              <li>Custom Website Design & Development (e.g., marketing sites, e-commerce stores)</li>
-              <li>Full-Stack Development (Frontend & Backend)</li>
-              <li>Responsive Web Design</li>
-              <li>Website Maintenance & Support</li>
-            </ul>
-          </div>
-          <div className={styles.serviceCard}>
-            <h3>Mobile App Development</h3>
-            <ul>
-              <li>iOS App Development</li>
-              <li>Android App Development</li>
-              <li>Cross-Platform Development (e.g., React Native, Flutter)</li>
-            </ul>
-          </div>
-          <div className={styles.serviceCard}>
-            <h3>UI/UX Design</h3>
-            <ul>
-              <li>User Interface (UI) Design</li>
-              <li>User Experience (UX) Research & Strategy</li>
-              <li>Wireframing & Prototyping</li>
-              <li>Usability Testing</li>
-            </ul>
-          </div>
-          <div className={styles.serviceCard}>
-            <h3>Consulting & Strategy</h3>
-            <ul>
-              <li>Technical Consultation</li>
-              <li>Project Planning & Scoping</li>
-              <li>Digital Transformation Strategy</li>
-            </ul>
-          </div>
-          <div className={styles.serviceCardFull}>
-            <h3>Additional Services (as applicable):</h3>
-            <ul>
-              <li>API Development & Integration</li>
-              <li>Cloud Infrastructure Setup & Management</li>
-              <li>Database Design & Optimization</li>
-              <li>SEO Optimization</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <Column fillWidth className={styles.serviceBlocksContainer} gap="0"> {/* Container for blocks, gap handled by block borders/padding */}
+        {servicesData.map((service, index) => (
+          <ServiceBlock
+            key={service.id}
+            id={service.id}
+            iconPlaceholder={service.iconPlaceholder}
+            title={service.title}
+            valueProposition={service.valueProposition}
+            deliverables={service.deliverables}
+            cta={service.cta}
+            reverseLayout={index % 2 !== 0} // Alternate layout for visual rhythm
+            // Alternatively, use service.reverseLayout if defined in data
+          />
+        ))}
+      </Column>
 
-      <section className={styles.section}>
-        <h2>B. Booking Slots & Engagement Process:</h2>
-        <p>To streamline our collaboration, we've implemented a clear process for booking and project initiation.</p>
-        <div className={styles.processSteps}>
-          <div className={styles.step}>
-            <h4>Initial Consultation:</h4>
-            <p>Schedule a free 30-minute discovery call to discuss your project requirements and goals.</p>
-            <p><em>Link to Calendar/Booking Tool:</em> <a href="[Your Calendly Link]" target="_blank" rel="noopener noreferrer">[e.g., Calendly link]</a></p>
-          </div>
-          <div className={styles.step}>
-            <h4>Project Proposal & Estimation:</h4>
-            <p>Following the consultation, we'll provide a detailed proposal outlining the scope, deliverables, timeline, and cost estimate.</p>
-          </div>
-          <div className={styles.step}>
-            <h4>Contract & Agreement:</h4>
-            <p>Upon agreement, a formal contract will be signed, detailing terms of service, intellectual property, and payment schedules.</p>
-          </div>
-          <div className={styles.step}>
-            <h4>Secure Payment Workflow:</h4>
-            <p><strong>Payment Gateways:</strong> We utilize secure and reliable payment gateways for all transactions. (e.g., Stripe, PayPal)</p>
-            <p><strong>Payment Milestones:</strong> Projects are typically structured with milestone-based payments (e.g., 25% upfront, 25% at midway, 50% upon completion).</p>
-            <p><strong>Invoicing:</strong> Professional invoices will be provided for all payments.</p>
-            <p><strong>Payment Security:</strong> We prioritize security with measures like SSL encryption and PCI compliance for online transactions.</p>
-          </div>
-        </div>
+      {/* Retain other sections if they need to be styled differently or are static */}
+      {/* For example, the "Booking Slots & Engagement Process", "Engagement Models",
+           "What to Expect" sections from the original prompt could be added here,
+           styled as distinct sections or integrated into a different format.
+           For now, focusing on the core service offerings redesign.
+      */}
+      {/*
+      <section className={styles.additionalInfoSection}>
+        <h2>Booking & Engagement</h2>
+        <p>Details about booking, payment, etc. can go here, styled appropriately.</p>
       </section>
-
-      <section className={styles.section}>
-        <h2>C. Engagement Models (For Freelancing/Agency):</h2>
-        <ul className={styles.engagementModels}>
-          <li><strong>Project-Based:</strong> Fixed price for a defined scope of work.</li>
-          <li><strong>Hourly Rate:</strong> Suitable for ongoing support, smaller tasks, or projects with evolving requirements.</li>
-          <li><strong>Retainer Model:</strong> For long-term partnerships requiring consistent availability (e.g., monthly hours).</li>
-        </ul>
-      </section>
-
-      <section className={styles.section}>
-        <h2>D. What to Expect from Our Process:</h2>
-        <ul className={styles.expectations}>
-          <li><strong>Transparency:</strong> Clear communication at every stage of the project.</li>
-          <li><strong>Regular Updates:</strong> Scheduled progress reports and client meetings.</li>
-          <li><strong>Quality Assurance:</strong> Rigorous testing and quality checks before delivery.</li>
-          <li><strong>Post-Launch Support:</strong> Assistance with deployment and initial support.</li>
-        </ul>
-      </section>
-    </div>
+      */}
+    </Column>
   );
 };
 
