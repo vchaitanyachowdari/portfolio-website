@@ -71,10 +71,48 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+  /* Adjust minmax for potentially smaller cards if needed, or keep similar to original */
+  /* For example, 3-4 cards per row on larger screens */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--static-space-24, 24px); /* Using a variable, assuming once-ui might have this */
+  padding-top: var(--static-space-24, 24px);
 }
 
+.filterContainer {
+  margin-bottom: var(--static-space-24, 24px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--static-space-12, 12px);
+  align-items: center;
+  justify-content: center; /* Center filter buttons */
+}
+
+.filterButton {
+  padding: var(--static-space-8, 8px) var(--static-space-16, 16px);
+  background-color: var(--surface-neutral-default, #f0f0f0);
+  color: var(--text-on-neutral-default, #333);
+  border: 1px solid var(--border-neutral-alpha-subtle, #ddd);
+  border-radius: var(--radius-m, 8px);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-size: var(--font-size-s, 14px);
+  font-weight: var(--font-weight-medium, 500);
+
+  &:hover {
+    background-color: var(--surface-neutral-hovered, #e0e0e0);
+    border-color: var(--border-neutral-alpha-medium, #ccc);
+  }
+
+  &.active {
+    background-color: var(--surface-brand-default, #007bff); /* Assuming once-ui token */
+    color: var(--text-on-brand-default, #fff); /* Assuming once-ui token */
+    border-color: var(--surface-brand-default, #007bff);
+  }
+}
+
+/* Styles for the old .card can be removed or repurposed if no longer used directly by page.tsx */
+/* For now, I'll comment it out as TechCard.module.scss handles new card styling */
+/*
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
