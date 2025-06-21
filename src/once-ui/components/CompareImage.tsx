@@ -39,13 +39,13 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
-  const handleMouseDown = useCallback(() => { // Memoize handleMouseDown
+  const handleMouseDown = useCallback(() => {
     isDragging.current = true;
-  }, []); // No dependencies as it only mutates a ref
+  }, []);
 
-  const handleMouseUp = useCallback(() => { // Memoize handleMouseUp
+  const handleMouseUp = useCallback(() => {
     isDragging.current = false;
-  }, []); // No dependencies as it only mutates a ref
+  }, []);
 
   const updatePosition = useCallback((clientX: number) => {
     if (!isDragging.current || !containerRef.current) return;
@@ -56,34 +56,31 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
 
     const newPosition = Math.max(0, Math.min(100, (x / containerWidth) * 100));
     setPosition(newPosition);
-    // setPosition is stable, and containerRef.current access doesn't require it in deps.
-  }, []); // setPosition is stable by React guarantee.
+  }, []);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     updatePosition(e.clientX);
   }, [updatePosition]);
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
-    if (e.touches.length > 0) { // Ensure there's at least one touch point
+    if (e.touches.length > 0) {
       updatePosition(e.touches[0].clientX);
     }
   }, [updatePosition]);
 
   useEffect(() => {
-    // Add event listeners using the memoized handlers
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("touchend", handleMouseUp);
 
-    // Cleanup function
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("touchmove", handleTouchMove);
       document.removeEventListener("touchend", handleMouseUp);
     };
-  }, [handleMouseMove, handleMouseUp, handleTouchMove]); // Add memoized handlers to dependency array
+  }, [handleMouseMove, handleMouseUp, handleTouchMove]);
 
   return (
     <Flex
@@ -96,7 +93,6 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
       {renderContent(leftContent, `inset(0 ${100 - position}% 0 0)`)}
       {renderContent(rightContent, `inset(0 0 0 ${position}%)`)}
 
-      {/* Hit area and visible line */}
       <Flex
         position="absolute"
         horizontal="center"
@@ -107,8 +103,8 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
         style={{
           left: `${position}%`,
         }}
-        onMouseDown={handleMouseDown} // Use memoized version
-        onTouchStart={handleMouseDown} // Use memoized version
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleMouseDown}
       >
         <Flex width="1" fillHeight background="neutral-strong" zIndex={2} />
       </Flex>
@@ -119,8 +115,8 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
         style={{
           left: `${position}%`,
         }}
-        onMouseDown={handleMouseDown} // Use memoized version
-        onTouchStart={handleMouseDown} // Use memoized version
+        onMouseDown={handleMouseDown}
+        onTouchStart={handleMouseDown}
       />
     </Flex>
   );
