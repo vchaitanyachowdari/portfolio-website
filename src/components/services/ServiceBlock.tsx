@@ -70,7 +70,7 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
       <Heading as="h2" variant="heading-strong-l" style={{textAlign: 'inherit'}}> {/* Inherit text align from parent */}
         {title}
       </Heading>
-      <Text variant="body-default-l" onBackground="neutral-default" style={{textAlign: 'inherit'}}> {/* CORRECTED VARIANT */}
+      <Text variant="body-default-l" onBackground="neutral-strong" style={{textAlign: 'inherit'}}> {/* CORRECTED VARIANT & ONBACKGROUND */}
         {valueProposition}
       </Text>
       <ul className={styles.deliverablesList}>
