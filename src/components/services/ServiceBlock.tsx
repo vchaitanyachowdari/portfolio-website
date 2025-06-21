@@ -100,7 +100,7 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
           {/* Use once-ui Button if available and appropriate, or SmartLink styled as button */}
           <SmartLink
             href={cta.link}
-            variant={cta.type === 'primary' ? 'cta-primary' : 'cta-secondary'} // Assuming SmartLink has variants or Button component exists
+            // variant prop removed as it's not valid for SmartLink
             className="button-like-cta" // Add a class for potential global button styling from once-ui
             style={{textDecoration:'none'}} // Ensure no underline if SmartLink is used
           >
