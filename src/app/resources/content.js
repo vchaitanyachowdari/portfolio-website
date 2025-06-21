@@ -326,7 +326,7 @@ const about = {
       },
       {
         title: "v0",
-        description: <>Proficient in using Vercel's v0 to rapidly prototype frontend UIs using AI-powered generation and Tailwind CSS integration.</>,
+        description: <>Proficient in using Vercel&apos;s v0 to rapidly prototype frontend UIs using AI-powered generation and Tailwind CSS integration.</>,
         // optional: leave the array empty if you don't want to display images
         images: [ ],
       },

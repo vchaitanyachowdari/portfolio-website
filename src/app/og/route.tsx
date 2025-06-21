@@ -61,6 +61,7 @@ export async function GET(request: Request) {
               objectFit: "cover",
               borderRadius: "100%",
             }}
+            alt={`${person.name}'s avatar`} // Added alt text
           />
           <div
             style={{
