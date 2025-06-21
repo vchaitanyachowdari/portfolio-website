@@ -1,8 +1,8 @@
-.container {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: sans-serif; // Basic font
+/* Removed .container class as page layout is now handled by once-ui/Column */
+
+/* Add a wrapper class if needed by the top-level Column in page.tsx for specific page-level styling */
+.pageWrapper {
+  /* Potentially add page-specific background or full-bleed section styles here if Column doesn't cover it */
 }
 
 .header {
@@ -87,40 +87,10 @@
   justify-content: center; /* Center filter buttons */
 }
 
-.filterButton {
-  padding: var(--static-space-8, 8px) var(--static-space-16, 16px);
-  background-color: var(--surface-neutral-default, #f0f0f0);
-  color: var(--text-on-neutral-default, #333);
-  border: 1px solid var(--border-neutral-alpha-subtle, #ddd);
-  border-radius: var(--radius-m, 8px);
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  font-size: var(--font-size-s, 14px);
-  font-weight: var(--font-weight-medium, 500);
-
-  &:hover,
-  &:focus {
-    background-color: var(--surface-neutral-hovered, #e0e0e0);
-    border-color: var(--border-neutral-alpha-medium, #ccc);
-    outline: 2px solid var(--border-focus-default, #007bff); /* Example focus outline, adjust color if needed */
-    outline-offset: 1px;
-  }
-
-  &:focus:not(:focus-visible) { /* Optional: remove outline if not keyboard focus, for browsers supporting :focus-visible */
-    outline: none;
-  }
-
-
-  &.active {
-    background-color: var(--surface-brand-default, #007bff); /* Assuming once-ui token */
-    color: var(--text-on-brand-default, #fff); /* Assuming once-ui token */
-    border-color: var(--surface-brand-default, #007bff);
-  }
-
-  &.active:focus {
-    outline: 2px solid var(--border-focus-on-brand, #fff); /* Example focus outline for active state */
-    outline-offset: 1px;
-  }
-}
+/*
+  .filterButton and .active styles removed as we are now using once-ui/Button
+  and its variants ('primary' for active, 'secondary' for inactive) to handle styling.
+  The .filterContainer is kept for layout of the buttons.
+*/
 
 /* Styles for the old .card have been removed as TechCard.module.scss handles new card styling. */
