@@ -62,7 +62,7 @@ const Logo: React.FC<LogoProps> = ({
           width={parseInt(sizeMap[size], 10)} // Assuming square aspect ratio for the container; SVG will scale.
           alt="Trademark Icon" // More specific alt text
           src={iconSrc}
-          style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto' }} // Keep style for SVGs that need to scale based on height
+          // style prop removed to rely on width/height props for next/image handling
         />
       )}
       {wordmark && !wordmarkSrc && (
@@ -80,7 +80,7 @@ const Logo: React.FC<LogoProps> = ({
                                                   // This width is for layout reservation. Actual rendering controlled by style.
           alt="Trademark Wordmark" // More specific alt text
           src={wordmarkSrc}
-          style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto' }} // Keep style for SVGs that need to scale based on height
+          // style prop removed to rely on width/height props for next/image handling
         />
       )}
     </>

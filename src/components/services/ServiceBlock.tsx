@@ -38,32 +38,44 @@ export const ServiceBlock: React.FC<ServiceBlockProps> = ({
   reverseLayout = false,
 }) => {
   const blockRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null); // For storing the observer instance
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible);
-            entry.target.classList.remove(styles.hidden);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    const currentBlockNode = blockRef.current; // Capture the DOM node
 
-    if (blockRef.current) {
-      blockRef.current.classList.add(styles.hidden);
-      observer.observe(blockRef.current);
+    // Ensure observer is created only once
+    if (!observerRef.current) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(styles.visible);
+              entry.target.classList.remove(styles.hidden);
+              // Unobserve the specific entry after animation
+              if (observerRef.current) { // Check if observer still exists
+                observerRef.current.unobserve(entry.target);
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+    }
+
+    const observer = observerRef.current; // Use the observer from ref
+
+    if (currentBlockNode) {
+      currentBlockNode.classList.add(styles.hidden);
+      observer.observe(currentBlockNode);
     }
 
     return () => {
-      if (blockRef.current) {
-        observer.unobserve(blockRef.current);
+      // Cleanup: unobserve the node if it was observed by this specific observer instance
+      if (currentBlockNode && observer) {
+        observer.unobserve(currentBlockNode);
       }
     };
-  }, []);
+  }, []); // Empty dependency array: runs on mount/unmount.
 
   const content = (
     <Column className={styles.contentArea} gap="16" vertical="center" horizontal="start">
