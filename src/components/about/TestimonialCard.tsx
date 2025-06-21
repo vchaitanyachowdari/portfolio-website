@@ -56,7 +56,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   return (
     <div ref={cardRef} className={styles.testimonialCard}>
       <Flex className={styles.authorInfo} align="center" gap="16"> {/* Increased gap */}
-        <Avatar src={image} alt={`${name}'s avatar`} size="l" /> {/* Using size="l" (48px) */}
+        <Avatar src={image} size="l" /> {/* Using size="l" (48px) - Removed alt prop */}
         <Column className={styles.authorDetails} gap="0"> {/* Reduced gap for tighter name/title */}
           <Text variant="heading-strong-s" as="p" style={{ margin: 0 }}>{name}</Text>
           <Text variant="body-default-s" onBackground="neutral-weak" as="p" style={{ margin: 0 }}>
