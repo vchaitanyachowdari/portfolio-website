@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react"; // Import useCallback
 import { Flex } from "@/once-ui/components";
 import styles from "./ScrollToTop.module.scss";
 import classNames from "classnames";

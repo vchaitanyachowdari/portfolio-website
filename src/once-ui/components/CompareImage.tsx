@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Flex, SmartImage, IconButton } from ".";
 import styles from "./CompareImage.module.scss";
 
@@ -39,47 +39,51 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
-  const handleMouseDown = () => {
+  const handleMouseDown = useCallback(() => { // Memoize handleMouseDown
     isDragging.current = true;
-  };
+  }, []); // No dependencies as it only mutates a ref
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => { // Memoize handleMouseUp
     isDragging.current = false;
-  };
+  }, []); // No dependencies as it only mutates a ref
 
-  const updatePosition = (clientX: number) => {
+  const updatePosition = useCallback((clientX: number) => {
     if (!isDragging.current || !containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const containerWidth = rect.width;
 
-    // Calculate percentage (constrained between 0 and 100)
     const newPosition = Math.max(0, Math.min(100, (x / containerWidth) * 100));
     setPosition(newPosition);
-  };
+    // setPosition is stable, and containerRef.current access doesn't require it in deps.
+  }, []); // setPosition is stable by React guarantee.
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     updatePosition(e.clientX);
-  };
+  }, [updatePosition]);
 
-  const handleTouchMove = (e: TouchEvent) => {
-    updatePosition(e.touches[0].clientX);
-  };
+  const handleTouchMove = useCallback((e: TouchEvent) => {
+    if (e.touches.length > 0) { // Ensure there's at least one touch point
+      updatePosition(e.touches[0].clientX);
+    }
+  }, [updatePosition]);
 
   useEffect(() => {
+    // Add event listeners using the memoized handlers
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("touchend", handleMouseUp);
 
+    // Cleanup function
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("touchmove", handleTouchMove);
       document.removeEventListener("touchend", handleMouseUp);
     };
-  }, []);
+  }, [handleMouseMove, handleMouseUp, handleTouchMove]); // Add memoized handlers to dependency array
 
   return (
     <Flex
@@ -103,8 +107,8 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
         style={{
           left: `${position}%`,
         }}
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleMouseDown}
+        onMouseDown={handleMouseDown} // Use memoized version
+        onTouchStart={handleMouseDown} // Use memoized version
       >
         <Flex width="1" fillHeight background="neutral-strong" zIndex={2} />
       </Flex>
@@ -115,8 +119,8 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
         style={{
           left: `${position}%`,
         }}
-        onMouseDown={handleMouseDown}
-        onTouchStart={handleMouseDown}
+        onMouseDown={handleMouseDown} // Use memoized version
+        onTouchStart={handleMouseDown} // Use memoized version
       />
     </Flex>
   );

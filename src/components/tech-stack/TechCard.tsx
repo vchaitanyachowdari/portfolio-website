@@ -17,33 +17,46 @@ export const TechCard: React.FC<TechCardProps> = ({
   category,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   // Basic scroll animation observer
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible);
-            entry.target.classList.remove(styles.hidden);
-            observer.unobserve(entry.target); // Optional: stop observing after visible
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when 10% of the card is visible
-    );
+    const currentCardNode = cardRef.current; // Capture the DOM node
 
-    if (cardRef.current) {
-      cardRef.current.classList.add(styles.hidden); // Start hidden
-      observer.observe(cardRef.current);
+    // Ensure observer is created only once
+    if (!observerRef.current) {
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(styles.visible);
+              entry.target.classList.remove(styles.hidden);
+              // Unobserve the specific entry after animation
+              if (observerRef.current) { // Check if observer still exists
+                observerRef.current.unobserve(entry.target);
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+    }
+
+    const observer = observerRef.current; // Use the observer from ref
+
+    if (currentCardNode) {
+      currentCardNode.classList.add(styles.hidden);
+      observer.observe(currentCardNode);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      // Cleanup: unobserve the node if it was observed by this specific observer instance
+      if (currentCardNode && observer) {
+        observer.unobserve(currentCardNode);
       }
     };
-  }, []);
+  }, []); // Empty dependency array: runs on mount/unmount.
+          // cardRef and observerRef are stable. currentCardNode is captured.
 
   // Create a simple placeholder icon (e.g., first letter of appName)
   const placeholderIcon = appName?.charAt(0).toUpperCase() || '?';

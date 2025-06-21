@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image"; // Import next/image
 import classNames from "classnames";
 import styles from "./Logo.module.scss";
 import { SpacingToken } from "../types";
@@ -56,14 +57,12 @@ const Logo: React.FC<LogoProps> = ({
         />
       )}
       {iconSrc && (
-        // @ts-ignore
-        <img
-          style={{
-            height: `var(--static-space-${sizeMap[size]})`,
-            width: "auto",
-          }}
-          alt="Trademark"
+        <Image
+          height={parseInt(sizeMap[size], 10)}
+          width={parseInt(sizeMap[size], 10)} // Assuming square aspect ratio for the container; SVG will scale.
+          alt="Trademark Icon" // More specific alt text
           src={iconSrc}
+          style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto' }} // Keep style for SVGs that need to scale based on height
         />
       )}
       {wordmark && !wordmarkSrc && (
@@ -75,14 +74,13 @@ const Logo: React.FC<LogoProps> = ({
         />
       )}
       {wordmarkSrc && (
-        // @ts-ignore
-        <img
-          style={{
-            height: `var(--static-space-${sizeMap[size]})`,
-            width: "auto",
-          }}
-          alt="Trademark"
+        <Image
+          height={parseInt(sizeMap[size], 10)}
+          width={parseInt(sizeMap[size], 10) * 3} // Assuming wordmark is wider, e.g., 3:1 aspect ratio for container.
+                                                  // This width is for layout reservation. Actual rendering controlled by style.
+          alt="Trademark Wordmark" // More specific alt text
           src={wordmarkSrc}
+          style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto' }} // Keep style for SVGs that need to scale based on height
         />
       )}
     </>
