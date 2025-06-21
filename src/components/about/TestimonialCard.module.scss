@@ -1,0 +1,57 @@
+.testimonialCard {
+  background-color: var(--surface-raised-default, #fff); /* Using a surface that implies elevation */
+  border: 1px solid var(--border-neutral-alpha-soft, #e0e0e0);
+  border-radius: var(--radius-l, 12px); /* Softer, larger radius */
+  padding: var(--static-space-24, 24px) var(--static-space-32, 32px);
+  box-shadow: var(--shadow-m, 0 4px 12px rgba(0, 0, 0, 0.08)); /* Slightly more pronounced shadow than TechCard */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* For grid alignment if used */
+  display: flex;
+  flex-direction: column;
+  gap: var(--static-space-20, 20px); /* Gap between author info and quote */
+}
+
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-l, 0 8px 16px rgba(0, 0, 0, 0.12));
+}
+
+.authorInfo {
+  /* Uses once-ui/Flex, props will handle layout (gap, align) */
+  /* No specific styles needed here if Flex props are sufficient */
+}
+
+.authorDetails {
+  /* Uses once-ui/Column for name and title/company */
+}
+
+.quoteText {
+  font-style: italic;
+  line-height: 1.7; /* More readable line height for quotes */
+  color: var(--text-on-surface-default, #454545); /* Slightly softer than pure black */
+  position: relative;
+  padding-left: var(--static-space-24, 24px); /* Space for the quote mark */
+  padding-right: var(--static-space-12, 12px);
+}
+
+.quoteText::before {
+  content: '“'; /* Opening quote mark */
+  position: absolute;
+  left: 0;
+  top: -0.1em; /* Adjust vertical position */
+  font-size: 2.5em; /* Larger quote mark */
+  color: var(--text-on-surface-disabled, #cccccc); /* Subtle color for quote mark */
+  line-height: 1;
+}
+
+/* Styles for scroll animations - can be activated via JS */
+.hidden {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

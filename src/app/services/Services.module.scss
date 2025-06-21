@@ -1,45 +1,37 @@
-.container {
-  padding: var(--static-space-24, 24px) 0; /* Vertical padding, horizontal handled by layout component if needed */
-  max-width: var(--layout-m- Fmax-width, 1024px); /* Example max-width, align with once-ui's 'm' */
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--static-space-32, 32px); /* Gap between header and service blocks container, or between blocks if not handled by a wrapper */
+/* Styles for the Services Page */
+
+.pageWrapper {
+  /* Add any page-specific overall styles here if needed,
+     beyond what the once-ui/Column provides.
+     For example, a page-specific background that spans full width
+     if the Column component doesn't have a background prop or is transparent.
+     For now, likely minimal if Column handles padding and max-width.
+  */
 }
 
 .header {
   text-align: center;
-  margin-bottom: var(--static-space-32, 32px); /* Space below header */
-  padding: 0 var(--static-space-24, 24px); /* Horizontal padding for header text if container is full-width */
+  /* margin-bottom is handled by the gap prop of the parent Column in page.tsx */
+  padding: 0 var(--static-space-12, 12px); /* Reduced padding as Column adds its own */
+  width: 100%; /* Ensure header content can be centered within its slot */
 
   h1 {
     font-size: var(--font-heading-xl-font-size, 2.5rem); /* Use once-ui tokens */
-    margin-bottom: var(--static-space-12, 12px);
+    margin-bottom: var(--static-space-16, 16px); /* Increased margin for title */
     color: var(--text-on-surface-strong, #333); /* Use once-ui tokens */
   }
 
   p {
-    font-size: var(--font-body-large-s-font-size, 1.1rem); /* Use once-ui tokens */
+    font-size: var(--font-body-l-font-size, 1.125rem); /* Slightly larger, using 'l' if 'body-large-s' was a typo */
     color: var(--text-on-surface-default, #555); /* Use once-ui tokens */
-    max-width: var(--layout-s- Fmax-width, 640px); /* Constrain intro paragraph width */
+    max-width: var(--layout-s-max-width, 768px); /* Ensure this token exists for constraining text */
     margin: 0 auto; /* Center the paragraph */
+    line-height: var(--font-body-l-line-height, 1.6); /* Add line height */
   }
 }
 
-.serviceBlocksContainer {
-  display: flex;
-  flex-direction: column;
-  /* The gap between ServiceBlock components can also be defined here if they are direct children,
-     or within ServiceBlock.module.scss as margin-bottom for each block */
-  /* For now, assuming ServiceBlock might handle its own bottom margin or separator */
-}
-
-/* Remove old styles as they are no longer relevant */
 /*
-.section { ... }
-.serviceGrid { ... }
-.serviceCard, .serviceCardFull { ... }
-.processSteps { ... }
-.engagementModels { ... }
-.expectations { ... }
+  Removed .container and .serviceBlocksContainer as their layout roles are now
+  handled by once-ui/Column components in src/app/services/page.tsx.
+  The ServiceBlock component itself has a border-bottom for separation.
 */

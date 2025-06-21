@@ -26,16 +26,15 @@
 
 .iconArea {
   flex-shrink: 0;
-  width: 80px; /* Example size, can be adjusted */
-  height: 80px;
-  background-color: var(--surface-neutral-default, #e9ecef);
-  border-radius: var(--radius-l, 12px); /* Larger radius for a softer look */
+  /* width and height can be determined by Icon's size prop + padding, or set explicitly */
+  /* background-color might not be needed if the Icon itself has a background or is just an outline */
+  /* border-radius also might be part of Icon's container if it has one, or applied here */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-xxl, 32px); /* Larger font for placeholder */
-  font-weight: var(--font-weight-semibold, 600);
-  color: var(--text-on-neutral-strong, #495057);
+  padding: var(--static-space-12, 12px); /* Add some padding around the icon */
+  /* The Icon component itself will define its color via onBackground prop */
+  /* Removed font-size, font-weight, color as they were for text placeholder */
   margin-bottom: var(--static-space-16, 16px); /* Spacing for mobile */
 }
 
@@ -43,6 +42,8 @@
   .iconArea {
     margin-bottom: 0;
     margin-right: var(--static-space-32, 32px); /* Spacing for desktop */
+    /* Potentially add explicit width/height here if Icon doesn't size container */
+    /* e.g., width: 96px; height: 96px; to ensure consistent size for xl icon + padding */
   }
 }
 
@@ -65,16 +66,15 @@
 .deliverableItem {
   display: flex;
   align-items: flex-start; /* Align icon with top of text */
-  gap: var(--static-space-8, 8px);
-  font-size: var(--font-size-default, 16px); /* Assuming once-ui token */
-  color: var(--text-on-surface-default, #333); /* Assuming once-ui token */
+  gap: var(--static-space-12, 12px); /* Increased gap for icon */
+  /* Font-size and color will be handled by the Text component inside */
 }
 
 .deliverableIcon {
-  /* Placeholder for potential small leading icons for deliverables */
-  /* Example: using a unicode character or a once-ui icon component */
-  color: var(--icon-brand-default, #007bff); /* Assuming once-ui token */
-  margin-top: 2px; /* Align with text better */
+  /* The Icon component itself will handle its color via onBackground prop */
+  /* Adjust margin if needed to align with text, Icon size 's' is used */
+  margin-top: var(--static-space-2, 2px); /* Small adjustment for alignment */
+  flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
 /* Styles for scroll animations - can be activated via JS */

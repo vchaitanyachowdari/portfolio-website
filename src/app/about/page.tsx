@@ -14,8 +14,10 @@ import {
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import { TestimonialCard } from "@/components/about/TestimonialCard"; // Import new TestimonialCard
 import styles from "@/components/about/about.module.scss";
-import testimonialStyles from "@/components/about/about-testimonials.module.scss";
+// Remove import of old testimonialStyles if TestimonialCard.module.scss handles all styling
+// import testimonialStyles from "@/components/about/about-testimonials.module.scss";
 import { person, about, social } from "@/app/resources";
 import { testimonials } from "@/app/resources/content";
 import React from "react";
@@ -319,42 +321,32 @@ export default function About() {
             </>
           )}
 
-          {/* Testimonial Section - Clean Card Style */}
-          <Column marginTop="56" marginBottom="56" fillWidth >
-            <div className={testimonialStyles.testimonialSectionLight}>
-              <Heading as="h2" variant="display-strong-s" className={testimonialStyles.testimonialTitleLight}>
+          {/* Testimonial Section - Using new TestimonialCard */}
+          {testimonials && testimonials.length > 0 && (
+            <Column marginTop="56" marginBottom="56" fillWidth gap="32"> {/* Added gap for between cards */}
+              <Heading as="h2" variant="display-strong-s" style={{ textAlign: 'center', width: '100%' }}>
                 Testimonials
               </Heading>
-              <Column gap="32" fillWidth>
+              {/*
+                Layout options for testimonials:
+                1. Single column stack (current implementation below)
+                2. Responsive grid (e.g., <Flex wrap="wrap" gap="32" justifyContent="center"> or CSS Grid)
+                For now, a single column stack is simplest and consistent with how ProjectCards are listed.
+              */}
+              <Column fillWidth gap="32"> {/* This Column will stack the cards */}
                 {testimonials.map((testimonial, idx) => (
-                  <div className={testimonialStyles.testimonialCardLight} key={testimonial.name + idx}>
-                    <Flex gap="20" align="start" className={testimonialStyles.testimonialCardFlex}>
-                      <Avatar
-                        src={testimonial.image}
-                        size={12}
-                        className={testimonialStyles.testimonialAvatarLight}
-                      />
-                      <div className={testimonialStyles.testimonialContentLight}>
-                        <Text variant="heading-strong-m" className={testimonialStyles.testimonialNameLight}>
-                          {testimonial.name}
-                        </Text>
-                        <Text variant="body-default-xs" className={testimonialStyles.testimonialTitleRoleLight}>
-                          {testimonial.title} at {testimonial.company}
-                        </Text>
-                        <Flex gap="8" align="start" className={testimonialStyles.testimonialQuoteRow}>
-                          <span className={testimonialStyles.testimonialQuoteMark}>&ldquo;</span>
-                          <Text as="p" className={testimonialStyles.testimonialQuoteLight}>
-                            {testimonial.quote}
-                          </Text>
-                          <span className={testimonialStyles.testimonialQuoteMark}>&rdquo;</span>
-                        </Flex>
-                      </div>
-                    </Flex>
-                  </div>
+                  <TestimonialCard
+                    key={testimonial.name + idx} // Consider a more stable unique ID if available
+                    name={testimonial.name}
+                    title={testimonial.title}
+                    company={testimonial.company}
+                    quote={testimonial.quote}
+                    image={testimonial.image}
+                  />
                 ))}
               </Column>
-            </div>
-          </Column>
+            </Column>
+          )}
         </Column>
       </Flex>
     </Column>
