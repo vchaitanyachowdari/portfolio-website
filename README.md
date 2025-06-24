@@ -118,8 +118,50 @@ Magic Portfolio is built with a modern, performant, and developer-friendly techn
 
 The project follows a standard Next.js (App Router) structure:
 
-magic-portfolio/ ├── .next/ # Next.js build output (generated) ├── node_modules/ # Project dependencies (generated) ├── public/ # Static assets (images, fonts, etc.) │ ├── images/ │ └── fonts/ ├── src/ │ ├── app/ # Next.js App Router: pages, layouts, API routes, MDX content │ │ ├── (main)/ # Main application routes group (actual name may vary) │ │ │ ├── about/ │ │ │ ├── blog/ │ │ │ │ └── posts/ # MDX files for blog posts │ │ │ ├── gallery/ │ │ │ ├── resource/ │ │ │ │ └── posts/ # MDX files for resources │ │ │ ├── services/ │ │ │ ├── tech-stack/ │ │ │ └── work/ │ │ │ └── projects/ # MDX files for work projects │ │ │ ├── layout.tsx # Root layout │ │ │ └── page.tsx # Homepage │ │ ├── api/ # API routes │ │ ├── og/ # OG image generation route │ │ └── resources/ # Global content definitions (content.js, config.js) │ ├── components/ # Shared React components specific to this portfolio │ │ ├── about/ │ │ ├── services/ │ │ ├── tech-stack/ │ │ └── work/ # (and others like blog, resource if they have specific components) │ ├── once-ui/ # The Once UI custom component library │ │ ├── components/ # Individual UI components │ │ ├── styles/ # Global styles, tokens, theming for Once UI │ │ ├── icons.ts # Icon library definitions │ │ └── ... │ └── styles/ # Additional global application styles (if any) ├── .env.example # Example environment variables ├── .eslintrc.json # ESLint configuration ├── biome.json # Biome (formatter/linter) configuration ├── next.config.mjs # Next.js configuration ├── package.json # Project dependencies and scripts ├── README.md # This file └── tsconfig.json # TypeScript configuration
-
+```
+magic-portfolio/ 
+├── .next/ # Next.js build output (generated) 
+├── node_modules/ # Project dependencies (generated) 
+├── public/ # Static assets (images, fonts, etc.) 
+│ ├── images/ 
+│ └── fonts/ 
+├── src/ 
+│ ├── app/ # Next.js App Router: pages, layouts, API routes, MDX content 
+│ │ ├── (main)/ # Main application routes group (actual name may vary) 
+│ │ │ ├── about/ 
+│ │ │ ├── blog/ 
+│ │ │ │ └── posts/ # MDX files for blog posts 
+│ │ │ ├── gallery/ 
+│ │ │ ├── resource/ 
+│ │ │ │ └── posts/ # MDX files for resources 
+│ │ │ ├── services/ 
+│ │ │ ├── tech-stack/ 
+│ │ │ └── work/ 
+│ │ │ └── projects/ # MDX files for work projects 
+│ │ │ ├── layout.tsx # Root layout 
+│ │ │ └── page.tsx # Homepage 
+│ │ ├── api/ # API routes 
+│ │ ├── og/ # OG image generation route 
+│ │ └── resources/ # Global content definitions (content.js, config.js) 
+│ ├── components/ # Shared React components specific to this portfolio 
+│ │ ├── about/ 
+│ │ ├── services/ 
+│ │ ├── tech-stack/ 
+│ │ └── work/ # (and others like blog, resource if they have specific components) 
+│ ├── once-ui/ # The Once UI custom component library 
+│ │ ├── components/ # Individual UI components 
+│ │ ├── styles/ # Global styles, tokens, theming for Once UI 
+│ │ ├── icons.ts # Icon library definitions 
+│ │ └── ... 
+│ └── styles/ # Additional global application styles (if any) 
+├── .env.example # Example environment variables 
+├── .eslintrc.json # ESLint configuration 
+├── biome.json # Biome (formatter/linter) configuration 
+├── next.config.mjs # Next.js configuration 
+├── package.json # Project dependencies and scripts 
+├── README.md # This file 
+└── tsconfig.json # TypeScript configuration
+```
 
 *   **`public/`**: Static assets accessible directly via URL.
 *   **`src/app/`**: The heart of the Next.js application using the App Router. MDX content for blog, work, and resources is typically within respective subdirectories like `posts/` or `projects/`.
@@ -245,7 +287,6 @@ You can also deploy to other Node.js compatible platforms like Netlify, AWS Ampl
 *(Add your project screenshots here to give a visual overview.)*
 
 **Example:**
-```md
 ![Homepage Preview](https://demo.magic-portfolio.com/images/og/home.jpg)
 *Homepage showcasing the main hero section and featured content.*
 
@@ -280,9 +321,9 @@ This project is licensed under the Creative Commons Attribution-NonCommercial 4.
 
 You are free to Share and Adapt the material, under the conditions of Attribution and NonCommercial use.
 
-Important Notes:
+### **Important Notes:**
 
-Commercial Usage: To use Magic Portfolio or elements from Once UI for commercial purposes, you must purchase a Once UI Pro license.
+**Commercial Usage:** To use Magic Portfolio or elements from Once UI for commercial purposes, you must purchase a Once UI Pro license.
 Full License Details: See the LICENSE file or visit creativecommons.org/licenses/by-nc/4.0/legalcode.
 
 This is the complete drafted README content. You can copy this and paste it into your `README.md` file.
