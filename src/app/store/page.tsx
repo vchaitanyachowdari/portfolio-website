@@ -11,6 +11,7 @@ interface Product {
   description: string;
   imageUrl: string;
   externalLink: string;
+  price: string;
 }
 
 const StorePage = () => {
@@ -33,6 +34,7 @@ const StorePage = () => {
             description={product.description}
             imageUrl={product.imageUrl}
             externalLink={product.externalLink}
+            price={product.price}
           />
         ))}
       </div>

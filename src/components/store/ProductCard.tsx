@@ -8,6 +8,7 @@ interface ProductCardProps {
   description: string;
   imageUrl: string;
   externalLink: string;
+  price: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -15,6 +16,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   description,
   imageUrl,
   externalLink,
+  price,
 }) => {
   return (
     <div style={{
@@ -47,6 +49,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         </Heading>
         <Text variant="body-default-m" onBackground="neutral-weak">
           {description}
+        </Text>
+        <Text variant="heading-strong-m" onBackground="neutral">
+          Price: {price}
         </Text>
       </Column>
       <Flex paddingTop="l">
