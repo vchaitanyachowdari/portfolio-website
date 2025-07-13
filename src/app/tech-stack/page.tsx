@@ -1,12 +1,9 @@
-"use client"; // Add this directive
-
-"use client"; // Ensure this is at the top, only once
+"use client";
 
 import React, { useState, useMemo } from 'react';
 import techStackData from './tech-stack-data.json';
-import styles from './TechStack.module.scss';
 import { TechCard } from '@/components/tech-stack/TechCard';
-import { Column, Button as OnceUIButton } from '@/once-ui/components'; // Import Column and Button
+import { Column, Button, Heading, Text, Row } from '@/once-ui/components';
 
 interface TechItem {
   appName: string;
@@ -42,52 +39,45 @@ const TechStackPage = () => {
   }, [selectedCategory]);
 
   return (
-    <Column maxWidth="l" gap="32" paddingY="32" className={styles.pageWrapper} align="center"> {/* Using Column for page layout */}
-      <header className={styles.header}>
-        <h1>Tech Stack</h1>
-        <p>Our technology stack is carefully chosen to ensure robust, scalable, and efficient solutions. We categorize our tools and platforms for better understanding:</p>
-      </header>
-
-      {/* The .coreCategories section might need its own Column if it has a different background or needs specific centering not handled by parent */}
-      <Column as="section" fillWidth className={styles.coreCategories} paddingX="20" align="center"> {/* Example: Constrain width of this text section */}
-        {/* Applying fillWidth to make its background span, but content constrained by parent Column's maxWidth or its own if set */}
-        <Column maxWidth="m" gap="16"> {/* Inner column to control text width if needed */}
-          <h2>A. Core Categories & Usage:</h2>
-          <ul>
-            <li>
-              <strong>Free/Open Source:</strong> Tools and platforms available without licensing costs, often with strong community support.
-              <br />
-              <em>Example Sub-categories: Development Tools, Libraries, Frameworks, Hosting Platforms (e.g., Linux, Apache, MySQL, PHP/Python/Node.js, Git, VS Code).</em>
-            </li>
-            <li>
-              <strong>Subscription-Based:</strong> Services requiring ongoing payments, often offering managed solutions, enhanced features, and dedicated support.
-              <br />
-              <em>Example Sub-categories: Cloud Platforms (e.g., AWS, Google Cloud, Azure), SaaS Applications (e.g., project management, CRM, email marketing), Development Environments (e.g., JetBrains IDEs).</em>
-            </li>
-          </ul>
+    <Column maxWidth="l" gap="xl" horizontal="center">
+      <Column fillWidth paddingY="24" gap="m">
+        <Column maxWidth="s">
+          <Heading variant="display-strong-l">Tech Stack</Heading>
+          <Text variant="heading-default-xl" onBackground="neutral-weak">
+            Our technology stack is carefully chosen to ensure robust, scalable, and efficient solutions.
+          </Text>
         </Column>
       </Column>
 
-      <Column as="section" fillWidth className={styles.applicationDeepDive} align="center" gap="20">
-        <h2>B. Application Deep Dive:</h2>
+      <Column as="section" fillWidth gap="l" horizontal="center">
+        <Column maxWidth="m" gap="m">
+          <Heading as="h2" variant="display-strong-xs">Core Categories & Usage</Heading>
+          <Text>
+            <strong>Free/Open Source:</strong> Tools and platforms available without licensing costs, often with strong community support.
+          </Text>
+          <Text>
+            <strong>Subscription-Based:</strong> Services requiring ongoing payments, often offering managed solutions, enhanced features, and dedicated support.
+          </Text>
+        </Column>
+      </Column>
 
-        <div className={styles.filterContainer}>
+      <Column as="section" fillWidth gap="l" horizontal="center">
+        <Heading as="h2" variant="display-strong-xs">Application Deep Dive</Heading>
+
+        <Row gap="s" horizontal="center" wrap>
           {categories.map(category => (
-            <OnceUIButton
+            <Button
               key={category}
-              label={category}
               onClick={() => setSelectedCategory(category)}
-              variant={selectedCategory === category ? "primary" : "secondary"} // Use primary for active, secondary for inactive
-              size="m" // Example size, can be "s" or "m"
-              // The custom .active class might not be needed if variant="primary" suffices for active state
-              // Or, if more specific styling is needed for active state beyond primary variant:
-              // className={selectedCategory === category ? styles.activeFilterButton : ""}
-              aria-pressed={selectedCategory === category}
-            />
+              variant={selectedCategory === category ? "primary" : "secondary"}
+              size="m"
+            >
+              {category}
+            </Button>
           ))}
-        </div>
+        </Row>
 
-        <div className={styles.grid}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', width: '100%' }}>
           {(filteredTechStack as TechItem[]).map((item) => (
             <TechCard
               key={item.appName}
@@ -103,3 +93,4 @@ const TechStackPage = () => {
 };
 
 export default TechStackPage;
+

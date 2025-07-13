@@ -1,16 +1,13 @@
-"use client"; // Ensure this is at the top, only once
+"use client";
 
 import React from 'react';
-import styles from './Services.module.scss';
 import { ServiceBlock, ServiceBlockProps } from '@/components/services/ServiceBlock';
-import { Column } from '@/once-ui/components';
-import { IconName } from '@/once-ui/icons'; // Import IconName
+import { Column, Heading, Text } from '@/once-ui/components';
 
-// Sample Data for Services - updated for ServiceBlockProps
 const servicesData: ServiceBlockProps[] = [
   {
     id: 'web-dev',
-    iconName: 'grid', // Example icon from once-ui/icons, replace with actual relevant ones
+    iconName: 'grid',
     title: 'Web Development',
     valueProposition: 'Crafting responsive, high-performance websites and web applications tailored to your business needs.',
     deliverables: [
@@ -23,7 +20,7 @@ const servicesData: ServiceBlockProps[] = [
   },
   {
     id: 'mobile-dev',
-    iconName: 'document', // Placeholder, find a better one like 'mobile' if it exists
+    iconName: 'document',
     title: 'Mobile App Development',
     valueProposition: 'Building intuitive and engaging mobile experiences for iOS and Android platforms.',
     deliverables: [
@@ -36,7 +33,7 @@ const servicesData: ServiceBlockProps[] = [
   },
   {
     id: 'ui-ux',
-    iconName: 'gallery', // Placeholder, find a better one like 'brush' or 'design'
+    iconName: 'gallery',
     title: 'UI/UX Design',
     valueProposition: 'Designing user-centric interfaces that are both beautiful and easy to use, enhancing user satisfaction.',
     deliverables: [
@@ -49,7 +46,7 @@ const servicesData: ServiceBlockProps[] = [
   },
   {
     id: 'consulting',
-    iconName: 'book', // Placeholder
+    iconName: 'book',
     title: 'Consulting & Strategy',
     valueProposition: 'Providing expert technical guidance and strategic planning to help you achieve your digital goals.',
     deliverables: [
@@ -58,25 +55,23 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
-    // No CTA for this one
   }
 ];
 
 const ServicesPage = () => {
   return (
-    // Use once-ui Column for consistent page layout and max-width
-    <Column maxWidth="m" gap="48" paddingY="48" className={styles.pageWrapper} align="center">
-      <header className={styles.header}>
-        <h1>Our Services</h1>
-        <p>
-          We offer a comprehensive range of services designed to meet your project needs,
-          specializing in various aspects of software development and digital solutions.
-        </p>
-      </header>
+    <Column maxWidth="l" gap="xl" horizontal="center">
+      <Column fillWidth paddingY="24" gap="m">
+        <Column maxWidth="s">
+          <Heading variant="display-strong-l">Our Services</Heading>
+          <Text variant="heading-default-xl" onBackground="neutral-weak">
+            We offer a comprehensive range of services designed to meet your project needs, specializing in various aspects of software development and digital solutions.
+          </Text>
+        </Column>
+      </Column>
 
-      {/* Removed styles.serviceBlocksContainer, Column will handle layout */}
-      <Column fillWidth gap="0"> {/* ServiceBlock has border-bottom, so no extra gap here */}
-        {servicesData.map((service, index) => (
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', width: '100%' }}>
+        {servicesData.map((service) => (
           <ServiceBlock
             key={service.id}
             id={service.id}
@@ -85,12 +80,9 @@ const ServicesPage = () => {
             valueProposition={service.valueProposition}
             deliverables={service.deliverables}
             cta={service.cta}
-            reverseLayout={index % 2 !== 0}
           />
         ))}
-      </Column>
-
-      {/* Footer sections like "Booking & Engagement" can be added here as new <Column> or <Flex> sections */}
+      </div>
     </Column>
   );
 };

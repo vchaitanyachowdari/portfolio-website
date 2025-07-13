@@ -26,6 +26,8 @@ import {
   HiMoon,
   HiSun,
   HiOutlineDocument,
+  HiOutlineCodeBracket,
+  HiOutlineCog,
 } from "react-icons/hi2";
 
 import {
@@ -34,6 +36,7 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiBooksDuotone,
 } from "react-icons/pi";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX } from "react-icons/fa6";
@@ -57,6 +60,7 @@ export const iconLibrary: Record<string, IconType> = {
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
   book: PiBookBookmarkDuotone,
+  resources: PiBooksDuotone,
   close: HiMiniXMark,
   openLink: HiOutlineLink,
   calendar: HiCalendarDays,
@@ -73,6 +77,8 @@ export const iconLibrary: Record<string, IconType> = {
   moon: HiMoon,
   sun: HiSun,
   document: HiOutlineDocument,
+  code: HiOutlineCodeBracket,
+  settings: HiOutlineCog,
 };
 
 export type IconLibrary = typeof iconLibrary;

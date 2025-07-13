@@ -1,88 +1,55 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import { Column, Heading, Text, Flex } from '@/once-ui/components'; // Assuming Flex is available
-import styles from './TechCard.module.scss';
+import React from 'react';
+import { Column, Heading, Text, Flex } from '@/once-ui/components';
 
 interface TechCardProps {
   appName: string;
   description: string;
-  category?: string; // For potential future use in styling or filtering
-  // Add other relevant props from tech-stack-data.json if needed for display
+  category?: string;
 }
 
 export const TechCard: React.FC<TechCardProps> = ({
   appName,
   description,
-  category,
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  // Basic scroll animation observer
-  useEffect(() => {
-    const currentCardNode = cardRef.current; // Capture the DOM node
-
-    // Ensure observer is created only once
-    if (!observerRef.current) {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(styles.visible);
-              entry.target.classList.remove(styles.hidden);
-              // Unobserve the specific entry after animation
-              if (observerRef.current) { // Check if observer still exists
-                observerRef.current.unobserve(entry.target);
-              }
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-    }
-
-    const observer = observerRef.current; // Use the observer from ref
-
-    if (currentCardNode) {
-      currentCardNode.classList.add(styles.hidden);
-      observer.observe(currentCardNode);
-    }
-
-    return () => {
-      // Cleanup: unobserve the node if it was observed by this specific observer instance
-      if (currentCardNode && observer) {
-        observer.unobserve(currentCardNode);
-      }
-    };
-  }, []); // Empty dependency array: runs on mount/unmount.
-          // cardRef and observerRef are stable. currentCardNode is captured.
-
-  // Create a simple placeholder icon (e.g., first letter of appName)
   const placeholderIcon = appName?.charAt(0).toUpperCase() || '?';
 
   return (
-    <div ref={cardRef} className={styles.techCard}>
-      <Flex horizontal="start" vertical="center" style={{ minHeight: '48px' }}> {/* Ensure icon area has consistent height */}
-        <div className={styles.iconPlaceholder}>
+    <div style={{
+      background: 'rgba(255, 255, 255, 0.1)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: '12px',
+      padding: '1.5rem',
+      border: '1px solid rgba(255, 255, 255, 0.2)',
+      height: '100%',
+    }}>
+      <Flex horizontal="start" vertical="center" style={{ minHeight: '48px' }}>
+        <div style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          background: 'rgba(255, 255, 255, 0.2)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+          color: 'var(--text-on-surface-strong)',
+          marginRight: '1rem'
+        }}>
           {placeholderIcon}
         </div>
       </Flex>
-      <Column fillWidth gap="4"> {/* Using gap from once-ui's Column */}
-        <Heading as="h3" variant="heading-strong-m" style={{ marginBottom: 'var(--static-space-4, 4px)' }}>
-          {/* Added small bottom margin to heading */}
+      <Column fillWidth gap="4">
+        <Heading as="h3" variant="heading-strong-m">
           {appName}
         </Heading>
         <Text variant="body-default-s" onBackground="neutral-weak">
           {description}
         </Text>
-        {/* Optionally display category or other info here */}
-        {/* {category && (
-          <Text variant="caption-default-s" onBackground="neutral-disabled" style={{ marginTop: 'var(--static-space-8, 8px)'}}>
-            Category: {category}
-          </Text>
-        )} */}
       </Column>
     </div>
   );
 };
+

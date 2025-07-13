@@ -1,16 +1,13 @@
 import { getPosts } from "@/app/utils/utils";
-import { Column } from "@/once-ui/components";
-import { ResourceDisplayCard } from "@/components/resource/ResourceDisplayCard"; // Use the new card
+import { ResourceDisplayCard } from "@/components/resource/ResourceDisplayCard";
 
 interface ResourcesDisplayProps {
-  range?: [number, number?]; // Prop to display a slice of resources, similar to Projects.tsx
+  range?: [number, number?];
 }
 
 export function ResourcesDisplay({ range }: ResourcesDisplayProps) {
-  // Fetch posts from the resource directory
   let allResources = getPosts(["src", "app", "resource", "posts"]);
 
-  // Sort resources by publication date (newest first)
   const sortedResources = allResources.sort((a, b) => {
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
@@ -20,20 +17,20 @@ export function ResourcesDisplay({ range }: ResourcesDisplayProps) {
     : sortedResources;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l"> {/* Similar layout props to Projects.tsx */}
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', width: '100%' }}>
       {displayedResources.map((resource, index) => (
         <ResourceDisplayCard
-          priority={index < 2} // Prioritize loading images for the first few items
+          priority={index < 2}
           key={resource.slug}
-          href={`/resource/${resource.slug}`} // Link to the detail page for the resource
-          images={resource.metadata.images || []} // Ensure images is always an array
+          href={`/resource/${resource.slug}`}
+          images={resource.metadata.images || []}
           title={resource.metadata.title}
           description={resource.metadata.summary}
-          content={resource.content} // Pass MDX content
+          content={resource.content}
           avatars={resource.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={resource.metadata.link || ""}
         />
       ))}
-    </Column>
+    </div>
   );
 }
