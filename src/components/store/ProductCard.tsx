@@ -50,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <Text variant="body-default-m" onBackground="neutral-weak">
           {description}
         </Text>
-        <Text variant="heading-strong-m" onBackground="neutral">
+        <Text variant="heading-strong-m" onBackground="neutral-medium">
           Price: {price}
         </Text>
       </Column>
