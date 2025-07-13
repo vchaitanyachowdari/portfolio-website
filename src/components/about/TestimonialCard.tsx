@@ -31,7 +31,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         <Text as="blockquote" variant="heading-default-m" style={{ fontStyle: 'italic', textAlign: 'center' }}>
           “{quote}”
         </Text>
-        <Flex align="center" gap="m" justify="center">
+        <Flex align="center" gap="m" horizontal="center">
           <Avatar src={image} size="l" />
           <Column gap="0">
             <Text variant="heading-strong-s" as="p">{name}</Text>
