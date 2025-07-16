@@ -55,380 +55,523 @@
     "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Visual Studio Code",
+    "category": "Integrated Development Environment (IDE) / Code Editor",
+    "type": "Open-Source (MIT License)",
+    "description": "A lightweight but powerful source code editor that runs on your desktop and is available for Windows, macOS, and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages and runtimes.",
+    "usage": "Web development (Frontend & Backend), Mobile development, Data Science, Cloud development, Scripting, General-purpose code editing.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://code.visualstudio.com/docs"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable installer for Windows, macOS, Linux (deb/rpm/tar.gz), available via package managers.",
+    "selfHostedOption": "Not applicable (desktop application), but extensions and settings can be synced via cloud accounts.",
+    "collaborationFeatures": ["Live Share extension for real-time collaborative editing and debugging", "Integrated Git version control", "Commenting on code changes (via Git/PRs)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "GitLab Community Edition (CE)",
+    "category": "DevOps Platform / Version Control",
+    "type": "Open-Source (MIT License)",
+    "description": "A complete DevOps platform delivered as a single application, allowing teams to collaborate on code development, version control, CI/CD, and more.",
+    "usage": "Source code management (Git repositories), CI/CD pipelines, issue tracking, project planning, code review, container registry, package registry.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.gitlab.com/ce/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Omnibus packages for Linux, Docker images, Kubernetes Helm charts, Cloud provider templates.",
+    "selfHostedOption": "Yes (primary deployment model)",
+    "collaborationFeatures": ["Git repository hosting", "Merge requests with code review and discussions", "Issue boards", "Wikis", "Shared CI/CD pipelines"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Nextcloud",
+    "category": "Cloud Storage & Collaboration",
+    "type": "Open-Source (AGPLv3)",
+    "description": "A suite of client-server software for creating and using file hosting services. Nextcloud is free and open-source, meaning anyone can install and operate it on their own private server.",
+    "usage": "File synchronization and sharing, collaborative document editing (with Collabora Online or OnlyOffice integration), calendar, contacts, email, video calls, task management.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.nextcloud.com/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Web installer, Docker, Snap, pre-built appliances (VM, Raspberry Pi), manual setup on a web server (LAMP/LEMP stack).",
+    "selfHostedOption": "Yes (core feature)",
+    "collaborationFeatures": ["Real-time collaborative editing of documents", "Shared folders and files", "Commenting", "Video conferencing (Talk app)", "Activity streams"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Mattermost",
+    "category": "Team Communication / ChatOps",
+    "type": "Open-Source (MIT License)",
+    "description": "A secure, open-source platform for team collaboration designed for developers. It offers private cloud messaging to connect people, tools, and automation.",
+    "usage": "Team chat, file sharing, integrations with development tools (e.g., Jira, GitHub, Jenkins), custom commands for ChatOps, voice and video calls.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.mattermost.com/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker, Kubernetes, manual installation on Linux servers (Ubuntu, Debian, CentOS), pre-built images for cloud platforms.",
+    "selfHostedOption": "Yes (recommended for full control and privacy)",
+    "collaborationFeatures": ["Public and private channels", "Direct messages", "File sharing", "Searchable history", "Integrations (webhooks, bots, plugins)", "Voice/Video calls (via plugins)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "PostgreSQL",
+    "category": "Database Management System",
+    "type": "Open-Source (PostgreSQL License)",
+    "description": "A powerful, open-source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.",
+    "usage": "Storing and managing structured data for web applications, analytical databases, data warehousing, geographic information systems (GIS).",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.postgresql.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Package managers (apt, yum, brew), source compilation, Docker images, cloud provider services.",
+    "selfHostedOption": "Yes (designed for self-hosting)",
+    "collaborationFeatures": ["Transactional integrity", "Replication for high availability and load balancing", "Role-based access control", "Extensions for shared functionality (e.g., PostGIS)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Apache JMeter",
+    "category": "Performance Testing / Load Testing",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "An Apache project that can be used as a Load Testing tool for analyzing and measuring the performance of a variety of services, with a focus on web applications.",
+    "usage": "Load testing, performance testing, functional testing, regression testing, API testing, database testing.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://jmeter.apache.org/usermanual/index.html"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Download and extract archive, requires Java Runtime Environment (JRE).",
+    "selfHostedOption": "Yes (desktop application, can run tests in distributed mode across multiple machines)",
+    "collaborationFeatures": ["Test plan sharing", "Distributed testing (master/slave architecture for collaboration on large tests)", "Reporting via shared files"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Jenkins",
+    "category": "CI/CD (Continuous Integration/Continuous Delivery)",
+    "type": "Open-Source (MIT License)",
+    "description": "An extensible automation server for automating the non-human part of the software development process, with continuous integration and facilitating continuous delivery.",
+    "usage": "Automated builds, testing, deployment, code quality checks, orchestrating release pipelines.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.jenkins.io/doc/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "WAR file deployment, Docker images, package managers (apt, yum), Kubernetes.",
+    "selfHostedOption": "Yes (widely used for self-hosted CI/CD)",
+    "collaborationFeatures": ["Role-based access control for jobs and views", "Shared libraries for pipeline code", "Plugin ecosystem for integrations with various tools", "Build status reporting"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "GIMP (GNU Image Manipulation Program)",
+    "category": "Image Editing",
+    "type": "Open-Source (GPLv3)",
+    "description": "A cross-platform image editor available for GNU/Linux, macOS, Windows and more operating systems. It is a free software that you can change and distribute.",
+    "usage": "Photo retouching, image composition, image authoring, graphic design, web design assets.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.gimp.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable installer for Windows, macOS, Linux (via package managers or Flatpak/Snap).",
+    "selfHostedOption": "Not applicable (desktop application)",
+    "collaborationFeatures": ["File sharing (via external means)", "Scripting capabilities for automated tasks (Python, Scheme)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "OpenProject",
+    "category": "Project Management",
+    "type": "Open-Source (GPLv3)",
+    "description": "OpenProject is a powerful open-source project management software. It supports classical, agile and hybrid project management approaches.",
+    "usage": "Project planning, task management, bug tracking, agile boards (Scrum/Kanban), Gantt charts, time tracking, wikis, forums.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.openproject.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker, Debian/Ubuntu packages, SUSE/CentOS packages, virtual appliance.",
+    "selfHostedOption": "Yes (community edition)",
+    "collaborationFeatures": ["Task assignment and tracking", "Commenting on tasks and work packages", "Shared project wikis", "Meeting management", "Team calendars"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Brave Browser",
+    "category": "Web Browser",
+    "type": "Open-Source (Mozilla Public License 2.0)",
+    "description": "A free and open-source web browser developed by Brave Software, Inc. based on the Chromium web browser. It features a built-in ad blocker and cryptocurrency-based rewards system.",
+    "usage": "Web Browse, privacy-focused Browse, ad blocking, cryptocurrency rewards (optional).",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://brave.com/help/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable installer for Windows, macOS, Linux, Android, iOS.",
+    "selfHostedOption": "Not applicable (desktop/mobile application)",
+    "collaborationFeatures": ["Sync across devices (bookmarks, history, passwords)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Grafana",
+    "category": "Monitoring & Observability",
+    "type": "Open-Source (AGPLv3)",
+    "description": "An open-source platform for monitoring and observability. Grafana allows you to query, visualize, alert on, and explore your metrics, logs, and traces no matter where they are stored.",
+    "usage": "Creating dashboards for system metrics, application performance monitoring (APM), log visualization, alerting on thresholds, data exploration across various data sources.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://grafana.com/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker, Kubernetes, Linux packages (deb/rpm), Windows installer, macOS (brew).",
+    "selfHostedOption": "Yes (very common deployment method)",
+    "collaborationFeatures": ["Dashboard sharing with permissions", "Team folders", "Annotations for shared insights", "Alerting via integrated channels (Slack, PagerDuty)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Redmine",
+    "category": "Project Management & Issue Tracking",
+    "type": "Open-Source (GPLv2)",
+    "description": "A flexible project management web application. It is written using the Ruby on Rails framework, it is cross-platform and cross-database.",
+    "usage": "Project tracking, issue management, Gantt charts, time tracking, news, wikis, forums, document management, SCM integration (SVN, Git, Mercurial, Bazaar).",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.redmine.org/guide"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Manual setup on a web server with Ruby on Rails, Docker images available.",
+    "selfHostedOption": "Yes (designed for self-hosting)",
+    "collaborationFeatures": ["Multi-project support", "Role-based access control", "User management", "Email notifications", "Wiki and forums for shared knowledge"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Ghost",
+    "category": "Content Management System (CMS) / Blogging Platform",
+    "type": "Open-Source (MIT License)",
+    "description": "A powerful app for new-media creators to publish, share, and grow a business around their content.",
+    "usage": "Blogging, newsletter publishing, membership websites, content marketing, developer documentation (can be adapted).",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://ghost.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Ghost-CLI for easy setup on Ubuntu, Docker, manual setup on Node.js environment.",
+    "selfHostedOption": "Yes (self-hosted or Ghost(Pro) SaaS)",
+    "collaborationFeatures": ["Multi-user roles (admin, editor, author, contributor)", "Scheduled posts", "Content revision history (basic)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Ansible",
+    "category": "Configuration Management & Orchestration",
+    "type": "Open-Source (GPLv3)",
+    "description": "An open-source software provisioning, configuration management, and application-deployment tool. It enables infrastructure as code.",
+    "usage": "Automating software provisioning, configuration management, application deployment, orchestrating more advanced IT tasks like continuous deployments or zero downtime rolling updates.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.ansible.com/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Python pip, OS package managers (apt, yum), source.",
+    "selfHostedOption": "Yes (controller runs on a single machine, manages remote hosts)",
+    "collaborationFeatures": ["Version control of playbooks (Git)", "Inventory management (shared among teams)", "Vault for secret sharing"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "OWASP ZAP (Zed Attack Proxy)",
+    "category": "Security Testing / DAST",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "An integrated penetration testing tool for finding vulnerabilities in web applications. It provides automated scanners as well as a set of tools that allow you to find security vulnerabilities manually.",
+    "usage": "Automated vulnerability scanning of web applications, manual penetration testing, fuzzing, forced Browse, spidering web applications.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.zaproxy.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable installers (Windows, macOS, Linux), Docker images.",
+    "selfHostedOption": "Not applicable (desktop application, but can be integrated into CI/CD pipelines)",
+    "collaborationFeatures": ["Can share context files for collaborative testing scenarios"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Jupyter Notebook / JupyterLab",
+    "category": "Data Science & Development Environment",
+    "type": "Open-Source (BSD License)",
+    "description": "An open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. JupyterLab is the next-generation user interface for Project Jupyter.",
+    "usage": "Interactive computing, data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and more.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://jupyter.org/documentation"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Python pip (Anaconda distribution recommended), Docker images.",
+    "selfHostedOption": "Yes (runs as a web server, can be accessed remotely, many cloud platforms offer managed versions)",
+    "collaborationFeatures": ["Can be shared as files", "Real-time collaboration via JupyterHub/JupyterLab extensions (e.g., Google Colab, Binder also offer collaborative features)", "Version control integration (Git)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Strapi",
+    "category": "Headless CMS",
+    "type": "Open-Source (MIT License)",
+    "description": "The open-source Node.js Headless CMS. Strapi gives developers the freedom to use their favorite tools and frameworks, while allowing editors to easily manage their content and distribute it anywhere.",
+    "usage": "Building APIs for web and mobile applications, content management for static sites, e-commerce backend, managing content for IoT devices.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.strapi.io/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "NPM/Yarn CLI, Docker.",
+    "selfHostedOption": "Yes (core feature)",
+    "collaborationFeatures": ["Role-based access control for content editing", "Draft/publish workflow", "Content versioning (with database support)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "KeePassXC",
+    "category": "Password Manager",
+    "type": "Open-Source (GPLv2)",
+    "description": "KeePassXC is a free and open-source password manager. It helps you manage your passwords in a secure way. All passwords are encrypted in a single database file which can be stored anywhere.",
+    "usage": "Securely storing passwords, generating strong passwords, autofilling credentials in browsers (via extensions).",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://keepassxc.org/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable installers for Windows, macOS, Linux (via package managers or Flatpak/Snap).",
+    "selfHostedOption": "Not applicable (desktop application, but database files can be synced via cloud storage)",
+    "collaborationFeatures": ["Shared database files (managed externally, e.g., via shared cloud drive, but no built-in real-time collaboration)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Godot Engine",
+    "category": "Game Development Engine",
+    "type": "Open-Source (MIT License)",
+    "description": "A free and open-source, cross-platform 2D and 3D game engine. It provides a comprehensive set of common tools, so users can focus on making games without having to reinvent the wheel.",
+    "usage": "Developing 2D and 3D games, interactive applications, simulations for desktop, mobile, and web platforms.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.godotengine.org/en/stable/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable executable (Windows, macOS, Linux), Flatpak, source compilation.",
+    "selfHostedOption": "Not applicable (desktop application)",
+    "collaborationFeatures": ["Project files can be version-controlled (Git)", "Scene and script sharing within a team"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Flutter",
+    "category": "Mobile & Cross-Platform Development Framework",
+    "type": "Open-Source (BSD License)",
+    "description": "An open-source UI software development kit created by Google. It is used to develop cross-platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase.",
+    "usage": "Building native mobile apps, web applications, desktop applications, embedded applications.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.flutter.dev/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Download SDK, command-line setup (requires Android Studio/Xcode for native toolchains).",
+    "selfHostedOption": "Not applicable (SDK/framework, not a self-hostable app)",
+    "collaborationFeatures": ["Code version control (Git)", "Team development using standard developer workflows"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Vault (HashiCorp)",
+    "category": "Security & Secret Management",
+    "type": "Open-Source (Mozilla Public License 2.0)",
+    "description": "Vault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and encryption keys.",
+    "usage": "Securely storing and managing secrets, dynamic secret generation, data encryption, identity-based access to secrets, secret revocation.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://developer.hashicorp.com/vault/docs"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable binary, Docker images, Kubernetes Helm charts.",
+    "selfHostedOption": "Yes (common deployment in enterprises)",
+    "collaborationFeatures": ["Role-based access control (RBAC)", "Audit logging", "Leasing and revocation of secrets", "Integration with identity providers"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Prometheus",
+    "category": "Monitoring & Alerting",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "A free software application used for event monitoring and alerting. It records real-time metrics in a time series database built using a HTTP pull model, with flexible queries and real-time alerting.",
+    "usage": "Collecting metrics from services and applications, time-series data storage, flexible querying (PromQL), alerting rules configuration, integration with Grafana for visualization.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://prometheus.io/docs/introduction/overview/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable binary, Docker images, Kubernetes Helm charts.",
+    "selfHostedOption": "Yes (often deployed as part of a self-hosted monitoring stack)",
+    "collaborationFeatures": ["Alerting configuration (shared)", "Recording rules (shared)", "Target discovery mechanisms"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Flarum",
+    "category": "Forum Software",
+    "type": "Open-Source (MIT License)",
+    "description": "A delightfully simple forum software. It's designed to be fast and easy to use, with a modern, responsive interface.",
+    "usage": "Building online communities, discussion forums for product support, community Q&A, general interest groups.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.flarum.org/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Composer (PHP package manager), requires Nginx/Apache, PHP, MySQL.",
+    "selfHostedOption": "Yes (designed for self-hosting)",
+    "collaborationFeatures": ["User roles and permissions", "Moderation tools", "Rich text editor for discussions", "Notifications"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Obsidian",
+    "category": "Note-taking / Knowledge Base",
+    "type": "Freemium (Paid features, core is free and local-first)",
+    "description": "A powerful knowledge base that works on local Markdown files. It's designed to help you create and manage a 'second brain' with linked notes.",
+    "usage": "Personal knowledge management, technical documentation, research notes, journaling, creating interconnected ideas.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://help.obsidian.md/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable desktop application (Windows, macOS, Linux), mobile apps (Android, iOS).",
+    "selfHostedOption": "Yes (notes are local Markdown files, can be synced via any cloud storage like Git, Dropbox, Nextcloud). Sync service is a paid add-on, but not required for self-hosting notes.",
+    "collaborationFeatures": ["No built-in real-time collaboration (local-first), but vaults can be shared via Git or cloud sync for asynchronous collaboration."]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Keycloak",
+    "category": "Identity & Access Management (IAM) / SSO",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "An open-source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code.",
+    "usage": "Single Sign-On (SSO), Identity Brokering, Social Login, User Federation, centralizing user management, securing APIs and microservices.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://www.keycloak.org/documentation"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Downloadable server distribution, Docker images, Kubernetes Helm charts.",
+    "selfHostedOption": "Yes (very common for self-hosted identity management)",
+    "collaborationFeatures": ["Admin console for managing realms, clients, users, roles", "Fine-grained permissions", "Multi-tenancy support"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Kubeapps",
+    "category": "Kubernetes Application Management",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "A web-based UI for deploying and managing applications on Kubernetes clusters. It provides a dashboard to browse, deploy, and manage applications from Helm charts and other sources.",
+    "usage": "Discovering and deploying applications in a Kubernetes cluster, managing application lifecycles, viewing release history, monitoring status of deployed applications.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://kubeapps.dev/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Kubernetes Helm chart, kubectl plugin.",
+    "selfHostedOption": "Yes (deployed directly onto your Kubernetes cluster)",
+    "collaborationFeatures": ["Role-based access control (RBAC) via Kubernetes integration", "Shared access to application dashboards and deployment controls"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Baserow",
+    "category": "No-Code / Low-Code Database & Automation",
+    "type": "Open-Source (MIT License)",
+    "description": "An open-source no-code database that runs in your browser. It's an Airtable alternative that gives you full control over your data, offering a powerful REST API and plugin ecosystem.",
+    "usage": "Building custom databases without code, managing data (CRM, project tracking), creating internal tools, API generation, workflow automation via integrations.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://baserow.io/docs/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker, Kubernetes Helm charts, manual setup with Python/Django.",
+    "selfHostedOption": "Yes (Community Edition is fully self-hostable)",
+    "collaborationFeatures": ["Real-time collaboration on data tables", "User and group permissions", "Shared views and filters", "Commenting on rows"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "PhotoPrism",
+    "category": "Photo Management & Gallery",
+    "type": "Open-Source (MIT License)",
+    "description": "An AI-powered, self-hosted app for Browse, organizing, and sharing your personal photo and video collection.",
+    "usage": "Indexing and organizing large photo/video libraries, automatic tagging (AI-powered), facial recognition, map view, album creation, sharing links.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://docs.photoprism.app/"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker, Docker Compose, Linux system packages.",
+    "selfHostedOption": "Yes (core functionality is self-hosted)",
+    "collaborationFeatures": ["Multi-user support (with permissions for albums/photos)", "Shared albums (via links or within the app)"]
   },
   {
-    "appName": "Figma",
-    "category": "Design & Prototyping",
-    "type": "Subscription-Based (with free tier)",
-    "description": "A collaborative web-based UI/UX design application.",
-    "usage": "Wireframing, prototyping, user interface design, design system creation.",
+    "appName": "Plausible Analytics",
+    "category": "Web Analytics",
+    "type": "Open-Source (MIT License)",
+    "description": "A simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics. No cookies, GDPR, CCPA & PECR compliant.",
+    "usage": "Website traffic analysis, referrer tracking, goal conversion tracking, event tracking, understanding user behavior on websites without compromising privacy.",
     "documentationLinks": {
-      "official": "https://help.figma.com/hc/en-us"
+      "official": "https://plausible.io/docs"
     },
-    "installationSetup": "Web-based, desktop app available",
-    "selfHostedOption": "No (SaaS)",
-    "collaborationFeatures": ["Real-time collaboration", "Version history", "Commenting"]
+    "installationSetup": "Docker Compose (recommended), manual setup with Elixir/PostgreSQL.",
+    "selfHostedOption": "Yes (designed for self-hosting)",
+    "collaborationFeatures": ["Shared dashboards with public links (optional)", "Team access to analytics data with role-based permissions"]
+  },
+  {
+    "appName": "Excalidraw",
+    "category": "Diagramming & Whiteboarding",
+    "type": "Open-Source (MIT License)",
+    "description": "A virtual whiteboard for sketching hand-drawn like diagrams. It provides a canvas for drawing diagrams, wireframes, and collaborative brainstorming.",
+    "usage": "Creating flowcharts, ER diagrams, wireframes, mockups, brainstorming sessions, illustrating concepts for technical documentation.",
+    "documentationLinks": {
+      "official": "https://github.com/excalidraw/excalidraw/tree/master/docs"
+    },
+    "installationSetup": "Web-based, can be self-hosted via Docker or static file deployment.",
+    "selfHostedOption": "Yes (excalidraw.com is the hosted version, but you can self-host the entire app)",
+    "collaborationFeatures": ["Real-time collaborative editing (via custom Excalidraw-Backend or Live Collaboration feature)", "Shareable links", "Export to various formats (SVG, PNG)"]
+  },
+  {
+    "appName": "TensorFlow.js",
+    "category": "Front-end Development",
+    "type": "Open-Source (Apache License 2.0)",
+    "description": "A JavaScript library for training and deploying machine learning models in the browser and on Node.js. It allows front-end developers to leverage AI capabilities directly on the client-side.",
+    "usage": "Running pre-trained ML models in the browser (e.g., image recognition, pose estimation), training small models, creating interactive AI experiences, real-time data processing for ML applications.",
+    "documentationLinks": {
+      "official": "https://www.tensorflow.org/js/docs"
+    },
+    "installationSetup": "NPM/Yarn package installation (`npm install @tensorflow/tfjs`), script tag in HTML.",
+    "selfHostedOption": "Yes (library, runs locally in browser or Node.js environment)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)", "Community contributions to models and examples"]
+  },
+  {
+    "appName": "ml5.js",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A friendly JavaScript library for machine learning in the browser, built on top of TensorFlow.js. It aims to make machine learning more accessible to artists, designers, and web developers.",
+    "usage": "Easy integration of pre-trained models for tasks like image classification, object detection, pose estimation, sentiment analysis, text generation, and neural network training.",
+    "documentationLinks": {
+      "official": "https://ml5js.org/reference/"
+    },
+    "installationSetup": "Script tag in HTML (`<script src=\"https://unpkg.com/ml5@latest/dist/ml5.min.js\"></script>`), NPM/Yarn package.",
+    "selfHostedOption": "Yes (library, runs locally in browser)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)", "Community examples and tutorials"]
+  },
+  {
+    "appName": "Brain.js",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A GPU accelerated JavaScript neural network library. It is designed for ease of use and performance, allowing you to train neural networks in the browser or on Node.js.",
+    "usage": "Building and training small neural networks for pattern recognition, classification, and prediction tasks directly in web applications.",
+    "documentationLinks": {
+      "official": "https://brain.js.org/#/docs/usage"
+    },
+    "installationSetup": "NPM/Yarn package installation (`npm install brain.js`), script tag in HTML.",
+    "selfHostedOption": "Yes (library, runs locally in browser or Node.js environment)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)"]
+  },
+  {
+    "appName": "Natural (Node.js NLP)",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A general natural language processing facility for Node.js. While often used server-side, it's relevant for front-end developers building Node.js-based tools or server-side rendering with NLP features.",
+    "usage": "Tokenizing, stemming, sentiment analysis, text classification, phonetics, and other NLP tasks within Node.js environments.",
+    "documentationLinks": {
+      "official": "https://naturalnode.github.io/natural/"
+    },
+    "installationSetup": "NPM package installation (`npm install natural`).",
+    "selfHostedOption": "Yes (Node.js library, runs locally on a server)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)"]
+  },
+  {
+    "appName": "Compromise",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A tiny natural language processing library for the browser, ideal for extracting meaning and intent from short texts.",
+    "usage": "Parsing text, extracting entities (names, places, dates), performing basic sentiment analysis, generating simple responses in conversational UIs.",
+    "documentationLinks": {
+      "official": "https://compromise.cool/references.html"
+    },
+    "installationSetup": "NPM/Yarn package installation (`npm install compromise`), script tag in HTML.",
+    "selfHostedOption": "Yes (library, runs locally in browser)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)"]
+  },
+  {
+    "appName": "Web Speech API (Browser Native)",
+    "category": "Front-end Development",
+    "type": "Open-Source (Browser Implementation)",
+    "description": "A browser native API that enables speech recognition and synthesis capabilities directly within web applications, allowing for voice-controlled interfaces.",
+    "usage": "Voice commands, dictation, text-to-speech narration, accessible user interfaces.",
+    "documentationLinks": {
+      "official": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API"
+    },
+    "installationSetup": "No installation, directly available in compatible web browsers.",
+    "selfHostedOption": "Not applicable (browser native API)",
+    "collaborationFeatures": ["Standard web development collaboration on code utilizing the API."]
+  },
+  {
+    "appName": "Annyang",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A tiny JavaScript library that lets your visitors control your site with voice commands. It wraps the Web Speech API for easier use.",
+    "usage": "Adding voice commands to web applications, creating hands-free interfaces, simple voice navigation.",
+    "documentationLinks": {
+      "official": "https://talon.github.io/annyang/"
+    },
+    "installationSetup": "Script tag in HTML, or NPM package.",
+    "selfHostedOption": "Yes (library, runs locally in browser)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)"]
+  },
+  {
+    "appName": "A-Frame",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A web framework for building virtual reality (VR) and augmented reality (AR) experiences with HTML and JavaScript. Can integrate with AI for interactive elements.",
+    "usage": "Creating immersive 3D web experiences, VR games, interactive data visualizations, virtual tours; can be enhanced with AI for gesture recognition, intelligent agents, or dynamic content.",
+    "documentationLinks": {
+      "official": "https://aframe.io/docs/"
+    },
+    "installationSetup": "Script tag in HTML, NPM package.",
+    "selfHostedOption": "Yes (framework for web content, runs in browser)",
+    "collaborationFeatures": ["Standard web development collaboration (Git, PRs)", "Community components and examples."]
+  },
+  {
+    "appName": "Three.js",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "A cross-browser JavaScript library and application programming interface (API) used to create and display animated 3D computer graphics in a web browser using WebGL. Can be combined with AI for dynamic content.",
+    "usage": "Creating 3D models and scenes, interactive 3D experiences, data visualization, games; can integrate with AI for procedural generation, intelligent agents, or real-time object manipulation based on ML outputs.",
+    "documentationLinks": {
+      "official": "https://threejs.org/docs/"
+    },
+    "installationSetup": "NPM/Yarn package installation (`npm install three`), script tag in HTML.",
+    "selfHostedOption": "Yes (library, runs locally in browser)",
+    "collaborationFeatures": ["Standard code collaboration (Git, PRs)"]
+  },
+  {
+    "appName": "LangUI",
+    "category": "Front-end Development",
+    "type": "Open-Source (MIT License)",
+    "description": "An Open Source Tailwind CSS component library with free-to-use components tailored for AI and GPT projects, designed to simplify building UIs for AI applications.",
+    "usage": "Rapidly building user interfaces for chatbots, AI assistants, generative AI tools, and other AI-powered web applications using pre-built, responsive components.",
+    "documentationLinks": {
+      "official": "https://www.langui.dev/"
+    },
+    "installationSetup": "Copy & paste components (Tailwind CSS project required).",
+    "selfHostedOption": "Yes (component library, integrates into any web project)",
+    "collaborationFeatures": ["Standard front-end development collaboration, components can be integrated and customized by teams."]
   },
 ]
