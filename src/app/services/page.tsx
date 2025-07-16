@@ -55,6 +55,59 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
+    cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
+  }
+  {
+    id: 'consulting',
+    iconName: 'book',
+    title: 'SEO Optimization',
+    valueProposition: 'Boost website rankings with on/off page SEO, technical audits, and AI driven keyword insights.',
+    deliverables: [
+      { text: 'Technical Consultation & Feasibility Studies', icon: 'checkCircle' },
+      { text: 'Project Planning, Scoping & Roadmapping', icon: 'checkCircle' },
+      { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
+      { text: 'Technology Stack Advisory', icon: 'checkCircle' },
+    ],
+    cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
+  }
+  {
+    id: 'consulting',
+    iconName: 'book',
+    title: 'AI Automation',
+    valueProposition: 'Use AI to automate repetitive workflows across marketing, customer support, and operations for increased efficiency.',
+    deliverables: [
+      { text: 'Technical Consultation & Feasibility Studies', icon: 'checkCircle' },
+      { text: 'Project Planning, Scoping & Roadmapping', icon: 'checkCircle' },
+      { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
+      { text: 'Technology Stack Advisory', icon: 'checkCircle' },
+    ],
+    cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
+  }
+  {
+    id: 'consulting',
+    iconName: 'book',
+    title: 'AI Solutions or AI Integration',
+    valueProposition: 'Integrate AI across your business for smart decision-making, lead generation, customer experience, and growth.',
+    deliverables: [
+      { text: 'Technical Consultation & Feasibility Studies', icon: 'checkCircle' },
+      { text: 'Project Planning, Scoping & Roadmapping', icon: 'checkCircle' },
+      { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
+      { text: 'Technology Stack Advisory', icon: 'checkCircle' },
+    ],
+    cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
+  }
+  {
+    id: 'consulting',
+    iconName: 'book',
+    title: 'Presentation',
+    valueProposition: 'Use AI to automate repetitive workflows across marketing, customer support, and operations for increased efficiency.',
+    deliverables: [
+      { text: 'Technical Consultation & Feasibility Studies', icon: 'checkCircle' },
+      { text: 'Project Planning, Scoping & Roadmapping', icon: 'checkCircle' },
+      { text: 'Digital Transformation Strategy Development', icon: 'checkCircle' },
+      { text: 'Technology Stack Advisory', icon: 'checkCircle' },
+    ],
+    cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
   }
 ];
 
