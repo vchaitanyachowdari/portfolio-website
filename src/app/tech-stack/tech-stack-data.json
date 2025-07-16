@@ -730,5 +730,238 @@
     "installationSetup": "Docker, standalone binary, Kubernetes Helm charts, client libraries.",
     "selfHostedOption": "Yes (designed for self-hosting)",
     "collaborationFeatures": ["API for data and query operations, enabling multiple services/teams to interact.", "Scalable deployment for shared AI infrastructure."]
+  },
+  {
+    "appName": "Microsoft Azure",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Free Account available)",
+    "description": "Microsoft's cloud platform, providing a vast array of services for building, deploying, and managing applications and services. Known for strong hybrid cloud capabilities and enterprise integration.",
+    "usage": "Hosting virtual machines, managing databases (Azure SQL, Cosmos DB), identity management (Azure AD), AI/ML services (Azure AI Services), developing serverless applications (Azure Functions), building IoT solutions, deploying Kubernetes clusters (AKS).",
+    "documentationLinks": {
+      "official": "https://docs.microsoft.com/en-us/azure/"
+    },
+    "installationSetup": "Account creation via Azure Portal, CLI tools (Azure CLI), SDKs for various languages, Infrastructure as Code tools (ARM templates, Bicep, Terraform).",
+    "selfHostedOption": "N/A (public cloud service, though hybrid solutions like Azure Stack Hub extend Azure services to on-premises)",
+    "integrationExamples": [
+      "Deploying .NET applications with Azure App Service and SQL Database",
+      "Implementing hybrid cloud with Azure Stack HCI",
+      "Building intelligent apps with Azure Cognitive Services",
+      "Container orchestration with Azure Kubernetes Service (AKS)"
+    ]
+  },
+  {
+    "appName": "Google Cloud Platform (GCP)",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Free Tier available)",
+    "description": "Google's suite of cloud computing services, leveraging the same infrastructure that powers Google's own products. Strong in data analytics, AI/ML, and containerization (Kubernetes).",
+    "usage": "Running virtual machines (Compute Engine), highly scalable object storage (Cloud Storage), serverless functions (Cloud Functions), managed Kubernetes (GKE), big data analytics (BigQuery), AI/ML development (Vertex AI).",
+    "documentationLinks": {
+      "official": "https://cloud.google.com/docs"
+    },
+    "installationSetup": "Account creation via Google Cloud Console, CLI tools (gcloud CLI), SDKs, Infrastructure as Code tools (Cloud Deployment Manager, Terraform).",
+    "selfHostedOption": "N/A (public cloud service, though hybrid options like Anthos extend GCP services to on-premises)",
+    "integrationExamples": [
+      "Building data pipelines with Cloud Dataflow and BigQuery",
+      "Deploying containerized applications on GKE",
+      "Developing custom ML models with Vertex AI",
+      "Serving web applications with Cloud Run and Cloud SQL"
+    ]
+  },
+  {
+    "appName": "Alibaba Cloud",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Free Trial available)",
+    "description": "The cloud computing arm of Alibaba Group, offering a comprehensive suite of cloud services with a dominant presence in Asia and growing global reach.",
+    "usage": "Running compute instances (ECS), object storage (OSS), managed databases (RDS), CDN, big data processing (MaxCompute), AI/ML services, enterprise applications.",
+    "documentationLinks": {
+      "official": "https://www.alibabacloud.com/help/doc-detail/42074.htm"
+    },
+    "installationSetup": "Account creation via Alibaba Cloud Console, CLI tools, SDKs.",
+    "selfHostedOption": "N/A (public cloud service)",
+    "integrationExamples": [
+      "Hosting e-commerce platforms and websites",
+      "Deploying mobile applications with backend services",
+      "Big data processing and analytics for large datasets",
+      "AI inference and training in the cloud"
+    ]
+  },
+  {
+    "appName": "IBM Cloud",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Lite account available)",
+    "description": "IBM's cloud offering, emphasizing hybrid cloud solutions, enterprise-grade capabilities, and strong integration with IBM's AI (Watson) and blockchain technologies.",
+    "usage": "Bare metal servers, virtual servers, Kubernetes Service, Cloud Foundry (PaaS), managed databases, AI services (Watson APIs), blockchain solutions, IoT platform, cybersecurity services.",
+    "documentationLinks": {
+      "official": "https://cloud.ibm.com/docs"
+    },
+    "installationSetup": "Account creation via IBM Cloud Console, CLI tools, SDKs.",
+    "selfHostedOption": "N/A (public cloud service, though heavily supports hybrid deployments with on-premises IBM technologies)",
+    "integrationExamples": [
+      "Building AI-powered chatbots with Watson Assistant",
+      "Deploying microservices with Kubernetes Service",
+      "Leveraging blockchain solutions for supply chain",
+      "Hybrid cloud management for enterprise workloads"
+    ]
+  },
+  {
+    "appName": "Oracle Cloud Infrastructure (OCI)",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Free Tier available)",
+    "description": "Oracle's second-generation cloud, designed for high performance, enterprise-grade capabilities, and seamless integration with Oracle's database and enterprise applications.",
+    "usage": "Running demanding workloads (high-performance compute), Oracle database services (Autonomous Database, Exadata Cloud), enterprise applications (ERP, HCM), analytics, data warehousing, AI/ML services.",
+    "documentationLinks": {
+      "official": "https://docs.oracle.com/en-us/iaas/Content/home.htm"
+    },
+    "installationSetup": "Account creation via OCI Console, CLI tools, SDKs, Terraform provider.",
+    "selfHostedOption": "N/A (public cloud service, though offers 'Dedicated Region Cloud@Customer' for on-premises OCI experience)",
+    "integrationExamples": [
+      "Migrating and running Oracle Databases in the cloud",
+      "Deploying high-performance computing clusters",
+      "Running enterprise applications like E-Business Suite",
+      "Developing and deploying custom applications with compute and storage options"
+    ]
+  },
+  {
+    "appName": "Salesforce Cloud",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (SaaS)",
+    "description": "A leading cloud platform primarily for Customer Relationship Management (CRM) and a broad ecosystem of business applications (Sales, Service, Marketing, Commerce, Analytics Clouds, etc.). It also offers a PaaS (Force.com/Lightning Platform) for custom app development.",
+    "usage": "Managing sales leads and opportunities, customer service and support, automating marketing campaigns, building custom business applications, e-commerce solutions, analytics and reporting.",
+    "documentationLinks": {
+      "official": "https://developer.salesforce.com/docs"
+    },
+    "installationSetup": "Subscription to specific Salesforce 'Clouds'; development done via Salesforce DX CLI, Apex (proprietary language), Lightning Web Components (LWC), and platform tools.",
+    "selfHostedOption": "No (pure SaaS platform)",
+    "integrationExamples": [
+      "Integrating Sales Cloud with marketing automation tools",
+      "Building custom customer portals using Experience Cloud",
+      "Extending functionality with AppExchange apps",
+      "Developing custom Apex triggers and Visualforce pages"
+    ]
+  },
+  {
+    "appName": "DigitalOcean",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go)",
+    "description": "A cloud provider popular among developers and small-to-medium businesses for its simplicity, ease of use, and straightforward pricing. Offers virtual private servers ('Droplets') and managed services.",
+    "usage": "Deploying web applications, hosting static sites, running managed databases (PostgreSQL, MySQL, Redis), Kubernetes clusters, object storage (Spaces), serverless functions (Functions), managing continuous deployment.",
+    "documentationLinks": {
+      "official": "https://docs.digitalocean.com/"
+    },
+    "installationSetup": "Account creation via DigitalOcean Control Panel, `doctl` CLI, Terraform provider.",
+    "selfHostedOption": "N/A (public cloud service)",
+    "integrationExamples": [
+      "Deploying a Dockerized web application on Droplets",
+      "Using managed Kubernetes (DOKS) for container orchestration",
+      "Storing user-generated content in Spaces object storage",
+      "Automated deployments via App Platform"
+    ]
+  },
+  {
+    "appName": "Linode (by Akamai)",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go)",
+    "description": "A cloud hosting provider acquired by Akamai, offering Linux-based virtual machines and other cloud infrastructure services with a focus on developer experience, predictable pricing, and high performance.",
+    "usage": "Running virtual machines, managed databases, Kubernetes clusters, object storage, block storage, network services, DNS management.",
+    "documentationLinks": {
+      "official": "https://www.linode.com/docs/"
+    },
+    "installationSetup": "Account creation via Linode Cloud Manager, Linode CLI, Terraform provider.",
+    "selfHostedOption": "N/A (public cloud service)",
+    "integrationExamples": [
+      "Hosting a high-traffic website on Linode instances",
+      "Setting up a robust database cluster with Managed Databases",
+      "Deploying containerized applications on Linode Kubernetes Engine (LKE)",
+      "Utilizing S3-compatible Object Storage for static assets"
+    ]
+  },
+  {
+    "appName": "Tencent Cloud",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go, Free Trial available)",
+    "description": "The cloud computing service operated by Tencent, a major Chinese technology company. Offers a wide array of services including compute, storage, networking, databases, and a strong focus on gaming and social media integrations.",
+    "usage": "Hosting game servers, deploying social media applications, content delivery, video processing, AI/ML services, big data analytics, blockchain services.",
+    "documentationLinks": {
+      "official": "https://intl.cloud.tencent.com/document/product/213"
+    },
+    "installationSetup": "Account creation via Tencent Cloud Console, CLI tools, SDKs.",
+    "selfHostedOption": "N/A (public cloud service)",
+    "integrationExamples": [
+      "Deploying gaming backends with high concurrency",
+      "Building real-time communication platforms",
+      "Leveraging AI services for content moderation or recommendation engines",
+      "Global content delivery for media applications"
+    ]
+  },
+  {
+    "appName": "OVHcloud",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go)",
+    "description": "A French cloud computing company offering public cloud, hosted private cloud, and bare metal servers, known for its emphasis on data sovereignty, privacy, and competitive pricing in Europe.",
+    "usage": "Virtual machines, dedicated servers, object storage, block storage, managed Kubernetes, managed databases, network solutions, web hosting, email services.",
+    "documentationLinks": {
+      "official": "https://docs.ovh.com/"
+    },
+    "installationSetup": "Account creation via OVHcloud Control Panel, CLI tools, API.",
+    "selfHostedOption": "N/A (public cloud service, but offers dedicated server and private cloud options for greater control)",
+    "integrationExamples": [
+      "Hosting applications requiring European data residency",
+      "Deploying high-performance bare metal servers for intense workloads",
+      "Building hybrid cloud environments with hosted private cloud",
+      "Managing containerized applications with managed Kubernetes"
+    ]
+  },
+  {
+    "appName": "Kamatera",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Pay-as-you-go)",
+    "description": "A global cloud provider offering enterprise-grade cloud infrastructure services, focusing on highly customizable virtual private servers (VPS) with a wide range of operating systems.",
+    "usage": "Deploying virtual servers with custom configurations, hosting web applications, setting up development environments, running databases, utilizing block storage and private networks.",
+    "documentationLinks": {
+      "official": "https://www.kamatera.com/support/documentation/"
+    },
+    "installationSetup": "Account creation via Kamatera Console, API.",
+    "selfHostedOption": "N/A (public cloud service)",
+    "integrationExamples": [
+      "Spinning up custom Linux or Windows server instances quickly",
+      "Scaling infrastructure up or down based on demand",
+      "Setting up specialized test environments for software development",
+      "Deploying high-availability solutions across multiple data centers"
+    ]
+  },
+  {
+    "appName": "Rackspace Technology",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Managed Services)",
+    "description": "A leading provider of end-to-end multi-cloud technology services, specializing in managed hosting, cloud migration, and ongoing management across various cloud platforms (AWS, Azure, GCP, VMware, OpenStack).",
+    "usage": "Managed cloud infrastructure (compute, storage, networking), multi-cloud strategy and management, cloud migrations, managed security services, managed databases, application modernization, professional services for cloud adoption.",
+    "documentationLinks": {
+      "official": "https://www.rackspace.com/resources/documentation"
+    },
+    "installationSetup": "Engagement through sales and professional services; deployment and management are handled by Rackspace expertise on chosen cloud platforms.",
+    "selfHostedOption": "N/A (service provider, manages infrastructure on public/private clouds)",
+    "integrationExamples": [
+      "Migrating legacy applications to AWS or Azure with expert guidance",
+      "Optimizing cloud spend and performance across multiple clouds",
+      "Implementing robust cloud security and compliance frameworks",
+      "24/7 operational support for critical cloud workloads"
+    ]
+  },
+  {
+    "appName": "VMware Cloud (now Broadcom VCF)",
+    "category": "Cloud Platform",
+    "type": "Subscription-Based (Software Licensing & Cloud Services)",
+    "description": "A comprehensive cloud infrastructure stack that integrates compute, storage, networking, and management, enabling consistent infrastructure and operations from the data center to public clouds, primarily leveraging VMware's virtualization technology (now part of Broadcom's VMware Cloud Foundation).",
+    "usage": "Building private clouds, extending on-premises VMware environments to public clouds, hybrid cloud deployments, disaster recovery, cloud-native application deployment on consistent infrastructure.",
+    "documentationLinks": {
+      "official": "https://docs.vmware.com/en/VMware-Cloud-Foundation/index.html"
+    },
+    "installationSetup": "Software installation (VMware Cloud Foundation) on customer hardware for private cloud; consumption of services via partners (e.g., AWS, Azure, GCP) for public cloud components.",
+    "selfHostedOption": "Yes (VMware Cloud Foundation is deployed on-premises as a private cloud, integrates with public cloud services)",
+    "collaborationFeatures": [
+      "Consistent operational model across private and public clouds",
+      "Centralized management for hybrid environments",
+      "Integration with existing IT workflows and tools"
+    ]
   }
 ]
