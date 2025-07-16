@@ -58,7 +58,7 @@ const servicesData: ServiceBlockProps[] = [
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
   }
   {
-    id: 'consulting',
+    id: 'seo',
     iconName: 'book',
     title: 'SEO Optimization',
     valueProposition: 'Boost website rankings with on/off page SEO, technical audits, and AI driven keyword insights.',
@@ -71,7 +71,7 @@ const servicesData: ServiceBlockProps[] = [
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
   }
   {
-    id: 'consulting',
+    id: 'aiautomation',
     iconName: 'book',
     title: 'AI Automation',
     valueProposition: 'Use AI to automate repetitive workflows across marketing, customer support, and operations for increased efficiency.',
@@ -84,7 +84,7 @@ const servicesData: ServiceBlockProps[] = [
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
   }
   {
-    id: 'consulting',
+    id: 'aisolution',
     iconName: 'book',
     title: 'AI Solutions or AI Integration',
     valueProposition: 'Integrate AI across your business for smart decision-making, lead generation, customer experience, and growth.',
@@ -97,7 +97,7 @@ const servicesData: ServiceBlockProps[] = [
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
   }
   {
-    id: 'consulting',
+    id: 'presentation',
     iconName: 'book',
     title: 'Presentation',
     valueProposition: 'Use AI to automate repetitive workflows across marketing, customer support, and operations for increased efficiency.',
