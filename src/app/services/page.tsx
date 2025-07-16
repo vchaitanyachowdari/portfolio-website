@@ -56,7 +56,7 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
-  }
+  },
   {
     id: 'seo',
     iconName: 'book',
@@ -69,7 +69,7 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
-  }
+  },
   {
     id: 'aiautomation',
     iconName: 'book',
@@ -82,7 +82,7 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
-  }
+  },
   {
     id: 'aisolution',
     iconName: 'book',
@@ -95,7 +95,7 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
-  }
+  },
   {
     id: 'presentation',
     iconName: 'book',
@@ -108,7 +108,7 @@ const servicesData: ServiceBlockProps[] = [
       { text: 'Technology Stack Advisory', icon: 'checkCircle' },
     ],
     cta: { text: 'Explore Design Process', link: '#contact', type: 'primary', suffixIcon: 'arrowRight' },
-  }
+  },
 ];
 
 const ServicesPage = () => {
