@@ -98,7 +98,7 @@ const ContactPage = () => {
         </Button>
 
         {status === 'success' && (
-          <Text color="success-on-background-strong" marginTop="m">Message sent successfully!</Text>
+          <Text color="success-on-background-strong" marginTop="m">Message sent successfully! Thank you!</Text>
         )}
         {status === 'error' && (
           <Text color="danger-on-background-strong" marginTop="m">Failed to send message. Please try again later.</Text>

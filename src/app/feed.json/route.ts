@@ -7,14 +7,14 @@ export async function GET() {
   
   const jsonFeed = {
     version: 'https://jsonfeed.org/version/1.1',
-    title: 'Portfolio Blog - Web Development & Design',
+    title: 'V Chaitanya Chowdari | Portfolio Blog',
     description: 'Latest articles about web development, design, and technology from a full-stack developer\'s perspective.',
     home_page_url: baseURL,
     feed_url: `${baseURL}/feed.json`,
     language: 'en-US',
     author: {
-      name: 'Your Name', // Replace with actual name
-      email: 'your-email@domain.com', // Replace with actual email
+      name: 'V Chaitanya Chowdari',
+      email: 'vchaitanya@chowdari.in',
       url: baseURL
     },
     items: posts
@@ -30,10 +30,10 @@ export async function GET() {
         date_published: new Date(post.metadata.publishedAt).toISOString(),
         date_modified: new Date(post.metadata.publishedAt).toISOString(),
         author: {
-          name: 'Your Name', // Replace with actual name
-          email: 'your-email@domain.com' // Replace with actual email
+          name: 'V Chaitanya Chowdari',
+          email: 'vchaitanya@chowdari.in'
         },
-        tags: post.metadata.tags || ['web-development', 'technology'],
+        tags: post.metadata.tags || ['web-development', 'technology', 'Generative AI', 'AI Generilist', 'app-developer'],
         language: 'en-US'
       }))
   };

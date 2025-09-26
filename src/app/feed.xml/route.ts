@@ -15,9 +15,20 @@ export async function GET() {
         <link>${baseURL}/blog/${post.slug}</link>
         <guid isPermaLink="true">${baseURL}/blog/${post.slug}</guid>
         <pubDate>${new Date(post.metadata.publishedAt).toUTCString()}</pubDate>
-        <author>your-email@domain.com (Your Name)</author>
+        <author>vchaitanya@chowdari.in (V Chaitanya Chowdari)</author>
         <category>Web Development</category>
         <category>Technology</category>
+        <category>AI Automation Expert</category>
+        <category>AI Agents Builder</category>
+        <category>Open Source</category>
+        <category>AI Generilist</category>
+        <category>App Development</category>
+        <category>Design</category>
+        <category>AI</category>
+        <category>LLMOS</category>
+        <category>Generative AI Tools</category>
+        <category>Wrapper</category>
+        <category>LLM</category>
         ${post.metadata.tags ? post.metadata.tags.map((tag: string) => `<category>${tag}</category>`).join('') : ''}
       </item>
     `).join('');
@@ -32,11 +43,20 @@ export async function GET() {
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         <atom:link href="${baseURL}/feed.xml" rel="self" type="application/rss+xml"/>
         <generator>Next.js Portfolio</generator>
-        <webMaster>your-email@domain.com (Your Name)</webMaster>
-        <managingEditor>your-email@domain.com (Your Name)</managingEditor>
+        <webMaster>vchaitanya@chowdari.in (V Chaitanya Chowdari)</webMaster>
+        <managingEditor>vchaitanya@chowdari.in (V Chaitanya Chowdari)</managingEditor>
         <category>Technology</category>
-        <category>Web Development</category>
+        <category>AI Automation Expert</category>
+        <category>AI Agents Builder</category>
+        <category>Open Source</category>
+        <category>AI Generilist</category>
+        <category>App Development</category>
         <category>Design</category>
+        <category>AI</category>
+        <category>LLMOS</category>
+        <category>Generative AI Tools</category>
+        <category>Wrapper</category>
+        <category>LLM</category>
         <ttl>60</ttl>
         ${rssItems}
       </channel>

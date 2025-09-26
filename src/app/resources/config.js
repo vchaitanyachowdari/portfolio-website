@@ -9,7 +9,6 @@ const routes = {
   "/blog": true,
   "/gallery": true,
   "/resource": true,
-  "/tech-stack": true,
   "/services": true,
   "/store": true,
   "/tools": true,

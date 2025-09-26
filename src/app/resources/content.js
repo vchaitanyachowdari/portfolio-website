@@ -40,7 +40,7 @@ const social = [
   {
     name: "X",
     icon: "x",
-    link: "https://x.com/vchaitanyachai?s=11",
+    link: "https://x.com/vchaitanyachai",
   },
   {
     name: "Email",
@@ -53,7 +53,7 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}&apos;s Portfolio`,
+  title: `V Chaitanya Chowdari | Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building bridges between Technology and Innovation</>,
   featured: {
@@ -83,7 +83,7 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://calendar.app.google/QeHM7DvtkaACUXKa8",
+    link: "https://cal.com/vcaicreator/discovery-call",
   },
   intro: {
     display: true,
@@ -399,13 +399,6 @@ const blog = {
   // All posts will be listed on the /blog route
 };
 
-const techStack = {
-  path: "/tech-stack",
-  label: "Tech Stack",
-  title: `Tech Stack – ${person.name}`,
-  description: `Technologies and tools used by ${person.name}`,
-};
-
 const services = {
   path: "/services",
   label: "Services",
@@ -581,14 +574,12 @@ export {
   home,
   about,
   blog,
-  techStack, // Added techStack
-  services,  // Added services
+  services,
   work,
   gallery,
   resources,
   store,
   tools,
-  // resourcePages, // No longer exporting as it's not used by the new Resource page design
   testimonials,
 };
 

@@ -1,8 +1,6 @@
-// SEO Configuration for AI Crawlers and Search Engines
 import { baseURL } from "@/app/resources";
 
 export const seoConfig = {
-  // Basic SEO
   title: "V Chaitanya Chowdari - AI Generilist, Web Developer, Fullstack Developer, Generative AI Expert",
   description: "Professional Portfolio showcasing AI Automation, AI Ad's Making, AI Model Training, AI Development, Researcher, full-stack development, UI/UX design, and innovative web solutions. Explore my projects, blog posts, and technical expertise.",
   keywords: [
@@ -34,7 +32,6 @@ export const seoConfig = {
     "AI Expert"
   ],
   
-  // Open Graph for social media and AI crawlers
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -52,25 +49,23 @@ export const seoConfig = {
     ],
   },
   
-  // Twitter Card
   twitter: {
     card: "summary_large_image",
     title: "Portfolio - Full Stack Developer & Designer",
     description: "Professional portfolio showcasing full-stack development, UI/UX design, and innovative web solutions.",
     images: [`${baseURL}/images/og/home.jpg`],
-    creator: "@vchaitanyacho", // Replace with actual Twitter handle
+    creator: "@vchaitanyacho",
   },
   
-  // Structured Data for AI understanding
   structuredData: {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "V Chaitanya Chowdari", // Replace with actual name
+    "name": "V Chaitanya Chowdari",
     "jobTitle": "Full Stack Developer & Designer",
     "description": "Professional full-stack developer and designer specializing in modern web technologies and user experience design.",
     "url": baseURL,
     "sameAs": [
-      "https://github.com/vchaitanyachowdari", // Replace with actual profiles
+      "https://github.com/vchaitanyachowdari",
       "https://linkedin.com/in/vchaitanyachowdari",
       "https://twitter.com/vchaitanyacho"
     ],
@@ -106,12 +101,11 @@ export const seoConfig = {
       "name": "Full Stack Developer",
       "occupationLocation": {
         "@type": "Place",
-        "name": "Davangere, Karnataka, India" // Update with your location
+        "name": "Davangere, Karnataka, India"
       }
     }
   },
   
-  // AI Crawler specific metadata
   aiCrawlerMeta: {
     "ai-content-declaration": "This portfolio contains original work and projects by the developer",
     "content-type": "professional-portfolio",
@@ -122,7 +116,6 @@ export const seoConfig = {
     "index-policy": "index,follow",
   },
   
-  // Additional meta tags for better discoverability
   additionalMeta: {
     "theme-color": "#000000",
     "color-scheme": "dark light",
@@ -134,7 +127,6 @@ export const seoConfig = {
   }
 };
 
-// Function to generate JSON-LD structured data
 export function generateStructuredData(pageType: string = "website", additionalData: any = {}) {
   const baseStructuredData = {
     ...seoConfig.structuredData,

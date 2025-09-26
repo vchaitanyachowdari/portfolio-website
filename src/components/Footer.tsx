@@ -1,42 +1,76 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { person, social } from "@/app/resources/content";
-import { Column, Flex, Text, Heading } from "@/once-ui/components";
+import { Column, Flex, Text, Heading, Icon, Button } from "@/once-ui/components";
 import styles from "./Footer.module.scss";
+import { IconName } from "@/once-ui/icons";
 
 const Footer = () => {
+  const [isGlassmorphism, setIsGlassmorphism] = useState(false);
+  
   const products = [
     { name: "About", path: "/about" },
     { name: "Work", path: "/work" },
     { name: "Blog", path: "/blog" },
     { name: "Resources", path: "/resource" },
-    { name: "Tech Stack", path: "/tech-stack" },
     { name: "Services", path: "/services" },
     { name: "Store", path: "/store" },
+    { name: "Open Source Contribution\'s", path: "https://pull-request.chowdari.in/" },
   ];
   const usefulLinks = [
-    { name: "AI Automation", path: "#" },
-    { name: "AI Solutions", path: "#" },
-    { name: "AI Integration", path: "#" },
-    { name: "App Development", path: "#" },
-    { name: "Web Development", path: "#" },
+    { name: "AI Automation", path: "/services" },
+    { name: "AI Solutions", path: "/services" },
+    { name: "AI Integration", path: "/services" },
+    { name: "App Development", path: "/services" },
+    { name: "Web Development", path: "/services" },
   ];
   const moreLinks = [
-    { name: "Privacy Policy", path: "/privacy " },
+    { name: "Privacy Policy", path: "/privacy" },
     { name: "Refund & Cancellation", path: "/refund" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // Map social media names to icon names
+  const getIconName = (socialName: string): IconName => {
+    const iconMap: Record<string, IconName> = {
+      "GitHub": "github",
+      "LinkedIn": "linkedin",
+      "X": "x",
+      "Email": "email",
+      "Twitter": "x",
+      "Instagram": "instagram",
+      "Facebook": "facebook",
+      "YouTube": "youtube",
+      "Discord": "discord"
+    };
+    return iconMap[socialName] || "globe";
+  };
+
+  const toggleEffect = () => {
+    setIsGlassmorphism(!isGlassmorphism);
+  };
+
   return (
-    <Column as="footer" className={styles.footer}>
+    <Column as="footer" className={`${styles.footer} ${isGlassmorphism ? styles.glassmorphism : styles.transparent}`}>
+      {/* Floating background elements */}
+      <div className={styles["floating-element"]}></div>
+      <div className={styles["floating-element"]}></div>
+      <div className={styles["floating-element"]}></div>
+      <div className={styles["floating-element"]}></div>
+      
       {/* Top Bar: Social Media */}
       <Flex className={styles.topbar} horizontal="space-between" vertical="center" wrap>
-        
-        <Flex className={styles.socials}>
-          {social.map((item) => (
-            <a key={item.name} href={item.link} aria-label={item.name} target="_blank" rel="noopener noreferrer">
-              <i className={`fab fa-${item.icon.toLowerCase()}`}></i>
-            </a>
-          ))}
+        <Text></Text>
+        <Flex gap="8">
+          <Flex className={styles.socials}>
+            {social.map((item) => (
+              <a key={item.name} href={item.link} aria-label={item.name} target="_blank" rel="noopener noreferrer">
+                <Icon name={getIconName(item.name)} size="l" />
+              </a>
+            ))}
+          </Flex>
         </Flex>
       </Flex>
       {/* Main Footer Content */}
@@ -45,13 +79,13 @@ const Footer = () => {
         <Column className={styles.col}>
           <Text as="div" className={styles.logo}>{person.name}</Text>
           <Text as="p" className={styles.desc}>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            AI Generalist, Researcher, and Builder creating innovative solutions at the intersection of technology and creativity.
           </Text>
         </Column>
         {/* Products/Services */}
         <Column className={styles.col}>
-          <Heading as="h6" className={styles.heading}></Heading>
-          <ul className={styles.list}>
+          <Heading as="h6" className={styles.heading}>Navigation</Heading>
+          <ul className={styles.list} style={{ listStyle: 'none', padding: 0 }}>
             {products.map((p) => (
               <li key={p.name}><a href={p.path}>{p.name}</a></li>
             ))}
@@ -60,7 +94,7 @@ const Footer = () => {
         {/* Useful Links */}
         <Column className={styles.col}>
           <Heading as="h6" className={styles.heading}>Services</Heading>
-          <ul className={styles.list}>
+          <ul className={styles.list} style={{ listStyle: 'none', padding: 0 }}>
             {usefulLinks.map((l) => (
               <li key={l.name}><a href={l.path}>{l.name}</a></li>
             ))}
@@ -68,8 +102,8 @@ const Footer = () => {
         </Column>
         {/* More Links */}
         <Column className={styles.col}>
-          <Heading as="h6" className={styles.heading}></Heading>
-          <ul className={styles.list}>
+          <Heading as="h6" className={styles.heading}>Legal</Heading>
+          <ul className={styles.list} style={{ listStyle: 'none', padding: 0 }}>
             {moreLinks.map((l) => (
               <li key={l.name}><a href={l.path}>{l.name}</a></li>
             ))}
@@ -77,18 +111,17 @@ const Footer = () => {
         </Column>
         {/* Contact */}
         <Column className={styles.col}>
-          <Heading as="h6" className={styles.heading}>CONTACT</Heading>
-          <ul className={styles.contact}>
-            <li><i className="fas fa-home"></i>Davangere, Karnataka, India</li>
-            <li><i className="fas fa-envelope"></i> vchaitanya@chowdari.in</li>
-            <li><i className="fas fa-phone"></i> + 91 94826 87922</li>
-            <li><i className="fas fa-print"></i></li>
+          <Heading as="h6" className={styles.heading}>Contact</Heading>
+          <ul className={styles.contact} style={{ listStyle: 'none', padding: 0 }}>
+            <li><Icon name="globe" size="s" /> Davangere, Karnataka, India</li>
+            <li><Icon name="email" size="s" /> vchaitanya@chowdari.in</li>
+            <li><Icon name="arrowUpRightFromSquare" size="s" /> +91 94826 87922</li>
           </ul>
         </Column>
       </Flex>
       {/* Copyright */}
       <Flex className={styles.bottom} horizontal="center">
-        <Text>© {new Date().getFullYear()} Copyright: <a href="https://chowdari.in/">Chowdari.in</a></Text>
+        <Text>© {new Date().getFullYear()} {person.name}. All rights reserved.</Text>
       </Flex>
     </Column>
   );
