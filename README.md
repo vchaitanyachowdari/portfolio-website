@@ -116,8 +116,6 @@ The project follows a standard Next.js (App Router) structure:
 
 ```
 magic-portfolio/ 
-├── .next/ # Next.js build output (generated) 
-├── node_modules/ # Project dependencies (generated) 
 ├── public/ # Static assets (images, fonts, etc.) 
 │ ├── images/ 
 │ └── fonts/ 
@@ -263,63 +261,9 @@ Tailor Magic Portfolio to your needs:
 ## Demo & Screenshots
 
 ### Live Demo
-*   **[View the Demo Here](https://demo.magic-portfolio.com)**
+*   **[View the Demo Here](https://chowdari.in/)**
 
-### Screenshots
-*(Add your project screenshots here to give a visual overview.)*
-
-**Example:**
-![Homepage Preview](https://demo.magic-portfolio.com/images/og/home.jpg)
-*Homepage showcasing the main hero section and featured content.*
-
-<!-- 
-To add your own screenshots:
-1. Take screenshots.
-2. Place them in a folder like `public/readme-assets/`.
-3. Update paths: ![Alt Text](readme-assets/your-screenshot.png)
--->
-Once UI Documentation
-For more details on using Once UI components and theming:
-
-docs.once-ui.com
-Contributing & Getting Involved
-We welcome contributions!
-
-🐛 Report Bugs: Use the Bug Report Template.
-💡 Suggest Enhancements: Open an issue to discuss your ideas.
-📝 Submit Pull Requests:
-Fork the repository.
-Create a feature or bugfix branch.
-Make your changes, adhering to linting and formatting standards.
-Commit and push to your fork.
-Open a pull request against the main branch.
-💬 Join the Community: Design Engineers Club on Discord.
-Authors
-Lorant Toth: Threads, LinkedIn
-Zsofia Komaromi: Threads, LinkedIn
-Localization by François Hernandez
-License
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.
-
-You are free to Share and Adapt the material, under the conditions of Attribution and NonCommercial use.
-
-### **Important Notes:**
-
-**Commercial Usage:** To use Magic Portfolio or elements from Once UI for commercial purposes, you must purchase a Once UI Pro license.
-Full License Details: See the LICENSE file or visit creativecommons.org/licenses/by-nc/4.0/legalcode.
-
-This is the complete drafted README content. You can copy this and paste it into your `README.md` file.
-
-Since I cannot use the `submit` tool to write this to the file due to the previously encountered tool limitations with large content, this is the best I can do to assist with the README update. All the planned drafting steps are now complete.
-
-## 🚀 Production Deployment
-
-Your portfolio is now production-ready! Here are the deployment options:
-
-### Quick Deploy to Vercel (Recommended)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvchaitanyachowdari%2Fsecond-portfolio)
-
-### Manual Deployment
+### Deployment
 ```bash
 # Run the production deployment script
 npm run deploy
@@ -350,7 +294,5 @@ Make sure to set these in your hosting platform:
 - ✅ Docker containerization support
 - ✅ Automated deployment scripts
 - ✅ Production environment configurations
-
-See `PRODUCTION_CHECKLIST.md` for detailed deployment steps and verification.
 
 ---
