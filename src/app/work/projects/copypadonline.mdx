@@ -1,0 +1,206 @@
+---
+title: "CopyPad — Instant URL-Based Text Sharing with Real-Time Sync"
+publishedAt: "2025-01-13"
+summary: "CopyPad is a minimalist, authentication-free text-sharing web app that enables instant document creation via custom URLs. Built with Node.js, Express, and Socket.io, it supports auto-save, dark mode, file export, and real-time collaborative editing."
+images:
+  - "/images/projects/copypad/01.png"
+  - "/images/projects/copypad/02.png"
+  - "/images/projects/copypad/03.png"
+  - "/images/projects/copypad/04.png"
+  - "/images/projects/copypad/05.png"
+team:
+  - name: "V Chaitanya Chowdari"
+    role: "Full-Stack Developer"
+    avatar: "/images/team/vchaitanyachowdari.jpg"
+    linkedIn: "https://www.linkedin.com/in/v-chaitanya-chowdari-bb3733202"
+link: "https://copypad.online/"
+category: "Web Application"
+client: "Self-Initiated"
+tags: ["Real-Time Web App", "Node.js", "Express", "Socket.io", "Minimalist Design", "Collaboration Tool"]
+---
+
+## Overview
+
+**CopyPad** is a frictionless, URL-based text-sharing platform designed for instant document creation and collaboration — without authentication barriers.
+
+Users can create a shared document simply by navigating to a custom path (e.g., `/notes`, `/project/docs`). The platform auto-saves content in real time, supports collaborative editing via WebSockets, and works seamlessly across devices.
+
+The philosophy is simple: **zero onboarding, zero complexity, instant productivity.**
+
+---
+
+## Core Objectives
+
+- Enable instant document creation without login
+- Provide real-time collaborative editing
+- Maintain lightweight, fast-loading architecture
+- Support multiple storage strategies (File-based + MongoDB)
+- Ensure strong baseline security against abuse
+
+---
+
+## Key Features
+
+### 🔗 URL-Based Document Creation
+
+- Dynamic document generation via custom routes
+- Supports hierarchical paths (`/project/frontend/ideas`)
+- Case-sensitive routing for granular control
+
+### 💾 Intelligent Auto-Save
+
+- 800ms debounce auto-save mechanism
+- Version-controlled updates
+- Backend persistence through file system or MongoDB
+
+### 🔄 Real-Time Synchronization
+
+- Powered by WebSockets using Socket.io
+- Room-based document sessions
+- Instant content updates across connected users
+
+### 📊 Live Editor Stats
+
+- Real-time word and character counter
+- Version tracking metadata
+- Timestamp-based modification records
+
+### 🌙 Adaptive Theming
+
+- System-based dark/light mode detection
+- Manual toggle with persistent localStorage state
+- Clean, distraction-free UI
+
+### 📥 Export & Sharing
+
+- One-click URL copy
+- Download documents as `.txt` files
+- Simple share-by-link workflow
+
+---
+
+## Architecture & System Design
+
+CopyPad follows a modular full-stack structure:
+
+### Backend
+
+- **Node.js** runtime
+- **Express.js** server
+- RESTful API endpoints (`/api/doc/:path`)
+- Socket.io WebSocket layer for real-time sync
+
+### Storage Options
+
+| Storage Type | Description | Configuration |
+|--------------|-------------|--------------|
+| File Storage (Default) | JSON files stored locally | No setup required |
+| MongoDB | Mongoose-based schema storage | Enable via environment variables |
+
+File-based storage ensures simplicity, while MongoDB enables scalable deployments.
+
+---
+
+## API Layer
+
+### Get Document
+`GET /api/doc/:path`
+
+Returns document content, version, and last modified timestamp.
+
+### Save Document
+`POST /api/doc/:path`
+
+Updates content with version increment.
+
+### Document Info
+`GET /api/doc/:path/info`
+
+Returns metadata including size, creation date, and modification history.
+
+---
+
+## Real-Time Engine
+
+Socket.io enables collaborative editing:
+
+- Users join document-specific rooms
+- Broadcast updates on content change
+- Maintain synchronization across sessions
+
+This ensures minimal latency and consistent document state.
+
+---
+
+## Security Implementation
+
+- Input sanitization to prevent XSS attacks
+- 1MB document size cap to prevent abuse
+- URL-based access model (privacy by obscurity)
+- Environment-based configuration control
+
+Security is lightweight but practical for a minimal sharing tool.
+
+---
+
+## Project Structure
+
+- Express server entry point
+- API routing layer
+- Modular storage models (FileStore + Mongoose schema)
+- Static frontend served via `/public`
+- Dedicated client-side JS for theme + editor logic
+- Environment-based configuration system
+
+---
+
+## Responsive Experience
+
+CopyPad adapts fluidly across devices:
+
+- Desktop: Full editor layout with controls
+- Tablet: Optimized spacing and scaling
+- Mobile: Touch-first UI with stacked layout
+
+The interface prioritizes usability over visual complexity.
+
+---
+
+## Challenges
+
+- Maintaining real-time consistency without conflict resolution overhead
+- Balancing minimalism with essential features
+- Supporting both file-based and database storage without architectural bloat
+
+---
+
+## Outcome
+
+CopyPad delivers:
+
+- Instant document creation without authentication
+- Seamless real-time collaboration
+- Lightweight infrastructure with optional database scaling
+- Clean UX with no onboarding friction
+
+It proves that powerful tools don’t require heavy systems — just smart architecture.
+
+---
+
+## Live Platform
+
+👉 https://copypad.online/
+
+---
+
+## What This Project Demonstrates
+
+- Real-time systems can remain simple and efficient
+- Authentication isn’t always required for collaborative workflows
+- Minimal UI reduces cognitive load and increases usability
+- Modular storage design enables flexible deployment strategies
+
+---
+
+**Skills Highlighted**:  
+Real-Time Web Architecture · WebSocket Engineering · REST API Design · Express Backend Systems · Responsive UI Engineering · Minimal Product Design

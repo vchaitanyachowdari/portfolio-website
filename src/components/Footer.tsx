@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { person, social } from "@/app/resources/content";
 import { Column, Flex, Text, Heading, Icon, Button } from "@/once-ui/components";
@@ -8,8 +8,8 @@ import styles from "./Footer.module.scss";
 import { IconName } from "@/once-ui/icons";
 
 const Footer = () => {
-  const [isGlassmorphism, setIsGlassmorphism] = useState(false);
-  
+
+
   const products = [
     { name: "About", path: "/about" },
     { name: "Work", path: "/work" },
@@ -48,21 +48,18 @@ const Footer = () => {
     return iconMap[socialName] || "globe";
   };
 
-  const toggleEffect = () => {
-    setIsGlassmorphism(!isGlassmorphism);
-  };
 
   return (
-    <Column as="footer" className={`${styles.footer} ${isGlassmorphism ? styles.glassmorphism : styles.transparent}`}>
+    <Column as="footer" className={`${styles.footer} ${styles.glassmorphism}`}>
       {/* Floating background elements */}
       <div className={styles["floating-element"]}></div>
       <div className={styles["floating-element"]}></div>
       <div className={styles["floating-element"]}></div>
       <div className={styles["floating-element"]}></div>
-      
+
       {/* Top Bar: Social Media */}
       <Flex className={styles.topbar} horizontal="space-between" vertical="center" wrap>
-        <Text></Text>
+
         <Flex gap="8">
           <Flex className={styles.socials}>
             {social.map((item) => (

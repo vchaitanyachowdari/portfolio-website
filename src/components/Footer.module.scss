@@ -23,55 +23,41 @@
 }
 
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 10;
 }
 
 .glassmorphism::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 100%);
+  pointer-events: none;
   z-index: -1;
-  animation: rotate 10s linear infinite;
 }
 
 .glassmorphism::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, var(--brand-alpha-weak) 0%, var(--accent-alpha-weak) 100%);
-  opacity: 0.1;
-  z-index: -1;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: none;
 }
 
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -138,26 +124,17 @@
 }
 
 .heading {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   color: var(--neutral-on-background-strong);
   text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.8;
 }
 
 .heading::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: linear-gradient(to right, var(--brand-background-strong), var(--accent-background-strong));
-  border-radius: 3px;
+  display: none;
 }
 
 .list,
@@ -168,47 +145,29 @@
 }
 
 .list li {
-  margin-bottom: 0.7rem;
-  position: relative;
-  padding-left: 20px;
-  transition: all 0.3s ease;
-}
-
-.contact li {
-  margin-bottom: 0.7rem;
-  display: flex;
-  align-items: center;
-  color: var(--neutral-on-background-medium);
-  font-size: 1rem;
-  position: relative;
-  padding-left: 20px;
-  transition: all 0.3s ease;
+  margin-bottom: 0.8rem;
+  transition: transform 0.2s ease;
 }
 
 .list li::before,
 .contact li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  background: var(--brand-background-strong);
-  border-radius: 50%;
-  opacity: 0.7;
+  display: none;
+  /* Clean look, no bullets */
 }
 
 .list li:hover,
 .contact li:hover {
-  padding-left: 25px;
-  color: var(--brand-on-background-strong);
+  padding-left: 0;
+  /* No indent shift */
+  transform: translateX(4px);
 }
 
 .list a {
   color: var(--neutral-on-background-medium);
   text-decoration: none;
-  transition: color 0.2s;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
 }
 
 .list a:hover {
@@ -224,21 +183,14 @@
 
 .bottom {
   text-align: center;
-  padding: 1rem 2rem;
-  background: rgba(30, 30, 30, 0.6);
-  font-size: 0.95rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.85rem;
   color: var(--neutral-on-background-weak);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .transparent .bottom {
-  background: rgba(0, 0, 0, 0.0);
   border-top: none;
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
 }
 
 .bottom a {
@@ -344,11 +296,13 @@
     flex-wrap: wrap;
     gap: 1.5rem;
   }
+
   .col {
     min-width: 180px;
     max-width: 100%;
   }
 }
+
 @media (max-width: 600px) {
   .topbar {
     flex-direction: column;
@@ -356,20 +310,23 @@
     gap: 0.7rem;
     padding: 1rem;
   }
+
   .main {
     flex-direction: column;
     padding: 2rem 1rem 1rem 1rem;
     gap: 1.5rem;
   }
+
   .col {
     min-width: 0;
     max-width: 100%;
   }
+
   .bottom {
     padding: 1rem;
     font-size: 0.9rem;
   }
-  
+
   .floating-element {
     display: none;
   }
