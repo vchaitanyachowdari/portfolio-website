@@ -5,6 +5,7 @@ import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
+import { seoConfig } from "@/app/seo-config";
 import { Mailchimp } from "@/components";
 import RollingGallery from "@/components/RollingGallery";
 import { Posts } from "@/components/blog/Posts";
@@ -35,18 +36,25 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+
+      {/* FAQPage JSON-LD structured data for Google rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seoConfig.faqStructuredData) }}
+      />
+
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
           {home.featured && (
-          <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
-              <Row paddingY="2">{home.featured.title}</Row>
-            </Badge>
-          </RevealFx>
+            <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
+              <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
+                href={home.featured.href}>
+                <Row paddingY="2">{home.featured.title}</Row>
+              </Badge>
+            </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
+            <Heading as="h1" wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
@@ -80,6 +88,9 @@ export default function Home() {
       </Column>
       <RollingGallery />
       <RevealFx translateY="16" delay={0.6}>
+        <Heading as="h2" variant="display-strong-xs" wrap="balance" paddingBottom="m">
+          Featured Work
+        </Heading>
         <Projects range={[1, 1]} />
       </RevealFx>
       {routes["/blog"] && (
@@ -96,6 +107,27 @@ export default function Home() {
       )}
       <Projects range={[2]} />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      {/* FAQ Section – targets Cluster 4 search queries, adds ~300 words, H2 + H3 headings */}
+      {home.faq && home.faq.length > 0 && (
+        <Column fillWidth gap="l" paddingTop="xl" paddingBottom="xl">
+          <Heading as="h2" variant="display-strong-xs" wrap="balance">
+            Frequently Asked Questions
+          </Heading>
+          <Column fillWidth gap="m">
+            {home.faq.map((item: { question: string; answer: string }, index: number) => (
+              <Column key={index} fillWidth gap="4" paddingY="m" style={{ borderBottom: "1px solid var(--neutral-border-medium)" }}>
+                <Heading as="h3" variant="heading-strong-l">
+                  {item.question}
+                </Heading>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {item.answer}
+                </Text>
+              </Column>
+            ))}
+          </Column>
+        </Column>
+      )}
     </Column>
   );
 }
