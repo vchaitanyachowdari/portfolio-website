@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getPosts } from '@/app/utils/utils';
 import { baseURL } from '@/app/resources';
 
+export const runtime = 'edge';
+
 export async function GET() {
   const posts = getPosts(['src', 'app', 'blog', 'posts']);
   
