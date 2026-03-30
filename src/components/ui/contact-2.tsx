@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Mail, Phone, Globe, MapPin, Send, Loader2, CheckCircle2, XCircle, ArrowUpRight, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -45,27 +44,15 @@ export const Contact2 = ({
     e.preventDefault();
     setStatus("loading");
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
-
-    if (!serviceId || !templateId || !publicKey) {
-      setStatus("error");
-      return;
-    }
-
     try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          name: `${formData.firstname} ${formData.lastname}`.trim(),
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        publicKey
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Failed to send");
+
       setStatus("success");
       setFormData({ firstname: "", lastname: "", email: "", subject: "", message: "" });
       setTimeout(() => setStatus("idle"), 5000);
