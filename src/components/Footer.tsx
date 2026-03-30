@@ -1,7 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { Mail, MapPin, ArrowUpRight, Sparkles } from "lucide-react";
+import React from 'react';
+import type { ComponentProps, ReactNode } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import Link from 'next/link';
+import { Mail, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
 
 /* ─── Inline Brand SVG Icons ─── */
 const GithubSvg = ({ className }: { className?: string }) => (
@@ -36,71 +39,121 @@ const YoutubeSvg = ({ className }: { className?: string }) => (
   </svg>
 );
 
+/* ─── Data ─── */
+interface FooterLink {
+  title: string;
+  href: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  external?: boolean;
+}
+
+interface FooterSection {
+  label: string;
+  links: FooterLink[];
+}
+
+const footerSections: FooterSection[] = [
+  {
+    label: 'Explore',
+    links: [
+      { title: 'Home', href: '/' },
+      { title: 'About', href: '/about' },
+      { title: 'Work', href: '/work' },
+      { title: 'Blog', href: '/blog' },
+      { title: 'Gallery', href: '/gallery' },
+    ],
+  },
+  {
+    label: 'Services',
+    links: [
+      { title: 'Services', href: '/services' },
+      { title: 'Resources', href: '/resource' },
+      { title: 'Contact', href: '/contact' },
+      { title: 'Tools', href: '/tools' },
+    ],
+  },
+  {
+    label: 'Legal',
+    links: [
+      { title: 'Privacy Policy', href: '/privacy' },
+      { title: 'Terms of Service', href: '/terms' },
+      { title: 'Refund & Cancellation', href: '/refund' },
+    ],
+  },
+  {
+    label: 'Connect',
+    links: [
+      { title: 'GitHub', href: 'https://github.com/vchaitanyachowdari', icon: GithubSvg, external: true },
+      { title: 'LinkedIn', href: 'https://www.linkedin.com/in/vchaitanyachowdari', icon: LinkedinSvg, external: true },
+      { title: 'X (Twitter)', href: 'https://x.com/vchaitanyachai', icon: XSvg, external: true },
+      { title: 'Instagram', href: 'https://www.instagram.com/vchaitanyachowdari', icon: InstagramSvg, external: true },
+      { title: 'YouTube', href: 'https://www.youtube.com/@vchaitanyachowdari', icon: YoutubeSvg, external: true },
+    ],
+  },
+];
+
+/* ─── Animated Container ─── */
+type ViewAnimationProps = {
+  delay?: number;
+  className?: ComponentProps<typeof motion.div>['className'];
+  children: ReactNode;
+};
+
+function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
+      whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.8 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 /* ─── Footer Component ─── */
 export default function Footer() {
   const year = new Date().getFullYear();
 
-  const navigation = [
-    {
-      heading: "Explore",
-      links: [
-        { title: "Home", href: "/" },
-        { title: "About", href: "/about" },
-        { title: "Work", href: "/work" },
-        { title: "Blog", href: "/blog" },
-        { title: "Gallery", href: "/gallery" },
-      ],
-    },
-    {
-      heading: "Services",
-      links: [
-        { title: "Services", href: "/services" },
-        { title: "Resources", href: "/resource" },
-        { title: "Contact", href: "/contact" },
-        { title: "Tools", href: "/tools" },
-      ],
-    },
-    {
-      heading: "Legal",
-      links: [
-        { title: "Privacy Policy", href: "/privacy" },
-        { title: "Terms of Service", href: "/terms" },
-        { title: "Refund & Cancellation", href: "/refund" },
-      ],
-    },
-  ];
-
-  const socialLinks = [
-    { icon: <GithubSvg className="size-4" />, link: "https://github.com/vchaitanyachowdari", label: "GitHub" },
-    { icon: <LinkedinSvg className="size-4" />, link: "https://www.linkedin.com/in/vchaitanyachowdari", label: "LinkedIn" },
-    { icon: <XSvg className="size-4" />, link: "https://x.com/vchaitanyachai", label: "X (Twitter)" },
-    { icon: <InstagramSvg className="size-4" />, link: "https://www.instagram.com/vchaitanyachowdari", label: "Instagram" },
-    { icon: <YoutubeSvg className="size-4" />, link: "https://www.youtube.com/@vchaitanyachowdari", label: "YouTube" },
-  ];
-
   return (
-    <footer className="relative mt-auto">
-      {/* ─── Top gradient border ─── */}
+    <footer className="relative mt-auto w-full">
+      {/* ─── Gradient top line ─── */}
       <div
         className="absolute inset-x-0 top-0 h-px"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, var(--brand-background-strong, #06b6d4) 30%, var(--accent-background-strong, #ef4444) 70%, transparent 100%)",
+            'linear-gradient(90deg, transparent 0%, var(--brand-background-strong, #06b6d4) 30%, var(--accent-background-strong, #ef4444) 70%, transparent 100%)',
           opacity: 0.4,
         }}
       />
 
-      <div className="mx-auto max-w-5xl px-6 pt-16 pb-8">
-        {/* ─── Main grid ─── */}
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
+      {/* ─── Radial glow ─── */}
+      <div
+        className="pointer-events-none absolute top-0 left-1/2 h-32 w-1/3 -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl"
+        style={{
+          background: 'var(--brand-background-strong, #06b6d4)',
+          opacity: 0.06,
+        }}
+      />
+
+      <div className="mx-auto max-w-6xl px-6 pt-16 pb-8">
+        <div className="grid w-full gap-10 xl:grid-cols-3 xl:gap-12">
           {/* ─── Brand Column ─── */}
-          <div className="md:col-span-5 flex flex-col gap-6">
-            {/* Logo / Name */}
-            <Link href="/" className="group inline-flex items-center gap-3 w-max">
+          <AnimatedContainer className="flex flex-col gap-5">
+            <Link href="/" className="group inline-flex w-max items-center gap-3">
               <div
-                className="flex size-10 items-center justify-center rounded-xl"
+                className="flex size-10 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-105"
                 style={{
-                  background: "linear-gradient(135deg, var(--brand-background-strong, #06b6d4) 0%, var(--accent-background-strong, #ef4444) 100%)",
+                  background:
+                    'linear-gradient(135deg, var(--brand-background-strong, #06b6d4), var(--accent-background-strong, #ef4444))',
                 }}
               >
                 <Sparkles className="size-5 text-white" />
@@ -110,14 +163,13 @@ export default function Footer() {
               </span>
             </Link>
 
-            {/* Bio */}
             <p
               className="max-w-sm text-sm leading-relaxed"
-              style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}
+              style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
             >
-              AI Generalist, Researcher & Builder. Helping businesses leverage
-              AI automation, build intelligent agents, and craft digital
-              solutions that scale.
+              AI Generalist, Researcher & Builder. Helping businesses leverage AI
+              automation, build intelligent agents, and craft digital solutions
+              that scale.
             </p>
 
             {/* Contact info */}
@@ -125,136 +177,138 @@ export default function Footer() {
               <a
                 href="mailto:vchaitanya@chowdari.in"
                 className="inline-flex items-center gap-2 text-sm transition-colors hover:opacity-80"
-                style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}
+                style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
               >
                 <Mail className="size-3.5" />
                 vchaitanya@chowdari.in
               </a>
               <span
                 className="inline-flex items-center gap-2 text-sm"
-                style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}
+                style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
               >
                 <MapPin className="size-3.5" />
                 Davangere, Karnataka, India
               </span>
             </div>
+          </AnimatedContainer>
 
-            {/* Social links */}
-            <div className="flex items-center gap-1.5 pt-1">
-              {socialLinks.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.label}
-                  className="flex size-9 items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105"
-                  style={{
-                    borderColor: "var(--neutral-border-medium, #374151)",
-                    color: "var(--neutral-on-background-weak, #9ca3af)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--brand-background-strong, #06b6d4)";
-                    e.currentTarget.style.color = "var(--brand-background-strong, #06b6d4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--neutral-border-medium, #374151)";
-                    e.currentTarget.style.color = "var(--neutral-on-background-weak, #9ca3af)";
-                  }}
-                >
-                  {item.icon}
-                </a>
-              ))}
-            </div>
-          </div>
+          {/* ─── Navigation Grid ─── */}
+          <div className="mt-2 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
+            {footerSections.map((section, index) => (
+              <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
+                <div className="mb-8 md:mb-0">
+                  <h3
+                    className="text-[11px] font-semibold uppercase tracking-widest"
+                    style={{ color: 'var(--brand-background-strong, #06b6d4)' }}
+                  >
+                    {section.label}
+                  </h3>
+                  <ul className="mt-4 space-y-2.5">
+                    {section.links.map((link) => {
+                      const LinkComp = link.external ? 'a' : Link;
+                      const extraProps = link.external
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {};
 
-          {/* ─── Navigation Columns ─── */}
-          <div className="md:col-span-7 grid grid-cols-2 gap-8 sm:grid-cols-3">
-            {navigation.map((section) => (
-              <div key={section.heading} className="flex flex-col gap-4">
-                <span
-                  className="text-[11px] font-semibold uppercase tracking-widest"
-                  style={{ color: "var(--brand-background-strong, #06b6d4)" }}
-                >
-                  {section.heading}
-                </span>
-                <ul className="flex flex-col gap-2.5">
-                  {section.links.map(({ href, title }) => (
-                    <li key={title}>
-                      <Link
-                        href={href}
-                        className="group inline-flex items-center gap-1 text-sm transition-all duration-200"
-                        style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = "var(--neutral-on-background-strong, #f3f4f6)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.color = "var(--neutral-on-background-weak, #9ca3af)";
-                        }}
-                      >
-                        {title}
-                        <ArrowUpRight className="size-3 opacity-0 -translate-y-0.5 translate-x-0 transition-all duration-200 group-hover:opacity-60 group-hover:translate-y-0" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      return (
+                        <li key={link.title}>
+                          <LinkComp
+                            href={link.href}
+                            className="group inline-flex items-center gap-1.5 text-sm transition-all duration-200"
+                            style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
+                            onMouseEnter={(e: React.MouseEvent<HTMLElement>) => {
+                              (e.currentTarget as HTMLElement).style.color =
+                                'var(--neutral-on-background-strong, #f3f4f6)';
+                            }}
+                            onMouseLeave={(e: React.MouseEvent<HTMLElement>) => {
+                              (e.currentTarget as HTMLElement).style.color =
+                                'var(--neutral-on-background-weak, #9ca3af)';
+                            }}
+                            {...extraProps}
+                          >
+                            {link.icon && <link.icon className="size-3.5" />}
+                            {link.title}
+                            {!link.icon && (
+                              <ArrowUpRight className="size-3 opacity-0 -translate-y-0.5 transition-all duration-200 group-hover:opacity-60 group-hover:translate-y-0" />
+                            )}
+                          </LinkComp>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </AnimatedContainer>
             ))}
           </div>
         </div>
 
         {/* ─── CTA Banner ─── */}
-        <div
-          className="mt-14 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
-          style={{
-            background: "linear-gradient(135deg, var(--brand-background-strong, #06b6d4)10, var(--accent-background-strong, #ef4444)08)",
-            border: "1px solid var(--neutral-border-medium, #374151)",
-          }}
-        >
-          <div>
-            <p className="text-sm font-medium" style={{ color: "var(--neutral-on-background-strong, #f3f4f6)" }}>
-              Ready to build something extraordinary?
-            </p>
-            <p className="text-xs mt-1" style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}>
-              Book a free discovery call and let&apos;s turn your ideas into reality.
-            </p>
-          </div>
-          <a
-            href="https://cal.com/vcaicreator/discovery-call"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+        <AnimatedContainer delay={0.5}>
+          <div
+            className="mt-14 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
             style={{
-              background: "linear-gradient(135deg, var(--brand-background-strong, #06b6d4), var(--accent-background-strong, #ef4444))",
+              background:
+                'linear-gradient(135deg, var(--brand-background-strong, #06b6d4)10, var(--accent-background-strong, #ef4444)08)',
+              border: '1px solid var(--neutral-border-medium, #374151)',
             }}
           >
-            Book a Call
-            <ArrowUpRight className="size-3.5" />
-          </a>
-        </div>
+            <div>
+              <p
+                className="text-sm font-medium"
+                style={{ color: 'var(--neutral-on-background-strong, #f3f4f6)' }}
+              >
+                Ready to build something extraordinary?
+              </p>
+              <p
+                className="mt-1 text-xs"
+                style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
+              >
+                Book a free discovery call and let&apos;s turn your ideas into reality.
+              </p>
+            </div>
+            <a
+              href="https://cal.com/vcaicreator/discovery-call"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-medium text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg"
+              style={{
+                background:
+                  'linear-gradient(135deg, var(--brand-background-strong, #06b6d4), var(--accent-background-strong, #ef4444))',
+              }}
+            >
+              Book a Call
+              <ArrowUpRight className="size-3.5" />
+            </a>
+          </div>
+        </AnimatedContainer>
 
         {/* ─── Bottom bar ─── */}
-        <div
-          className="mt-10 flex flex-col items-center justify-between gap-3 border-t pt-6 sm:flex-row"
-          style={{ borderColor: "var(--neutral-border-medium, #374151)" }}
-        >
-          <p
-            className="text-xs"
-            style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}
+        <AnimatedContainer delay={0.6}>
+          <div
+            className="mt-10 flex flex-col items-center justify-between gap-3 border-t pt-6 sm:flex-row"
+            style={{ borderColor: 'var(--neutral-border-medium, #374151)' }}
           >
-            © {year} V Chaitanya Chowdari. All rights reserved.
-          </p>
-          <div className="flex items-center gap-1 text-xs" style={{ color: "var(--neutral-on-background-weak, #9ca3af)" }}>
-            <span>Crafted with</span>
-            <span
-              className="inline-block animate-pulse"
-              style={{ color: "var(--accent-background-strong, #ef4444)" }}
+            <p
+              className="text-xs"
+              style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
             >
-              ♥
-            </span>
-            <span>in India</span>
+              © {year} V Chaitanya Chowdari. All rights reserved.
+            </p>
+            <div
+              className="flex items-center gap-1 text-xs"
+              style={{ color: 'var(--neutral-on-background-weak, #9ca3af)' }}
+            >
+              <span>Crafted with</span>
+              <span
+                className="inline-block animate-pulse"
+                style={{ color: 'var(--accent-background-strong, #ef4444)' }}
+              >
+                ♥
+              </span>
+              <span>in India</span>
+            </div>
           </div>
-        </div>
+        </AnimatedContainer>
       </div>
     </footer>
   );
