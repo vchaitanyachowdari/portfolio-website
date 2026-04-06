@@ -1,8 +1,8 @@
 import { baseURL } from "@/app/resources";
 
 export const seoConfig = {
-  title: "V Chaitanya Chowdari | AI Generalist, Researcher, Builder & Founder",
-  description: "Chaitanya Chowdari – AI Generalist, Researcher & Builder. Founder of VC AI Creator and Commonly Technologies. Explore work, blog, gallery, resources, and services. Hire for AI automation, LLM integration, web development, and consulting in India.",
+  title: "V Chaitanya Chowdari | Enterprise AI Automation Specialist & India's Youngest AI Systems Builder",
+  description: "V Chaitanya Chowdari — Enterprise AI Automation Specialist & India's Youngest AI Systems Builder. I design and deploy multi-agent AI systems, intelligent automation pipelines, and LLM-powered workflows for enterprises. Founder of VC AI Creator & Commonly Technologies. Based in Davangere, Karnataka, India.",
   keywords: [
     // Cluster 1 – Identity / Brand
     "Chaitanya Chowdari",
@@ -13,113 +13,111 @@ export const seoConfig = {
     "Commonly Technologies founder",
     "VC Groups chairman",
 
-    // Cluster 2 – Role / Expertise
-    "AI Generalist",
-    "AI Researcher",
-    "AI Generalist India",
-    "AI researcher India",
-    "AI automation expert",
-    "AI automation expert India",
-    "AI automation expert Davangere",
-    "LLM trainer India",
-    "LLM Retrainer",
+    // Cluster 2 – Primary Role / Core Positioning
+    "Enterprise AI Automation Specialist",
+    "Enterprise AI Automation Specialist India",
+    "India's Youngest AI Systems Builder",
+    "youngest AI builder India",
+    "AI Systems Builder India",
+    "AI Automation Expert India",
+    "AI Automation Specialist",
+    "Enterprise AI Specialist",
+    "AI Systems Architect India",
+    "AI Automation Engineer India",
+
+    // Cluster 3 – Multi-Agent & LLM Expertise
+    "multi-agent AI systems India",
     "AI agent builder India",
-    "prompt engineer India",
-    "GEO Expert",
-    "GEO expert India",
+    "LLM integration specialist India",
+    "AI pipeline architect",
+    "autonomous AI agent developer",
+    "LangChain developer India",
+    "OpenAI API developer India",
+    "LLM orchestration expert",
+    "AI workflow automation expert",
+    "intelligent automation India",
+
+    // Cluster 4 – Tools & Platforms
     "n8n expert India",
-    "make.com automation expert",
-    "Zapier automation freelancer India",
-    "AI influencer India",
-    "AI Builder",
-    "AI Expert",
-    "AI Model Training",
-    "AI Trainer",
+    "n8n automation specialist",
+    "Make.com expert India",
+    "Zapier expert India",
+    "no-code AI automation India",
+    "low-code AI workflows",
+    "AI automation tools",
+    "GEO Expert India",
+    "Generative Engine Optimization",
+    "prompt engineer India",
+    "AI Model Training India",
 
-    // Cluster 3 – Service / Hire
-    "hire AI automation expert India",
+    // Cluster 5 – Service / Hire
+    "hire AI automation specialist India",
     "AI integration services India",
-    "web development services Davangere",
-    "AI consulting services India",
-    "SEO optimization with AI India",
+    "enterprise AI consulting India",
+    "AI automation services Davangere",
     "AI agent development India",
-    "LLM integration services",
-    "no code automation expert",
-    "AI workflow automation freelancer",
-    "custom AI solutions India",
+    "custom AI systems India",
+    "AI strategy consultant India",
     "web developer India",
-    "UI/UX designer",
-    "React developer",
-    "Next.js developer",
-    "TypeScript developer",
-    "frontend developer",
-    "backend developer",
-    "software engineer",
-    "full-stack developer India",
-    "Marketing Expert",
-    "Meta Official Partner",
-    "Influencer",
+    "Next.js developer India",
+    "full-stack AI developer India",
 
-    // Cluster 4 – Questions / FAQ
+    // Cluster 6 – Questions / FAQ
+    "who is India's youngest AI builder",
+    "what is enterprise AI automation",
+    "V Chaitanya Chowdari portfolio",
+    "Chaitanya Chowdari LinkedIn",
     "what does Chaitanya Chowdari do",
     "who is VC AI Creator founder",
     "how to contact Chaitanya Chowdari",
-    "Chaitanya Chowdari LinkedIn",
-    "Chaitanya Chowdari portfolio",
-    "what is VC AI Creator",
-    "what is Commonly Technologies",
-    "what services does chowdari.in offer",
     "Chaitanya Chowdari blog",
     "Chaitanya Chowdari GitHub",
+    "what is VC AI Creator",
+    "what is Commonly Technologies",
 
-    // Cluster 5 – Content / Resources
-    "AI automation blog India",
-    "AI generalist blog",
-    "LLM news India",
+    // Cluster 7 – Content / Resources
+    "enterprise AI automation blog India",
+    "AI systems architecture blog",
+    "LLM engineering blog India",
     "AI tools resources 2025",
     "how to build AI agents",
-    "prompt engineering tutorials",
+    "multi-agent system design",
     "n8n automation tutorials",
+    "AI automation case studies India",
     "AI research India",
-    "work blog",
-    "gallery resources",
-    "resources services",
-    "work blog gallery",
-    "blog gallery resources",
-    "linkedin work",
   ],
 
   openGraph: {
     type: "website",
     locale: "en_US",
     url: baseURL,
-    siteName: "V Chaitanya Chowdari - Portfolio Website",
-    title: "V Chaitanya Chowdari - Full Stack Developer & Designer",
-    description: "Professional Portfolio showcasing AI Automation, AI Ad's Making, AI Model Training, AI Development, Researcher, full-stack development, UI/UX design, and innovative web solutions. Explore my projects, blog posts, and technical expertise.",
+    siteName: "V Chaitanya Chowdari — Enterprise AI Automation Specialist",
+    title: "V Chaitanya Chowdari | Enterprise AI Automation Specialist & India's Youngest AI Systems Builder",
+    description: "I design and deploy production-grade multi-agent AI systems, intelligent automation pipelines, and LLM-powered workflows that help enterprises scale 10x faster. Founder of VC AI Creator & Commonly Technologies.",
     images: [
       {
         url: `${baseURL}/images/og/home.jpg`,
         width: 1200,
         height: 630,
-        alt: "Portfolio Homepage",
+        alt: "V Chaitanya Chowdari — Enterprise AI Automation Specialist",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio - Full Stack Developer & Designer",
-    description: "Professional portfolio showcasing full-stack development, UI/UX design, and innovative web solutions.",
+    title: "V Chaitanya Chowdari | India's Youngest AI Systems Builder",
+    description: "Enterprise AI Automation Specialist. I build multi-agent AI systems, intelligent automation pipelines & LLM-powered workflows for enterprises. Founder @VCAICreator.",
     images: [`${baseURL}/images/og/home.jpg`],
-    creator: "@vchaitanyacho",
+    creator: "@vchaitanyachai",
   },
 
   structuredData: {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "V Chaitanya Chowdari",
-    "jobTitle": "AI Generalist, AI Researcher & Builder",
-    "description": "Chaitanya Chowdari is an AI Generalist, Researcher, and Builder from Davangere, Karnataka, India. Founder of VC AI Creator and Commonly Technologies. Expert in AI automation, LLM training, n8n, Make.com, Zapier, and full-stack web development.",
+    "jobTitle": "Enterprise AI Automation Specialist & India's Youngest AI Systems Builder",
+    "description": "V Chaitanya Chowdari is an Enterprise AI Automation Specialist and India's Youngest AI Systems Builder from Davangere, Karnataka, India. He designs and deploys production-grade multi-agent AI systems, LLM-powered automation pipelines, and intelligent workflows for enterprises. Founder of VC AI Creator and Commonly Technologies.",
     "url": baseURL,
     "sameAs": [
       "https://github.com/vchaitanyachowdari",
@@ -127,31 +125,33 @@ export const seoConfig = {
       "https://x.com/vchaitanyachai"
     ],
     "knowsAbout": [
-      "AI Generalist",
-      "AI Research",
-      "AI Automation",
-      "LLM Training",
-      "AI Agent Development",
-      "Prompt Engineering",
-      "GEO (Generative Engine Optimization)",
+      "Enterprise AI Automation",
+      "Multi-Agent AI Systems",
+      "LLM Integration & Orchestration",
+      "AI Systems Architecture",
+      "Intelligent Workflow Automation",
       "n8n Automation",
       "Make.com Automation",
       "Zapier Automation",
-      "Web Development",
-      "Full Stack Development",
-      "React",
+      "GEO (Generative Engine Optimization)",
+      "Prompt Engineering",
+      "AI Agent Development",
+      "LangChain",
+      "OpenAI API",
+      "Google Gemini",
+      "AI Strategy Consulting",
+      "Full-Stack AI Development",
       "Next.js",
+      "React",
       "TypeScript",
-      "JavaScript",
-      "UI/UX Design",
+      "Python",
       "Digital Marketing",
       "SEO Optimization",
-      "AI Model Training",
       "Business Strategy"
     ],
     "hasOccupation": {
       "@type": "Occupation",
-      "name": "AI Generalist & Founder",
+      "name": "Enterprise AI Automation Specialist",
       "occupationLocation": {
         "@type": "Place",
         "name": "Davangere, Karnataka, India"
@@ -166,6 +166,10 @@ export const seoConfig = {
       {
         "@type": "Organization",
         "name": "Commonly Technologies"
+      },
+      {
+        "@type": "Organization",
+        "name": "VC Groups"
       }
     ]
   },
@@ -176,10 +180,18 @@ export const seoConfig = {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What does Chaitanya Chowdari do?",
+        "name": "Who is V Chaitanya Chowdari?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "V Chaitanya Chowdari is an AI Generalist, Researcher, and Builder based in Davangere, Karnataka, India. He helps businesses leverage AI automation, build AI agents, integrate LLMs, and develop web applications. He is the Founder and CEO of VC AI Creator and Commonly Technologies."
+          "text": "V Chaitanya Chowdari is an Enterprise AI Automation Specialist and India's Youngest AI Systems Builder based in Davangere, Karnataka, India. He designs and deploys production-grade multi-agent AI systems, LLM-powered automation pipelines, and intelligent workflows for enterprises. He is the Founder & CEO of VC AI Creator and Commonly Technologies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is Chaitanya called India's Youngest AI Systems Builder?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chaitanya began building production-grade AI systems, autonomous agents, and enterprise automation pipelines at a very young age. He founded VC AI Creator in 2025, scaled it to ₹2.1 Crore valuation, partnered with 30+ businesses, and delivered real-world AI systems — making him arguably India's youngest builder operating at enterprise scale."
         }
       },
       {
@@ -187,7 +199,7 @@ export const seoConfig = {
         "name": "What services does Chaitanya Chowdari offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Chaitanya offers AI automation, AI agent development, LLM integration, web development, mobile app development, UI/UX design, SEO optimization, AI consulting, and digital marketing services through his portfolio at chowdari.in."
+          "text": "Chaitanya offers enterprise AI automation, multi-agent system design, LLM integration, intelligent workflow automation (n8n, Make.com, Zapier), AI strategy consulting, GEO (Generative Engine Optimization), and full-stack AI application development through VC AI Creator and Commonly Technologies."
         }
       },
       {
@@ -200,10 +212,18 @@ export const seoConfig = {
       },
       {
         "@type": "Question",
+        "name": "What AI systems has Chaitanya built?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Chaitanya has built deep research agents, SEO audit automation systems, social media content pipelines, email intelligence agents, lead qualification bots, customer support AI, and multi-agent orchestration frameworks — all running in production for real businesses."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "What is VC AI Creator?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VC AI Creator is an AI-driven startup founded by Chaitanya Chowdari in 2025. It provides AI automation, AI agent development, digital marketing, GEO, and consultancy services to businesses. It grew from ₹2.5 Lakhs investment to ₹2.1 Crore valuation within its first phase."
+          "text": "VC AI Creator is an AI-driven startup founded by Chaitanya Chowdari in 2025. It provides enterprise AI automation, multi-agent system development, digital marketing, GEO, and AI consultancy services to businesses. It grew from ₹2.5 Lakhs investment to ₹2.1 Crore valuation within its first operating phase."
         }
       },
       {
@@ -211,23 +231,7 @@ export const seoConfig = {
         "name": "What is GEO (Generative Engine Optimization)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GEO (Generative Engine Optimization) is the practice of optimizing content to rank in AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews. Chaitanya Chowdari is a GEO Expert helping businesses get found in AI-driven search results."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What automation tools does Chaitanya Chowdari use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Chaitanya is proficient in n8n, Make.com (formerly Integromat), and Zapier for building no-code and low-code automation workflows. He also builds custom AI agents using LangChain and LLMs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where can I read Chaitanya Chowdari's blog?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Chaitanya writes about AI, automation, and digital strategies on his blog at chowdari.in/blog. Topics include AI research, prompt engineering, GEO, and business insights."
+          "text": "GEO (Generative Engine Optimization) is the practice of optimizing content to rank in AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews. Chaitanya Chowdari is a pioneer in GEO, helping businesses get discovered in the AI search era."
         }
       },
       {
@@ -235,16 +239,16 @@ export const seoConfig = {
         "name": "Is Chaitanya Chowdari available for freelance or consulting?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Chaitanya Chowdari is available for freelance projects and consulting in AI automation, AI agent development, web development, digital marketing, and SEO/GEO optimization. Contact via chowdari.in/contact or book a call at cal.com/vcaicreator/discovery-call."
+          "text": "Yes. Chaitanya Chowdari is available for enterprise AI automation consulting, multi-agent system architecture, AI agent development, LLM integration, web development, and SEO/GEO optimization. Contact via chowdari.in/contact or book a call at cal.com/vcaicreator/discovery-call."
         }
       }
     ]
   },
 
   aiCrawlerMeta: {
-    "ai-content-declaration": "This portfolio contains original work and projects by the developer",
+    "ai-content-declaration": "This portfolio contains original work and AI systems built by V Chaitanya Chowdari — Enterprise AI Automation Specialist & India's Youngest AI Systems Builder",
     "content-type": "professional-portfolio",
-    "content-category": "technology,web-development,design",
+    "content-category": "artificial-intelligence,automation,enterprise-ai,ai-systems",
     "content-language": "en",
     "content-freshness": "regularly-updated",
     "crawl-priority": "high",

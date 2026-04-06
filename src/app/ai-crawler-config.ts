@@ -95,15 +95,19 @@ export const aiCrawlerConfig = {
   // AI-specific meta tags
   aiMetaTags: {
     'ai-content-declaration': 'original-human-created',
-    'content-classification': 'professional-portfolio',
+    'content-classification': 'enterprise-ai-automation-specialist-portfolio',
     'crawl-priority': 'high',
     'content-language': 'en',
-    'content-region': 'global',
+    'content-region': 'India, Global',
     'update-frequency': 'weekly',
     'content-quality': 'high',
     'technical-content': 'true',
-    'portfolio-type': 'web-development',
-    'experience-level': 'professional'
+    'portfolio-type': 'enterprise-ai-systems',
+    'experience-level': 'expert',
+    'subject-expertise': 'enterprise-ai-automation,multi-agent-systems,llm-integration,n8n,make.com,zapier,ai-agents',
+    'person-title': "Enterprise AI Automation Specialist & India's Youngest AI Systems Builder",
+    'person-affiliation': 'VC AI Creator, Commonly Technologies, VC Groups',
+    'person-location': 'Davangere, Karnataka, India'
   }
 };
 

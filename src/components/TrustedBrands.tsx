@@ -93,9 +93,9 @@ export function TrustedBrands() {
             <div className={styles.fadeRight} />
 
             <div className={styles.header}>
-                <span className={styles.eyebrow}>Trusted by &amp; worked with</span>
+                <span className={styles.eyebrow}>Enterprise AI Stack &amp; Partners</span>
                 <p className={styles.sub}>
-                    Tools, platforms, and organisations I&rsquo;ve partnered with across 30+ projects.
+                    The tools, platforms, and organisations powering 30+ enterprise AI systems I&rsquo;ve built and shipped.
                 </p>
             </div>
 
