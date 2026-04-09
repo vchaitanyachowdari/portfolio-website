@@ -12,7 +12,7 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Silence multi-lockfile workspace root warning
-  outputFileTracingRoot: path.join(__dirname, "../../../"),
+  outputFileTracingRoot: path.join(__dirname, "../../"),
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   sassOptions: {
