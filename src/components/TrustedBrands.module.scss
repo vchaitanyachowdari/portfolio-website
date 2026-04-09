@@ -1,0 +1,178 @@
+/* ======================================================
+   TrustedBrands – infinite marquee section
+   ====================================================== */
+
+/* Section wrapper */
+.section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 3rem 0 2rem;
+}
+
+/* Gradient fade masks on left & right edges */
+.fadeLeft,
+.fadeRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fadeLeft {
+    left: 0;
+    background: linear-gradient(to right, var(--page-background, #0a0a0a) 0%, transparent 100%);
+}
+
+.fadeRight {
+    right: 0;
+    background: linear-gradient(to left, var(--page-background, #0a0a0a) 0%, transparent 100%);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-on-background-medium);
+    margin-bottom: 0.4rem;
+}
+
+.sub {
+    font-size: 0.88rem;
+    color: var(--neutral-on-background-weak);
+    margin: 0.4rem auto 0;
+    max-width: 480px;
+    line-height: 1.5;
+}
+
+/* Two-row wrapper */
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ---- Sliding track ---- */
+.track {
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes marquee-forward {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.strip {
+    display: flex;
+    width: max-content;
+    animation: marquee-forward linear infinite;
+    will-change: transform;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+
+    &.reverse {
+        animation-name: marquee-reverse;
+    }
+}
+
+/* ---- Individual brand card ---- */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    height: 64px;
+    margin: 0 0.6rem;
+    padding: 0 1.2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+
+    &:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateY(-2px);
+    }
+}
+
+/* Logo image */
+.logo {
+    max-height: 32px;
+    max-width: 100px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.65;
+    transition: opacity 0.2s;
+
+    .card:hover & {
+        opacity: 1;
+    }
+}
+
+/* Text badge fallback */
+.label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--neutral-on-background-medium);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    .card:hover & {
+        color: var(--brand-on-background-strong);
+    }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+
+    .fadeLeft,
+    .fadeRight {
+        width: 60px;
+    }
+
+    .card {
+        min-width: 110px;
+        height: 52px;
+        padding: 0 0.9rem;
+    }
+
+    .logo {
+        max-height: 24px;
+        max-width: 80px;
+    }
+}

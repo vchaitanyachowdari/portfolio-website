@@ -116,7 +116,7 @@ const ServicesPage = () => {
     <Column maxWidth="l" gap="xl" horizontal="center">
       <Column fillWidth paddingY="24" gap="m">
         <Column maxWidth="s">
-          <Heading variant="display-strong-l">Our Services</Heading>
+          <Heading as="h1" variant="display-strong-l">Our Services – Chaitanya Chowdari</Heading>
           <Text variant="heading-default-xl" onBackground="neutral-weak">
             We offer a comprehensive range of services designed to meet your project needs, specializing in various aspects of software development and digital solutions.
           </Text>

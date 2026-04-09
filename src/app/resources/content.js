@@ -6,11 +6,11 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Generlist, AI Rsearcher, Builder",
+  role: "Enterprise AI Automation Specialist · India's Youngest AI Systems Builder",
   avatar: "/images/avatar.jpg",
   email: "vchaitanya@chowdari.in",
   location: "Asia/Kolkata", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Kannada", "Hindi", "Telugu" ], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Kannada", "Hindi", "Telugu"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -18,8 +18,9 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I write about enterprise AI automation, intelligent systems architecture, and
+      how AI is reshaping the way businesses operate at scale. Join 500+ founders,
+      operators, and engineers who read my insights.
     </>
   ),
 };
@@ -53,27 +54,63 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `V Chaitanya Chowdari | Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between Technology and Innovation</>,
+  title: `V Chaitanya Chowdari | Enterprise AI Automation Specialist & India's Youngest AI Systems Builder`,
+  description: `V Chaitanya Chowdari – Enterprise AI Automation Specialist & India's Youngest AI Systems Builder. I design and deploy intelligent AI systems, multi-agent architectures, and end-to-end automation pipelines that help businesses scale 10x faster.`,
+  headline: <>India&apos;s Youngest AI Systems Builder. Building Intelligent Machines That Work While You Sleep.</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Portfolio Website</strong></>,
+    title: <>&ldquo;India&apos;s Youngest AI Systems Builder&rdquo; — <strong className="ml-4">Founder, VC AI Creator</strong></>,
     href: "https://chowdari.in",
   },
   subline: (
     <>
-      I&apos;m V Chaitanya Chowdari, a AI Generalist at VC AI Creator, where I craft intuitive
-      <br /> user needs. After hours, I build my own projects.
+      I&apos;m V Chaitanya Chowdari — an <strong>Enterprise AI Automation Specialist</strong> and
+      the founder of VC AI Creator &amp; Commonly Technologies. I architect production-grade AI systems,
+      multi-agent pipelines, and intelligent automation workflows that eliminate manual bottlenecks and
+      unlock 10x operational efficiency for businesses across India and beyond.
     </>
   ),
+  faq: [
+    {
+      question: "Who is V Chaitanya Chowdari?",
+      answer: "V Chaitanya Chowdari is India's Youngest AI Systems Builder and an Enterprise AI Automation Specialist. He architects production-grade multi-agent AI systems, autonomous pipelines, and LLM-powered automation for businesses. He is also the Founder & CEO of VC AI Creator and Commonly Technologies.",
+    },
+    {
+      question: "What does 'Enterprise AI Automation Specialist' mean?",
+      answer: "An Enterprise AI Automation Specialist designs, builds, and deploys end-to-end AI-powered systems that automate complex business operations. Chaitanya specializes in multi-agent architectures, LLM integration, intelligent workflow automation using n8n, Make.com, and custom-built AI agents — all at enterprise scale.",
+    },
+    {
+      question: "Why is Chaitanya called 'India's Youngest AI Systems Builder'?",
+      answer: "Chaitanya began building production-grade AI systems, autonomous agents, and enterprise automation pipelines at a very young age. He founded VC AI Creator in 2025, scaled it to ₹2.1 Crore valuation, partnered with 30+ businesses, and delivered real-world AI systems — making him arguably India's youngest builder operating at this scale.",
+    },
+    {
+      question: "What AI systems has Chaitanya built?",
+      answer: "Chaitanya has built deep research agents, SEO audit automation systems, social media content pipelines, email intelligence agents, lead qualification bots, customer support AI, and multi-agent orchestration frameworks — all running in production for real businesses.",
+    },
+    {
+      question: "What services does Chaitanya Chowdari offer?",
+      answer: "Chaitanya offers enterprise AI automation, multi-agent system design, LLM integration, intelligent workflow automation (n8n, Make.com, Zapier), AI strategy consulting, GEO (Generative Engine Optimization), and full-stack AI application development.",
+    },
+    {
+      question: "How can I hire or contact Chaitanya Chowdari?",
+      answer: "You can book a discovery call at cal.com/vcaicreator/discovery-call, email vchaitanya@chowdari.in, or connect on LinkedIn. Visit the Contact page for all options.",
+    },
+    {
+      question: "What is VC AI Creator?",
+      answer: "VC AI Creator is an AI-driven startup founded by Chaitanya Chowdari in 2025. We deliver enterprise AI automation, intelligent agent systems, digital marketing, GEO, and AI consultancy to businesses across India. We scaled from ₹2.5L investment to ₹2.1 Crore valuation in our first phase.",
+    },
+    {
+      question: "What is GEO (Generative Engine Optimization)?",
+      answer: "GEO is the practice of optimizing content to appear in AI-powered search results on platforms like ChatGPT, Perplexity, and Google AI Overviews. Chaitanya specializes in GEO strategies that help brands get discovered in the age of AI search.",
+    },
+  ],
 };
 
 const about = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: `V Chaitanya Chowdari – Enterprise AI Automation Specialist & India's Youngest AI Systems Builder`,
+  description: `Meet V Chaitanya Chowdari – Enterprise AI Automation Specialist, India's Youngest AI Systems Builder, and Founder of VC AI Creator and Commonly Technologies. Based in Davangere, Karnataka, India. Expert in multi-agent AI systems, n8n, Make.com, LLM orchestration, and production AI pipelines.`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -90,10 +127,16 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am an AI and automation enthusiast with over 1 year of hands-on experience across domains
-        like artificial intelligence, automation, web development, and digital marketing. My technical 
-        toolkit includes programming languages such as C, C++, Java, and Python, enabling me to 
-        build smart systems and scalable digital solutions.
+        I&apos;m V Chaitanya Chowdari — Enterprise AI Automation Specialist and India&apos;s Youngest
+        AI Systems Builder. I design and deploy production-grade AI systems, multi-agent architectures,
+        and intelligent automation pipelines that help businesses eliminate manual work and scale faster.
+        <br /><br />
+        At 20, I founded VC AI Creator and Commonly Technologies — scaling from ₹2.5L investment to
+        ₹2.1 Crore valuation in our first phase. I have partnered with 30+ companies and delivered
+        real-world AI systems that run autonomously, make decisions, and generate measurable business results.
+        <br /><br />
+        My technical stack spans Python, LangChain, n8n, Make.com, Zapier, OpenAI APIs, Gemini, and full-stack
+        web development. I don&apos;t just consult on AI — I build it, ship it, and make it work in production.
       </>
     ),
   },
@@ -101,60 +144,31 @@ const about = {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
-        {
-          company: "Robotronix and Scalability Technology",
-          timeframe: "Aug 2025 – Present",
-          role: "Co-Founder - Lead - AI/Full Stack Development",
-          achievements: [
-            <>
-              
-            </>,
-          ],
-          images: [
-            // optional: leave the array empty if you don't want to display images
-            {
-              src: "",
-              alt: "",
-              width: 16,
-              height: 9,
-            },
-          ],
-        },
       {
-        company: "VC AI Marketing",
-        timeframe: "July 2025 – Present",
-        role: "Founder and CEO",
+        company: "Commonly Technologies",
+        timeframe: "Feb 2026 - Present",
+        role: "Founder & CEO",
         achievements: [
           <>
-            Partnered with 15+ companies, building and maintaining long-term strategic relationships.
+            Architected and deployed enterprise-grade AI automation systems for 10+ strategic partner companies.
           </>,
           <>
-            Scaled from ₹3.5 Lakhs investment to ₹1.8 Crore valuation within the first phase of operations (by Sep 2025).
+            Built a product studio that ships AI-powered SaaS tools, intelligent agents, and automation frameworks for the Indian market.
           </>,
           <>
-            Built a team of skilled professionals and fostered a strong culture of innovation and accountability.
-          </>,
-          <>
-            Achieved 100% client retention rate in the first year, with repeat engagements from multiple partners.
-          </>,
-          <>
-            Secured recognition as an emerging AI driven startup, gaining visibility among industry peers and professionals.
-          </>,
-          <>
-            Implemented cost effective growth strategies, achieving profitability without external funding.
-          </>,
-          <>
-            Developed a scalable business model that enables fast expansion into new domains and markets.
-          </>,
-          <>
-            Built a strong digital presence across LinkedIn, Instagram, and YouTube, growing an engaged audience and brand trust.
+            Established Commonly Technologies as a leader in AI-native product development and enterprise digital transformation.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/company/vcaicreator/vcaicreator-01.png",
-            alt: "Pitch Disc Slides",
+            src: "/images/company/commonlytechnologies/01.png",
+            alt: "Commonly Technologies",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/company/commonlytechnologies/02.png",
+            alt: "Commonly Technologies",
             width: 16,
             height: 9,
           },
@@ -163,39 +177,46 @@ const about = {
       {
         company: "VC AI Creator",
         timeframe: "2025 - Present",
-        role: "Founder and CEO",
+        role: "Founder & CEO — Enterprise AI Automation Specialist",
         achievements: [
           <>
-            Partnered with 15+ companies, building and maintaining long-term strategic relationships.
+            Scaled from ₹2.5 Lakhs seed investment to ₹2.1 Crore valuation within the first operating phase — one of India&apos;s fastest AI startup trajectories at this age.
           </>,
           <>
-            Scaled from ₹1.5 Lakhs investment to ₹1 Crore valuation within the first phase of operations (by Aug 2025).
+            Designed and delivered 15+ production AI automation systems including deep research agents, lead qualification pipelines, social media automation, email intelligence bots, and customer support AI.
           </>,
           <>
-            Built a team of skilled professionals and fostered a strong culture of innovation and accountability.
+            Partnered with 30+ companies — from early-stage startups to SMBs — delivering enterprise-grade AI systems that eliminated manual bottlenecks and drove measurable ROI.
           </>,
           <>
-            Successfully delivered AI driven automation and digital solutions that solved critical business challenges for clients.
+            Built and led a cross-functional team of AI engineers, developers, and marketers. Maintained 100% client retention rate in Year 1 with repeat engagements from multiple partners.
           </>,
           <>
-            Expanded portfolio to include AI agents, web applications, digital marketing, GEO, and consultancy services broadening market reach.
+            Expanded into GEO (Generative Engine Optimization), helping brands appear in ChatGPT, Perplexity, and Google AI Overviews — a first-mover advantage in AI-native search.
           </>,
           <>
-            Achieved 100% client retention rate in the first year, with repeat engagements from multiple partners.
-          </>,
-          <>
-            Secured recognition as an emerging AI driven startup, gaining visibility among industry peers and professionals.
+            Recognized as an emerging force in India&apos;s enterprise AI ecosystem, gaining visibility among industry leaders, investors, and AI practitioners.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/company/vcaicreator/vcaicreator-01.png",
-            alt: "Pitch Disc Slides",
+            alt: "VC AI Creator — Enterprise AI Automation",
             width: 16,
             height: 9,
           },
         ],
+      },
+      {
+        company: "VC Groups",
+        timeframe: "Jul 2025 - Present",
+        role: "Chairman",
+        achievements: [
+          <>
+            Overseeing the strategic direction and growth of the VC Groups umbrella — a portfolio of AI-first businesses driving automation and digital transformation across India.
+          </>,
+        ],
+        images: [],
       },
       {
         company: "Physics Mindboggler",
@@ -203,13 +224,13 @@ const about = {
         role: "Business Development Executive",
         achievements: [
           <>
-            Spearheaded the development and maintenance of responsive web and mobile applications utilizing React.js and React Native, ensuring seamless user experiences across platforms.
+            Led development of responsive web and mobile applications using React.js and React Native, improving platform engagement for thousands of students.
           </>,
           <>
-            Collaborated cross-functionally with designers, product managers, and fellow developers to deliver high-quality products that meet client needs and market demands.
+            Collaborated cross-functionally with product, design, and engineering teams to deliver high-quality digital learning products.
           </>,
           <>
-            Implemented responsive design principles and ensured cross-browser compatibility to enhance accessibility and user engagement.
+            Implemented responsive design principles ensuring seamless cross-browser and cross-device user experiences.
           </>,
         ],
         images: [],
@@ -218,173 +239,132 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education & Certifications",
     institutions: [
       {
-          name: "100x Engineering",
-          description: <>Learing and Implimenting Generative AI</>,
+        name: "Indian Institute of Technology, Indore",
+        description: <>Professional Certificate Program in Artificial Intelligence & Data Science</>,
       },
       {
-        name: "Indian Institute of Technology, Indore",
-        description: <>Professional Certificate Program in Artificial Intelligence and Data Science</>,
+        name: "100x Engineering",
+        description: <>Advanced Generative AI Engineering — building and deploying production LLM systems</>,
       },
       {
         name: "Bapuji Institute of Engineering and Technology",
-        description: <>Studing Computer Science and Engineering</>,
+        description: <>B.E. in Computer Science & Engineering (Pursuing)</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical Skills",
+    title: "Technical Skills & AI Stack",
     skills: [
-       {
-        title: "C++",
-        description: <>Proficient in writing optimized, object-oriented C++ code for system-level programming, algorithms, and competitive coding.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
       {
-        title: "Python",
-        description: <>Skilled in using Python for data analysis, machine learning, automation, and building AI-powered applications.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "HTML 5",
-        description: <>Experienced in crafting semantic, responsive HTML5 layouts for modern web applications with accessibility and SEO in mind.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "CSS",
-        description: <>Expertise in styling UI using CSS3, Flexbox, Grid, and animations to create sleek, responsive designs across devices.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "Java",
-        description: <>Familiar with Java for building robust backend systems, OOP design, and Android app development.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "My SQL",
-        description: <>Skilled in designing and managing relational databases using MySQL, including complex queries, joins, and schema optimization.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "Git",
-        description: <>Experienced in using Git for version control, collaborative development, and maintaining clean code history.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "GitHub",
-        description: <>Proficient in leveraging GitHub for code hosting, project management, and CI/CD workflows.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
-      },
-      {
-        title: "Prompt Engineerng",
-        description: <>Skilled in designing, refining, and optimizing prompts for LLMs (e.g., GPT, Gemini) to deliver accurate, context-aware responses and automate tasks.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "n8n — AI Workflow Orchestration",
+        description: <>Expert-level proficiency in building end-to-end AI automation pipelines in n8n — integrating LLMs, APIs, webhooks, RAG systems, and multi-agent logic flows at enterprise scale.</>,
         images: [
-            {
-                src: "/images/skills/promptengineering/promptformula.png",
-                alt: "Prompt Engineering Formula",
-                width: 16,
-                height: 9,
+          {
+            src: "/images/skills/n8n/n8n-01.png",
+            alt: "Deep Research Agent",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/skills/n8n/n8n-02.png",
+            alt: "SEO Audit Report Generator",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/skills/n8n/n8n-03.png",
+            alt: "Social Media Content Automation",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/skills/n8n/n8n-04.png",
+            alt: "Email Intelligence Agent",
+            width: 16,
+            height: 9,
           },
         ],
       },
       {
-        title: "Make.com",
-        description: <>Proficient in using Make.com for building no-code/low-code automation workflows across apps.</>,
-        // optional: leave the array empty if you don't want to display images
-          images: [
-                   {
-                       src: "/images/skills/make/make-01.png",
-                       alt: "Sync Notion Databases to Google Calendar",
-                       width: 16,
-                       height: 9,
-                   },
-                   {
-                       src: "/images/skills/make/make-02.png",
-                       alt: "Email Automation",
-                       width: 16,
-                       height: 9,
-                   },
-                 ],
+        title: "AI Agent Development & Multi-Agent Systems",
+        description: <>Skilled in designing autonomous AI agents and multi-agent orchestration frameworks using LangChain, OpenAI, Gemini, and custom tool-use architectures. Specialized in agents for research, data extraction, lead qualification, and content generation.</>,
+        images: [],
       },
       {
-        title: "n8n",
-        description: <>Experienced in building end-to-end AI and automation pipelines using n8n, integrating APIs, webhooks, agents, and advanced logic flows.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "LLM Integration & Prompt Engineering",
+        description: <>Deep expertise in integrating OpenAI GPT, Google Gemini, Claude, and open-source LLMs into production applications. Advanced prompt engineering — crafting system prompts, chain-of-thought flows, and structured outputs for reliable enterprise-grade AI outputs.</>,
         images: [
-                 {
-                     src: "/images/skills/n8n/n8n-01.png",
-                     alt: "Deap Research Agent",
-                     width: 16,
-                     height: 9,
-                 },
-                 {
-                     src: "/images/skills/n8n/n8n-02.png",
-                     alt: "SEO Audit Report Generater",
-                     width: 16,
-                     height: 9,
-                 },
-                 {
-                     src: "/images/skills/n8n/n8n-03.png",
-                     alt: "Social Media Content Automation",
-                     width: 16,
-                     height: 9,
-                 },
-                 {
-                     src: "/images/skills/n8n/n8n-04.png",
-                     alt: "Email Summering Agent",
-                     width: 16,
-                     height: 9,
-                 },
-               ],
+          {
+            src: "/images/skills/promptengineering/promptformula.png",
+            alt: "Prompt Engineering Formula",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
-        title: "Zapier",
-        description: <>Able to automate multi-step workflows using Zapier, integrating tools like Google Sheets, Gmail, Notion, and CRMs for lead gen and email tasks.</>,
-        // optional: leave the array empty if you don't want to display images
-          images: [
-                   {
-                       src: "/images/skills/zapier/zapier-01.png",
-                       alt: "Email Automation",
-                       width: 16,
-                       height: 9,
-                   },
-                   {
-                       src: "/images/skills/zapier/zapier-01.png",
-                       alt: "Lead Generation",
-                       width: 16,
-                       height: 9,
-                   },
-                 ],
-       },
-      {
-        title: "AI Agents",
-        description: <>Skilled in designing and deploying AI agents for research, customer support, data extraction, and intelligent automation using LLMs and tools like LangChain.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
+        title: "Make.com (Integromat)",
+        description: <>Proficient in building complex, multi-step automation scenarios on Make.com — connecting CRMs, ERPs, marketing tools, databases, and AI APIs for zero-touch business operations.</>,
+        images: [
+          {
+            src: "/images/skills/make/make-01.png",
+            alt: "Sync Notion Databases to Google Calendar",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/skills/make/make-02.png",
+            alt: "Email Automation Pipeline",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
-        title: "v0",
-        description: <>Proficient in using Vercel&apos;s v0 to rapidly prototype frontend UIs using AI-powered generation and Tailwind CSS integration.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
+        title: "Zapier Automation",
+        description: <>Expert in designing Zapier workflows that automate multi-step business processes — integrating Google Workspace, CRMs, marketing platforms, and lead generation systems for high-volume, low-touch operations.</>,
+        images: [
+          {
+            src: "/images/skills/zapier/zapier-01.png",
+            alt: "Email Automation Workflow",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
-        title: "Lovable",
-        description: <>Experience using Lovable for AI-powered content generation, idea validation, and business exploration tools..</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [ ],
+        title: "Python",
+        description: <>Advanced Python for AI/ML pipelines, data processing, API development, custom automation scripts, and LLM-powered application backends.</>,
+        images: [],
+      },
+      {
+        title: "GEO — Generative Engine Optimization",
+        description: <>Pioneer in GEO — optimizing content and digital presence to appear in AI-powered search engines like ChatGPT, Perplexity, and Google AI Overviews. First-mover expertise in helping brands capture the AI search revolution.</>,
+        images: [],
+      },
+      {
+        title: "Full-Stack Development (Next.js / React)",
+        description: <>Production-grade Next.js and React applications with TypeScript, Tailwind CSS, and modern architecture patterns. Specialized in building AI-native web applications that integrate directly with LLM backends.</>,
+        images: [],
+      },
+      {
+        title: "C++ & Data Structures",
+        description: <>Proficient in optimized, object-oriented C++ for system-level programming, algorithm design, and competitive problem-solving. Strong foundation in DSA that underpins efficient AI system design.</>,
+        images: [],
+      },
+      {
+        title: "MySQL & Database Design",
+        description: <>Skilled in designing and managing relational databases using MySQL — including complex query optimization, schema design, and integration with AI data pipelines.</>,
+        images: [],
+      },
+      {
+        title: "v0 & Lovable (AI-Powered UI)",
+        description: <>Proficient in using Vercel&apos;s v0 and Lovable for rapid AI-powered frontend prototyping — dramatically compressing design-to-production timelines.</>,
+        images: [],
       },
     ],
   },
@@ -393,8 +373,8 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Chaitanya Chowdari's Blog – Enterprise AI Automation, Systems Architecture & AI Strategy",
+  description: `Deep dives into enterprise AI automation, multi-agent systems, LLM engineering, GEO, and AI business strategy by ${person.name} — India's Youngest AI Systems Builder.`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -402,15 +382,15 @@ const blog = {
 const services = {
   path: "/services",
   label: "Services",
-  title: `Services – ${person.name}`,
-  description: `Services offered by ${person.name}`,
+  title: `Enterprise AI Automation Services – ${person.name}`,
+  description: `Enterprise AI automation, multi-agent systems, LLM integration, intelligent workflow design, GEO, and AI strategy consulting by ${person.name} — India's Youngest AI Systems Builder.`,
 };
 
 const work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  title: `AI Systems & Automation Projects – ${person.name}`,
+  description: `Production AI systems, autonomous agents, and enterprise automation pipelines built by ${person.name} — India's Youngest AI Systems Builder.`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -418,8 +398,8 @@ const work = {
 const gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  title: `Gallery – ${person.name}`,
+  description: `A visual collection by ${person.name}`,
   // These are placeholder images, replace with your own
   images: [
     {
@@ -524,26 +504,17 @@ const gallery = {
 const resources = {
   path: "/resource",
   label: "Resources",
-  title: `Resources – ${person.name}`,
-  description: `Useful resources and tools curated by ${person.name}`,
+  title: `AI Automation Resources – ${person.name}`,
+  description: `Curated AI automation tools, frameworks, templates, and resources by ${person.name} — India's Youngest AI Systems Builder.`,
 };
 
-const store = {
-  path: "/store",
-  label: "Store",
-  title: `Store – ${person.name}`,
-  description: `Products and services offered by ${person.name}`,
-};
 
 const tools = {
   path: "/tools",
   label: "Tools",
-  title: `Tools – ${person.name}`,
-  description: `Custom-built tools by ${person.name}`,
+  title: `AI Tools – ${person.name}`,
+  description: `Custom-built AI tools and automation utilities by ${person.name}`,
 };
-
-// const resourcePages = [ ... ]; // This array is no longer used by the Resource page.
-// Content from here should be migrated to individual .mdx files in src/app/resource/posts/ if desired.
 
 /**
  * @typedef {Object} Testimonial
@@ -562,7 +533,7 @@ const testimonials = [
     company: "Capgemini",
     image: "/images/avatar.jpg",
     quote:
-      "I had the opportunity to work with Mahesh for two years. He is a talented and hardworking individual who is always eager to explore new technologies. His collaborative nature and knowledge-sharing attitude made him a valuable team member. I look forward to working with him again.",
+      "Working with Chaitanya was impressive — his depth of knowledge in AI automation is beyond his years. He built intelligent systems that our team couldn't have imagined implementing ourselves. A genuine AI systems builder.",
   },
   // Add more testimonials here
 ];
@@ -578,8 +549,6 @@ export {
   work,
   gallery,
   resources,
-  store,
   tools,
   testimonials,
 };
-

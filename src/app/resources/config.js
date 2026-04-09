@@ -10,7 +10,6 @@ const routes = {
   "/gallery": true,
   "/resource": true,
   "/services": true,
-  "/store": true,
   "/tools": true,
   "/contact": true,
   "/privacy": true,

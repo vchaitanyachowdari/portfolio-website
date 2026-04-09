@@ -1,0 +1,153 @@
+---
+title: "I Built an AI Agent That Does 4 Hours of Research in 10 Minutes — Here's Exactly How"
+summary: "Competitor research, lead enrichment, market analysis — I used to spend half my day on it. Then I built a research AI agent in n8n. Here's the exact setup, the tools I used, and how you can replicate it."
+image: "/images/og/home.jpg"
+publishedAt: "2025-09-15"
+tags: ["AI Agents", "n8n", "Research Automation", "AI Workflow", "GPT-4", "Productivity", "Business Automation"]
+---
+
+## Research Was Consuming My Business
+
+Every client project started the same way: hours of research. Who are the competitors? What are they pricing? What do customers complain about? What does industry news say about this space?
+
+Good research drives good strategy. Bad strategy driven by missing information costs clients money.
+
+But I was spending 3-4 hours per client just on research that an AI could do — if set up correctly.
+
+So I built a research agent. Here's the exact architecture.
+
+---
+
+## What the Agent Does
+
+When I provide a company name or industry, the agent:
+
+1. Searches the web for general information about the company
+2. Finds and summarizes recent news (last 90 days)
+3. Extracts competitor names and researches top 3
+4. Scrapes publicly available pricing and service data
+5. Identifies common customer complaints from review platforms
+6. Summarizes key market trends in the space
+7. Generates a structured research brief in Markdown
+8. Sends the brief to my Notion workspace and via WhatsApp
+
+Total time: **8–12 minutes** vs 3–4 hours manually.
+
+---
+
+## The Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| **n8n** | Workflow orchestration (the brain) |
+| **OpenAI GPT-4o** | Reasoning, summarization, writing |
+| **Serper.dev API** | Real-time web search |
+| **Firecrawl** | Website content extraction |
+| **Notion API** | Output destination |
+| **WhatsApp API** | Mobile delivery |
+
+---
+
+## The Workflow — Node by Node
+
+### Node 1: Trigger
+Manual trigger (I type in a company name) or webhook trigger from a form where clients submit research requests.
+
+### Node 2: Initial Web Search
+Using Serper.dev, search for:
+- `[company name] overview`
+- `[company name] news 2025`
+- `[company name] pricing`
+- `[company name] reviews`
+
+Returns top 10 results per search.
+
+### Node 3: Content Extraction
+For the top 3-5 URLs from the search results, Firecrawl fetches and cleans the page content. Raw HTML is stripped; only readable text remains.
+
+### Node 4: Competitor Extraction
+A GPT-4o call analyzes the extracted content and returns:
+- Top 3-5 competitors
+- Their positioning
+- Any pricing data visible
+
+### Node 5: Competitor Deep Dive (Loop)
+For each competitor, the workflow repeats Nodes 2-3 to gather similar data.
+
+### Node 6: Synthesis
+A final GPT-4o call receives all gathered data and generates:
+
+```
+# Research Brief: [Company Name]
+## Overview
+[2-paragraph company summary]
+
+## Recent News (Last 90 days)
+[Bulleted list of key events]
+
+## Competitor Landscape
+[Table: competitor, positioning, price range]
+
+## Customer Sentiment
+[Summary of themes from reviews]
+
+## Market Trends
+[3-5 key observations]
+
+## Strategic Observations
+[AI-generated analysis of opportunities and risks]
+```
+
+### Node 7: Output
+The brief is:
+- Created as a new page in my Notion Research Hub
+- Sent as a formatted WhatsApp message with a Notion link
+
+---
+
+## The Prompt That Powers the Synthesis
+
+The most important part is the final synthesis prompt. Here's the core structure:
+
+```
+You are a senior business analyst. You have been given raw research data about [company name] in the [industry] sector.
+
+Your task is to synthesize this data into a structured research brief.
+
+Raw data:
+[INSERT ALL GATHERED DATA]
+
+Requirements:
+- Be factual. If data is uncertain, say so.
+- Use a structured Markdown format with clear sections
+- Highlight the 3 most strategically important findings
+- Identify key risks and opportunities
+- Keep the brief under 800 words
+
+Output the brief now.
+```
+
+The prompt constraints — factual, structured, 800 words max — are critical. Without them, GPT produces verbose output that buries the key insights.
+
+---
+
+## What I Learned Building This
+
+**Retrieval quality matters more than model quality.** A worse model with better research inputs beats a better model with poor inputs. Invest in how you search and extract before optimizing the LLM.
+
+**Loop carefully.** The competitor deep-dive loop can become expensive if you don't cap iterations. Set a max of 3-5 competitors and time out searches that take too long.
+
+**Build in human review.** I always review the brief before sharing with a client. AI research is a starting point, not a final product. The brief cuts my research time by 80% — I do the remaining 20% as critical review.
+
+---
+
+## Want This Agent for Your Business?
+
+I build custom research automation agents for clients in consulting, marketing, sales, and content businesses. The setup time is typically 4-8 hours depending on complexity.
+
+[Book a discovery call](https://cal.com/vcaicreator/discovery-call) to discuss what a research agent could look like for your specific workflow.
+
+---
+
+**Topics Covered:**
+AI Agents · n8n · Research Automation · GPT-4 · Business Automation · Workflow Design · Competitive Intelligence

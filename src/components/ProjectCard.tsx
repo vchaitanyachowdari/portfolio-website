@@ -9,6 +9,9 @@ import {
   SmartLink,
   Text,
 } from "@/once-ui/components";
+import { motion } from "framer-motion";
+import evStyles from "./EvervaultCard.module.scss";
+import { useEvervault } from "@/hooks/useEvervault";
 
 interface ProjectCardProps {
   href: string;
@@ -30,8 +33,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
 }) => {
+  const { randomString, maskImage, onMouseMove } = useEvervault();
+
   return (
-    <Column fillWidth gap="m">
+    <Column
+      fillWidth
+      gap="m"
+      className={evStyles.evervaultWrapper}
+      onMouseMove={onMouseMove as any}
+      style={{ position: "relative", overflow: "hidden", borderRadius: "var(--radius-l)" }}
+    >
+      {/* Evervault gradient spotlight */}
+      <motion.div
+        className={evStyles.gradientOverlay}
+        style={{ maskImage: maskImage as any, WebkitMaskImage: maskImage as any }}
+      />
+      {/* Evervault character overlay */}
+      <motion.div
+        className={evStyles.charOverlay}
+        style={{ maskImage: maskImage as any, WebkitMaskImage: maskImage as any }}
+      >
+        <p className={evStyles.charText}>{randomString}</p>
+      </motion.div>
+
       <Carousel
         sizes="(max-width: 960px) 100vw, 960px"
         images={images.map((image) => ({
@@ -46,6 +70,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         paddingTop="12"
         paddingBottom="24"
         gap="l"
+        style={{ position: "relative", zIndex: 4 }}
       >
         {title && (
           <Flex flex={5}>

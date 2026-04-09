@@ -1,6 +1,8 @@
-import { NextResponse } from 'next/server';
 import { getPosts } from '@/app/utils/utils';
 import { baseURL } from '@/app/resources';
+
+// Force static generation at build time — no edge runtime needed
+export const dynamic = 'force-static';
 
 export async function GET() {
   const posts = getPosts(['src', 'app', 'blog', 'posts']);
@@ -38,7 +40,7 @@ export async function GET() {
       }))
   };
 
-  return NextResponse.json(jsonFeed, {
+  return Response.json(jsonFeed, {
     headers: {
       'Content-Type': 'application/feed+json; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=7200',

@@ -1,6 +1,8 @@
-import { NextResponse } from 'next/server';
 import { getPosts } from '@/app/utils/utils';
 import { baseURL } from '@/app/resources';
+
+// Force static generation at build time — no edge runtime needed
+export const dynamic = 'force-static';
 
 export async function GET() {
   const posts = getPosts(['src', 'app', 'blog', 'posts']);
@@ -36,7 +38,7 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
       <channel>
-        <title>Portfolio Blog - Web Development & Design</title>
+        <title>Portfolio Blog - Web Development &amp; Design</title>
         <description>Latest articles about web development, design, and technology from a full-stack developer's perspective.</description>
         <link>${baseURL}</link>
         <language>en-US</language>
@@ -62,7 +64,7 @@ export async function GET() {
       </channel>
     </rss>`;
 
-  return new NextResponse(rssXml, {
+  return new Response(rssXml, {
     headers: {
       'Content-Type': 'application/rss+xml; charset=utf-8',
       'Cache-Control': 'public, max-age=3600, s-maxage=7200',

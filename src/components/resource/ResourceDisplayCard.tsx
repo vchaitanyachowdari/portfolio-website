@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   AvatarGroup,
   Column,
@@ -8,6 +9,8 @@ import {
   SmartLink,
   Text,
 } from "@/once-ui/components";
+import evStyles from "../EvervaultCard.module.scss";
+import { useEvervault } from "@/hooks/useEvervault";
 
 interface ResourceDisplayCardProps {
   href: string;
@@ -29,33 +32,52 @@ export const ResourceDisplayCard: React.FC<ResourceDisplayCardProps> = ({
   avatars = [],
   link,
 }) => {
+  const { randomString, maskImage, onMouseMove } = useEvervault();
+
   return (
-    <div style={{
-      background: 'rgba(255, 255, 255, 0.1)',
-      backdropFilter: 'blur(10px)',
-      borderRadius: '12px',
-      padding: '1.5rem',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-    }}>
-      <div style={{ flex: 1 }}>
-        <Heading as="h2" variant="heading-strong-l" style={{ marginBottom: '1rem' }}>
+    <div
+      className={evStyles.evervaultWrapper}
+      onMouseMove={onMouseMove as any}
+      style={{
+        background: "rgba(255, 255, 255, 0.04)",
+        backdropFilter: "blur(10px)",
+        borderRadius: "12px",
+        padding: "1.5rem",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
+        overflow: "hidden",
+        transition: "border-color 0.3s ease",
+      }}
+    >
+      {/* Evervault gradient spotlight */}
+      <motion.div
+        className={evStyles.gradientOverlay}
+        style={{ maskImage: maskImage as any, WebkitMaskImage: maskImage as any }}
+      />
+      {/* Evervault character overlay */}
+      <motion.div
+        className={evStyles.charOverlay}
+        style={{ maskImage: maskImage as any, WebkitMaskImage: maskImage as any }}
+      >
+        <p className={evStyles.charText}>{randomString}</p>
+      </motion.div>
+
+      <div style={{ flex: 1, position: "relative", zIndex: 4 }}>
+        <Heading as="h2" variant="heading-strong-l" style={{ marginBottom: "1rem" }}>
           {title}
         </Heading>
-        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginBottom: '1.5rem' }}>
+        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginBottom: "1.5rem" }}>
           {description}
         </Text>
       </div>
-      <Flex direction="column" gap="m">
+      <Flex direction="column" gap="m" style={{ position: "relative", zIndex: 4 }}>
         {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
         <Flex gap="l" wrap>
           {content?.trim() && (
-            <SmartLink
-              suffixIcon="arrowRight"
-              href={href}
-            >
+            <SmartLink suffixIcon="arrowRight" href={href}>
               <Text variant="body-default-s">Read more</Text>
             </SmartLink>
           )}
