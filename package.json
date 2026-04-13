@@ -29,7 +29,7 @@
     "cookie": "^1.0.2",
     "framer-motion": "^12.23.6",
     "gray-matter": "^4.0.3",
-    "next": "15.5.12",
+    "next": "15.5.15",
     "next-mdx-remote": "^6.0.0",
     "postcss-preset-env": "^9.6.0",
     "prismjs": "^1.30.0",
